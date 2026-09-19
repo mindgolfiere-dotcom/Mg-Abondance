@@ -8,33 +8,49 @@ Hooks et CTA repris tels quels du calendrier.
 
 ## REEL 1 · Lundi 22/09 · Pilier Éducatif
 
+> **Écart assumé avec le calendrier.** Le déroulé prévoyait deux imageries cérébrales côte à côte,
+> « stress sur l'argent » à gauche et « visualisation de l'abondance » à droite. Cette comparaison
+> n'existe dans aucune étude : ce sont deux protocoles différents, jamais scannés côte à côte, et
+> aucun travail publié ne mesure un cerveau « qui visualise l'abondance 2 min/jour ». Le reveal
+> côte à côte est conservé, mais il compare désormais deux conditions issues des mêmes
+> expériences, ce qui est réellement comparable. Sources en fin de document.
+
 ### Forme
 
-- **Durée cible** : 40 à 45 s. Débit rapide, coupes sèches toutes les 2 à 3 s.
-- **Cadre** : face cam sobre, cadrage poitrine, fond neutre uni, lumière douce frontale. Zak tient un petit objet (stylo ou pierre) dans le bas du cadre comme point focal.
-- **0 à 3 s** : face cam plein écran + hook en gros texte sur 2 lignes, le mot « DANS » en surbrillance (jaune/or).
-- **3 à 32 s (reveal)** : deux visuels de cerveau côte à côte occupant les deux tiers supérieurs (imagerie cérébrale libre de droits type Pexels/Pixabay, ou animation « brain scan » Canva). Face cam réduite dans le tiers inférieur.
-  - Gauche, étiquette : « Ton cerveau quand tu stresses sur l'argent ». Zone rouge pulsante sur l'amygdale, zone frontale grisée.
-  - Droite, étiquette : « Ton cerveau quand tu visualises l'abondance 2 min/jour ». Zone frontale (cortex préfrontal) bleu/doré, connexions qui s'allument.
-  - À chaque zone nommée dans le script : zoom léger sur la zone, Zak la pointe avec l'objet, whoosh discret.
-- **32 à 45 s (CTA)** : retour face cam plein écran, mot « NEURO » en gros à l'écran + mention « en commentaire ».
-- **Sous-titres** : dynamiques, mot à mot, 3 à 4 mots par bloc, mots-clés en couleur (AMYGDALE, MÊMES ZONES, RÉPÉTITION, NEURO).
-- **Audio** : voix prioritaire, fond musical type documentaire/tech très bas, un « ding » au moment du reveal.
-- **Couverture** : les deux cerveaux + titre « Ton cerveau sous 2 états ».
+- **Durée cible** : 45 à 50 s. Débit rapide, coupes sèches toutes les 2 à 3 s.
+- **Cadre** : face cam sobre, cadrage poitrine, fond neutre uni, lumière douce frontale.
+- **0 à 3 s** : face cam plein écran + hook en gros texte sur 2 lignes, le mot « DANS » en surbrillance or.
+- **3 à 15 s (le reveal)** : plein écran sur un graphique animé très simple, une seule courbe qui **descend**, axe libellé « énergie mobilisée (tension artérielle) », gros titre « FANTASME SEUL ». Face cam réduite dans le tiers inférieur. En bas, en petit et lisible : « Kappes & Oettingen, J. Exp. Soc. Psychol., 2011 ».
+- **15 à 28 s (le mécanisme)** : **un seul** cerveau schématique, clairement illustratif (animation Canva, jamais une fausse IRM). Les mêmes zones s'allument deux fois : d'abord vif, étiquette « VÉCU », puis en version atténuée, étiquette « IMAGINÉ ». Le contraste d'intensité porte tout le propos.
+- **28 à 40 s (le vrai côte à côte)** : écran partagé, deux courbes. Gauche « fantasme seul », elle retombe. Droite « fantasme + obstacle », elle tient. Le côté droit s'allume en or au moment de « l'énergie tient ».
+- **40 à 50 s (CTA)** : retour face cam plein écran, mot « NEURO » en gros + « en commentaire ».
+- **Sous-titres** : dynamiques, mot à mot, 3 à 4 mots par bloc. Mots-clés en couleur : SE DÉTEND, PLUS FAIBLE, OBSTACLE, NEURO.
+- **Audio** : voix prioritaire, fond documentaire/tech très bas, un « ding » sec sur « Il se détend ».
+- **Couverture** : la courbe qui descend + titre « Visualiser l'argent te fatigue ».
 
 ### Script
 
 [HOOK · 0-3 s]
 Voilà ce qui se passe DANS ton cerveau quand tu visualises l'argent 2 minutes par jour.
 
-[REVEAL · 3-16 s]
-Regarde. À gauche, ton cerveau quand tu stresses sur l'argent. La zone rouge, c'est l'amygdale, ton alarme interne. Quand elle s'allume, elle coupe le courant au cortex préfrontal, ici devant, la zone qui réfléchit et qui voit les opportunités. Résultat : tu tournes en rond.
+[REVEAL · 3-15 s]
+Il se détend. Et c'est exactement ça, le problème.
+Des chercheurs ont fait fantasmer des gens sur ce qu'ils voulaient, en mesurant leur tension, qui est l'indicateur de l'énergie que ton corps met à disposition. Chez ceux qui fantasment, elle descend.
 
-[EXPLICATION · 16-32 s]
-À droite, le même cerveau, deux minutes de visualisation par jour. Et là c'est dingue : quand tu imagines une scène avec assez d'émotion, ton cerveau active en grande partie les mêmes zones que si tu la vivais pour de vrai. Il fait quasiment pas la différence. Donc chaque répétition renforce la connexion. Et au bout de quelques semaines, l'abondance, c'est plus une idée. C'est un chemin déjà tracé dans ta tête.
+[MÉCANISME · 15-28 s]
+Pourquoi ? Parce que quand tu imagines une scène, ton cerveau réutilise une partie des circuits qui servent à la vivre pour de vrai. En plus faible. Mais assez pour que tu encaisses un bout de la récompense tout de suite. Dans ta tête, tu l'as déjà eu, l'argent. Donc ton corps arrête de bosser.
 
-[CTA · 32-45 s]
-C'est là-dessus que j'ai construit mon exercice signature. Commente NEURO et je t'envoie l'exercice de reprogrammation exact.
+[LE VRAI TRUC · 28-40 s]
+Et ceux qui obtiennent le résultat, ils visualisent pas moins. Ils visualisent autrement. Ils voient ce qu'ils veulent, et juste après, l'obstacle réel qui va se mettre en travers. Là, l'énergie tient. Et c'est eux qui passent à l'action.
+
+[CTA · 40-50 s]
+Commente NEURO et je t'envoie l'exercice de reprogrammation exact.
+
+### Trois choses à ne pas dire face caméra
+
+- **« Ton cerveau ne fait pas la différence entre le réel et l'imaginé. »** C'est la formule Dispenza, et elle est fausse. Une étude parue dans *Neuron* en 2025 a identifié le circuit qui fait précisément cette différence : le gyrus fusiforme produit un « signal de réalité », l'insula antérieure le compare à un seuil. Le signal imaginé est plus faible, et c'est ce qui permet au cerveau de trancher. La bonne formulation est dans le script : les circuits sont en partie les mêmes, en plus faible.
+- **« Visualise l'abondance et ça reprogramme ton rapport à l'argent. »** Aucune étude ne teste ça, et la littérature sur le fantasme positif va dans l'autre sens.
+- **Tout chiffre de QI perdu à cause du stress financier.** Le résultat le plus cité là-dessus a été contesté dans *Science* dès 2013 sur sa méthode. À éviter.
 
 ---
 
@@ -110,3 +126,19 @@ Dis-moi en commentaire : c'est quoi LA croyance qui te bloque ?
 ---
 
 Note : les détails personnels du Reel 3 (miroir, tableau de visualisation, rituels) sont à ajuster à ton vécu réel avant tournage. Aucun chiffre inventé.
+
+
+---
+
+## Sources du Reel 1
+
+Vérifiées le 19/09/2026 sur les articles d'origine.
+
+- **Le fantasme positif épuise l'énergie.** Kappes, H. B., & Oettingen, G. (2011). *Positive fantasies about idealized futures sap energy.* Journal of Experimental Social Psychology, 47(4), 719-729. Quatre expériences. Dans l'étude 1 (164 étudiantes), le fantasme positif induit fait **baisser la tension systolique** par rapport à une condition qui interroge le futur désiré. La tension systolique sert d'indicateur physiologique de l'énergie mobilisée. Mécanisme avancé par les auteurs : le fantasme fait consommer mentalement le futur désiré, ce qui déclenche la détente qui accompagnerait sa réalisation réelle, au lieu de mobiliser l'énergie pour l'atteindre.
+- **Le fantasme positif prédit de moins bons résultats.** Oettingen, G., & Mayer, D. (2002). *The motivating function of thinking about the future: Expectations versus fantasies.* Journal of Personality and Social Psychology, 83, 1198-1212. Plus les fantasmes sont positifs, moins le résultat est atteint, sur l'entrée dans la vie active, la mise en couple (suivi à cinq mois), la récupération après prothèse de hanche et la perte de poids. Distinction centrale : les **attentes** élevées (je pense que je vais y arriver) aident ; les **fantasmes** positifs (je savoure la scène) nuisent.
+- **La correction : ajouter l'obstacle.** Le contraste mental, fantasme du résultat puis obstacle réel, transforme le fantasme en engagement. Nuance à connaître sans la dire dans le Reel : il mobilise ceux dont les attentes de réussite sont élevées, et fait désengager ceux dont les attentes sont basses. Oettingen, G. (2016). *The power of prospection: mental contrasting and behavior change.* Social and Personality Psychology Compass.
+- **Le cerveau distingue l'imaginé du réel.** Dijkstra, N. et coll. (2025). *A neural basis for distinguishing imagination from reality.* Neuron. Signal de réalité dans le gyrus fusiforme, seuil évalué par l'insula antérieure. La perception produit un signal plus fort que l'imagerie mentale, donc elle franchit le seuil et l'imagerie non.
+- **Le recouvrement imagerie/perception est partiel.** Winlove, C. et coll. (2018), *The neural correlates of visual imagery: a coordinate-based meta-analysis*, Cortex, et méta-analyse multisensorielle de McNorgan (2012). Le recouvrement est réel mais partiel, et **l'amplitude d'activation est plus forte en perception qu'en imagerie** pour un même contenu.
+- **Le stress coupe le cortex préfrontal.** Arnsten, A. F. T. (2009). *Stress signalling pathways that impair prefrontal cortex structure and function.* Nature Reviews Neuroscience. Non utilisé dans ce script, mais solide et disponible pour un contenu futur sur le stress financier.
+- **La répétition mentale modifie le cortex moteur.** Pascual-Leone, A. et coll. (1995), exercice de piano à cinq doigts, deux heures par jour sur cinq jours : la pratique mentale produit une réorganisation des cartes motrices semblable à la pratique physique (repris dans *The Plastic Human Brain Cortex*, Annual Review of Neuroscience, 2005, 28, 377-401). Attention à la portée : c'est démontré sur une **compétence motrice précise et répétée**, pas sur un rapport à l'argent.
+- **À éviter.** Mani, A. et coll. (2013), *Poverty impedes cognitive function*, Science. Un commentaire publié dans Science la même année n'a pas retrouvé les résultats après réanalyse sans dichotomisation du revenu, en pointant des effets de plafond. Ne pas citer de chiffre issu de cette étude.
