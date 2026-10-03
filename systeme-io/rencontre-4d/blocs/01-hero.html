@@ -1,0 +1,51 @@
+<!-- Rencontre 4D · Bloc 01 · Hero (colonne GAUCHE)
+     Élément systeme.io : « Code HTML ». Titre, promesse + prix, vidéo, bouton vers le formulaire. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-hero{display:flex;flex-direction:column;gap:18px}
+.r4d-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border:1.5px solid var(--r4d-pink);border-radius:999px;background:var(--r4d-pink-soft);color:var(--r4d-pink-ink);font-size:11px;font-weight:800;letter-spacing:2px;line-height:1;text-transform:uppercase}
+.r4d-badge span{font-size:13px;letter-spacing:0}
+.r4d-h1{font-size:40px;font-size:clamp(34px,10.2vw,52px);line-height:.98}
+.r4d-h1 .r4d-pink{display:block}
+.r4d-lead{font-size:19px;font-weight:700;line-height:1.45;color:var(--r4d-ink)}
+.r4d-sub{font-size:16.5px;line-height:1.65}
+.r4d-sub strong{font-weight:700;color:var(--r4d-ink)}
+.r4d-sub .r4d-price{color:var(--r4d-pink-ink);white-space:nowrap}
+.r4d-video{margin-top:4px}
+.r4d-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:3px solid var(--r4d-pink);border-radius:16px;background:#0D0B0C;box-shadow:0 24px 48px -22px rgba(255,67,113,.6)}
+.r4d-video figcaption{margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.5px;line-height:1.5;text-transform:uppercase;color:var(--r4d-muted)}
+.r4d-cta-wrap{display:flex;flex-direction:column;gap:12px;width:100%;max-width:500px;margin-top:4px}
+.r4d-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 22px;border-radius:12px;background:var(--r4d-pink);color:#fff !important;text-decoration:none !important;font-family:'Oswald',Impact,sans-serif;font-size:20px;font-weight:700;letter-spacing:.8px;line-height:1.2;text-transform:uppercase;box-shadow:0 14px 28px -12px rgba(255,67,113,.8);transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+.r4d-cta:hover{background:#F2345F;transform:translateY(-3px);box-shadow:0 20px 32px -14px rgba(255,67,113,.85)}
+.r4d-cta:focus-visible{outline:3px solid var(--r4d-ink);outline-offset:3px}
+.r4d-tagline{text-align:center;text-wrap:balance;font-size:12px;font-weight:600;letter-spacing:1.5px;line-height:1.6;text-transform:uppercase;color:var(--r4d-ink)}
+.r4d-tagline > span{white-space:nowrap}
+.r4d-arrow-d{display:none}
+.r4d-tagline b{font-weight:800;color:var(--r4d-pink-ink)}
+@media (min-width:801px){.r4d-arrow-m{display:none}.r4d-arrow-d{display:inline}.r4d-hero{gap:20px}.r4d-h1{font-size:clamp(44px,5.4vw,66px)}.r4d-lead{font-size:21px}.r4d-sub{font-size:17px}.r4d-cta{padding:20px 24px;font-size:22px}}
+@media (max-width:360px){.r4d-cta{padding:16px 14px;font-size:17px;letter-spacing:.4px}}
+@media (prefers-reduced-motion:reduce){.r4d-cta{transition:none}.r4d-cta:hover{transform:none}}
+</style>
+<div class="r4d r4d-hero">
+  <p class="r4d-badge"><span aria-hidden="true">♡</span>Manifestation amoureuse</p>
+  <h1 class="r4d-title r4d-h1">T’as pas besoin de chercher l’amour. <span class="r4d-pink">Fais-le venir à toi.</span></h1>
+  <p class="r4d-lead">Le problème, ce n’est pas toi. C’est l’énergie depuis laquelle tu entres dans une relation.</p>
+  <p class="r4d-sub">Remplis tes infos et accède <strong>immédiatement</strong> à <strong>Rencontre 4D</strong>, le programme de 28&nbsp;jours pour changer ton identité intérieure et attirer la relation idéale… naturellement. <strong class="r4d-price">Seulement 99&nbsp;€</strong> (ou 2&nbsp;×&nbsp;55&nbsp;€).</p>
+  <figure class="r4d-video">
+    <video controls preload="none" playsinline controlslist="nodownload" poster="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a3297e370f179.45074999_YOUTUBETHUMBNAIL9.png">
+      <source src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a31d0b6566500.23843816_assomptionfinal1_2.mp4" type="video/mp4">
+    </video>
+    <figcaption>🕐 11&nbsp;min pour comprendre pourquoi tu répètes la même histoire… et comment changer ça.</figcaption>
+  </figure>
+  <div class="r4d-cta-wrap">
+    <a class="r4d-cta" href="#r4d-commande">Accéder au programme <span class="r4d-arrow-m" aria-hidden="true">↓</span><span class="r4d-arrow-d" aria-hidden="true">→</span></a>
+    <p class="r4d-tagline"><span>Offre <b>limitée</b> •</span> <span>Accès <b>à vie</b> •</span> <span><b>Bonus</b> communauté</span></p>
+  </div>
+</div>

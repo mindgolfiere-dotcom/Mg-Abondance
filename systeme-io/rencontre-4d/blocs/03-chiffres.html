@@ -1,0 +1,26 @@
+<!-- Rencontre 4D · Bloc 03 · Bandeau chiffres (colonne GAUCHE, sous le programme)
+     Élément systeme.io : « Code HTML ». Même bandeau rose qu'avant, en version compacte. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-stats{padding-top:36px}
+.r4d-stats ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;padding:24px 14px;border-radius:18px;background:var(--r4d-pink);text-align:center}
+.r4d-stats li{display:flex;flex-direction:column;align-items:center;gap:6px}
+.r4d-stats strong{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;color:#140A0D}
+.r4d-stats strong span{color:#fff}
+.r4d-stats li > span{font-size:11px;font-weight:700;letter-spacing:1px;line-height:1.3;text-transform:uppercase;color:#140A0D}
+@media (min-width:1100px){.r4d-stats ul{grid-template-columns:repeat(4,minmax(0,1fr));padding:26px 16px}.r4d-stats strong{font-size:34px}}
+@media (max-width:800px){.r4d-stats{padding-top:32px}}
+</style>
+<div class="r4d r4d-stats">
+  <ul>
+    <li><strong>1.500+</strong><span>membres actifs</span></li>
+    <li><strong>28</strong><span>jours de programme</span></li>
+    <li><strong>4.9<span aria-hidden="true">★</span></strong><span>note communauté</span></li>
+    <li><strong>15&nbsp;min</strong><span>par jour suffisent</span></li>
+  </ul>
+</div>

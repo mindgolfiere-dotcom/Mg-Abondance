@@ -1,0 +1,52 @@
+<!-- Rencontre 4D · Bloc 02 · Le programme en 4 puces (colonne GAUCHE, sous le hero)
+     Élément systeme.io : « Code HTML ». Remplace « Comment ça marche » + « Ce que les 28 jours vont changer ». -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-prog{display:flex;flex-direction:column;gap:22px;padding-top:56px}
+.r4d-prog .r4d-h2{font-size:30px;font-size:clamp(28px,8vw,40px);line-height:1.04}
+.r4d-nowrap{white-space:nowrap}
+.r4d-checks{display:flex;flex-direction:column;gap:20px}
+.r4d-checks li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;align-items:start}
+.r4d-checks svg{display:block;width:26px;height:26px;margin-top:2px}
+.r4d-checks p{font-size:16.5px;line-height:1.6}
+.r4d-checks strong{display:block;margin-bottom:3px;font-family:'Oswald',Impact,sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;line-height:1.3;text-transform:uppercase;color:var(--r4d-ink)}
+.r4d-checks em{font-style:normal;font-weight:600;color:var(--r4d-pink-ink)}
+.r4d-chips{display:flex;flex-wrap:wrap;gap:8px}
+.r4d-chips li{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid var(--r4d-line);border-radius:999px;background:var(--r4d-card);font-size:13px;font-weight:600;line-height:1.2;color:var(--r4d-ink)}
+.r4d-chips li::before{content:"✓";font-weight:800;color:var(--r4d-pink-ink)}
+@media (min-width:801px){.r4d-prog .r4d-h2{font-size:clamp(30px,3.3vw,44px)}}
+@media (max-width:800px){.r4d-prog{padding-top:44px}}
+</style>
+<div class="r4d r4d-prog">
+  <h2 class="r4d-title r4d-h2">Ce que tu vas vivre <span class="r4d-pink r4d-nowrap">en 28 jours</span></h2>
+  <ul class="r4d-checks">
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>1. Identifier &amp; guérir</strong>Tu mets le doigt sur ce qui se répète&nbsp;: la croyance qui te parasite en amour, la blessure qui te maintient dans la douleur, le scénario subconscient qui tourne en boucle. Puis tu le guéris avec des exercices adaptés à ta blessure.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>2. Manifester</strong>Tu graves une nouvelle identité amoureuse dans ton subconscient, avec des protocoles précis, au bon moment de la journée, en état Thêta. <em>Valable aussi si tu es en couple et que l’amour bat de l’aile.</em></p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>3. Maintenir</strong>Tu ancres ce nouvel état, même quand une relation réveille tes vieilles peurs, grâce aux protocoles «&nbsp;urgence émotionnelle&nbsp;». Ta nouvelle identité amoureuse devient ton état par défaut.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>+ Bonus&nbsp;: la communauté</strong>Un espace pour poser tes questions et partager tes victoires. Et ton accès au programme est à vie.</p>
+    </li>
+  </ul>
+  <ul class="r4d-chips">
+    <li>Aucune expérience requise</li>
+    <li>Célibataire ou en couple</li>
+    <li>15&nbsp;min par jour</li>
+  </ul>
+</div>

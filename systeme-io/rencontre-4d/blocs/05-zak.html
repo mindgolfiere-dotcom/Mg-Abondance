@@ -1,0 +1,36 @@
+<!-- Rencontre 4D · Bloc 05 · Qui est derrière le programme (colonne GAUCHE)
+     Élément systeme.io : « Code HTML ». Version courte de la présentation de Zak. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-zak{display:flex;flex-direction:column;gap:14px;padding-top:56px}
+.r4d-kicker{font-size:12px;font-weight:800;letter-spacing:1.8px;line-height:1.4;text-transform:uppercase;color:var(--r4d-pink-ink)}
+.r4d-zak-card{display:grid;grid-template-columns:84px minmax(0,1fr);gap:16px;align-items:center;padding:20px;background:var(--r4d-card);border:1px solid var(--r4d-line);border-radius:18px;box-shadow:0 1px 2px rgba(20,18,19,.04),0 14px 30px -24px rgba(20,18,19,.3)}
+.r4d-zak-photo{display:block;width:84px;height:104px;object-fit:cover;object-position:50% 18%;border-radius:12px;background:#0D0B0C}
+.r4d-zak-name{font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.2;color:var(--r4d-ink)}
+.r4d-zak-text{grid-column:1 / -1;display:flex;flex-direction:column;gap:10px}
+.r4d-zak-text p{font-size:15.5px;line-height:1.65}
+.r4d-zak-text strong{font-weight:700;color:var(--r4d-ink)}
+@media (min-width:960px){
+  .r4d-zak-card{grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto 1fr;gap:10px 22px;align-items:start;padding:22px}
+  .r4d-zak-photo{grid-row:1 / span 2;width:150px;height:188px}
+  .r4d-zak-text{grid-column:2}
+}
+@media (max-width:800px){.r4d-zak{padding-top:44px}}
+</style>
+<div class="r4d r4d-zak">
+  <p class="r4d-kicker">Qui est derrière le programme&nbsp;?</p>
+  <div class="r4d-zak-card">
+    <img class="r4d-zak-photo" src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a32a5b7b09e94.05318879_Aujourdhuijevisualise4.png" alt="Zak, créateur de Rencontre 4D" width="844" height="1500" loading="lazy" decoding="async">
+    <h3 class="r4d-zak-name">👋 Hello, c’est Zak&nbsp;!</h3>
+    <div class="r4d-zak-text">
+      <p>Quand j’ai mis en application tout ce que j’avais appris sur le fonctionnement du cerveau, j’ai manifesté une relation idéale, exactement comme je l’avais imaginée. Même physiquement&nbsp;: elle ressemble comme deux gouttes d’eau à la personne que je visualisais.</p>
+      <p><strong>Aujourd’hui, nous sommes mariés depuis plus de 8&nbsp;ans</strong> et nous avons une formidable petite fille.</p>
+      <p>Rencontre 4D, c’est 10&nbsp;ans d’expérience condensés dans un programme pragmatique. Pas des conseils de séduction&nbsp;: un vrai travail neurologique sur ce qui t’empêche de recevoir ce que tu désires vraiment.</p>
+    </div>
+  </div>
+</div>

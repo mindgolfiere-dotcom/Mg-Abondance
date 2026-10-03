@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Rencontre 4D — Aperçu</title>
+<meta name="description" content="Aperçu de la nouvelle page de vente-commande Rencontre 4D (version claire), assemblée à partir des blocs Code HTML systeme.io.">
+<style>
+/* --- Reset global repris de systeme.io --- */
+html{box-sizing:border-box;scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:#FAF6F0}
+*,*:before,*:after{box-sizing:inherit}
+a{text-decoration:none}
+p{margin:0}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:normal}
+ul{margin:0}
+
+/* --- Structure systeme.io : section > ligne 12 colonnes > colonnes 7/5 --- */
+.sio-section{display:flex;position:relative;padding:48px 40px 72px}
+.sio-container{max-width:1120px;width:100%;margin:auto}
+.sio-row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;padding:0 10px}
+.sio-col-left{grid-column:1 / 8;align-self:flex-start;display:flex;flex-direction:column;min-width:0}
+.sio-col-right{grid-column:8 / 13;align-self:flex-start;display:flex;flex-direction:column;min-width:0}
+.sio-rawhtml{min-height:20px;text-align:center}   /* wrapper que systeme.io met autour de chaque Code HTML */
+.sio-card{margin-left:20px;padding:28px 26px;background:#fff;border:1px solid #ECE4D8;border-radius:20px;box-shadow:0 1px 2px rgba(20,18,19,.04),0 24px 48px -30px rgba(20,18,19,.28);display:flex;flex-direction:column;gap:22px}
+.sio-footer{padding:22px 16px 28px;border-top:1px solid #ECE4D8;text-align:center;font-family:'Inter',system-ui,sans-serif;font-size:13px;color:#6E6668}
+@media only screen and (max-width:800px){
+  .sio-section{padding:24px 16px 40px}
+  .sio-row{display:flex;flex-direction:column;padding:0}
+  .sio-col-left,.sio-col-right{align-self:unset;width:100%}
+  .sio-card{margin-left:0;padding:22px 16px}
+  .sio-footer{padding-bottom:96px}
+}
+
+/* --- Simulation des éléments natifs du bon de commande --- */
+.pv-form{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#141213;text-align:left;display:flex;flex-direction:column}
+.pv-label{margin:16px 0 7px;font-size:14px;font-weight:600;line-height:1.3;color:#141213}
+.pv-form > .pv-label:first-child{margin-top:0}
+.pv-label-sm{margin-top:12px;font-size:13px;font-weight:500;color:#3D3739}
+.pv-input{display:flex;align-items:center;height:50px;padding:0 14px;background:#fff;border:1px solid #DCD3C6;border-radius:10px;font-size:16px;color:#9A918A}
+.pv-pay{border:1px solid #DCD3C6;border-radius:10px;overflow:hidden}
+.pv-pay-head{display:flex;align-items:center;gap:10px;padding:14px;border-bottom:1px solid #ECE4D8;font-size:15px;font-weight:500}
+.pv-brands{display:flex;gap:4px;margin-left:auto}
+.pv-brands i{padding:3px 5px;border:1px solid #E3DACD;border-radius:4px;font-size:9px;font-style:normal;font-weight:800;letter-spacing:.3px;color:#3D3739}
+.pv-pay-body{padding:14px}
+.pv-applepay{display:flex;align-items:center;justify-content:center;height:44px;border-radius:8px;background:#000;color:#fff;font-size:16px;font-weight:600}
+.pv-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pv-radio{flex:none;display:inline-block;width:18px;height:18px;border:2px solid #CFC5B8;border-radius:50%;background:#fff}
+.pv-radio.is-on,.pv-plan.is-on .pv-radio{border-color:#FF4371;box-shadow:inset 0 0 0 3px #fff;background:#FF4371}
+.pv-offer{display:flex;flex-direction:column;gap:8px;padding:10px;background:#FBF8F4;border:1px solid #ECE4D8;border-radius:12px}
+.pv-plan{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"r n" "r p";column-gap:12px;row-gap:2px;align-items:center;width:100%;padding:12px 14px;text-align:left;background:#fff;border:1.5px solid #E3DACD;border-radius:10px;cursor:pointer;font:inherit;color:inherit}
+.pv-plan .pv-radio{grid-area:r}
+.pv-plan-name{grid-area:n;font-family:'Oswald',Impact,sans-serif;font-size:16px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#141213}
+.pv-plan-price{grid-area:p;font-size:14px;font-weight:600;color:#3D3739}
+.pv-plan.is-on{border-color:#FF4371;background:#FFF6F8}
+.pv-plan:focus-visible{outline:3px solid #141213;outline-offset:2px}
+.pv-sum{display:flex;justify-content:space-between;gap:12px;padding:4px 6px 0;font-size:14px;font-weight:600}
+.pv-sum[hidden]{display:none}
+.pv-sum-total{padding-top:0;font-size:13px;font-weight:500;color:#6E6668}
+.pv-hint{margin-top:8px;font-size:12.5px;font-weight:600;color:#D42A5B}
+.pv-paybtn{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:22px;padding:16px;border-radius:12px;background:#FF4371;color:#fff;font-family:'Oswald',Impact,sans-serif;font-size:22px;font-weight:700;letter-spacing:.8px;line-height:1.2;text-transform:uppercase;box-shadow:0 14px 28px -12px rgba(255,67,113,.8)}
+.pv-paybtn small{font-family:'Inter',system-ui,sans-serif;font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.92)}
+.pv-cgv{margin-top:12px;font-size:12.5px;text-align:center;color:#6E6668}
+.pv-contact{margin-top:6px;font-size:13px;text-align:center;color:#3D3739}
+
+/* --- Repères : montre quel morceau est un bloc Code HTML et lequel est natif --- */
+.pv-slot{position:relative}
+.pv-guides .pv-slot{outline:2px dashed #2F6FEB;outline-offset:4px}
+.pv-guides .pv-native{outline-color:#16A34A}
+.pv-guides .pv-slot::before{content:attr(data-label);position:absolute;z-index:5;top:-2px;right:-2px;max-width:92%;padding:3px 8px;border-radius:0 0 0 8px;background:#2F6FEB;color:#fff;font:600 11px/1.4 'Inter',system-ui,sans-serif;text-align:right;pointer-events:none}
+.pv-guides .pv-native::before{background:#16A34A}
+.pv-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:10px 16px;background:#EFE7DB;border-bottom:1px dashed #CFC5B8;font:500 12.5px/1.4 'Inter',system-ui,sans-serif;color:#3D3739}
+.pv-bar b{display:inline-block;margin-right:8px;padding:3px 8px;border-radius:999px;background:#141213;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.pv-toggle{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid #CFC5B8;border-radius:999px;background:#fff;font:600 12px/1 'Inter',system-ui,sans-serif;color:#141213;cursor:pointer}
+.pv-toggle::before{content:"";width:10px;height:10px;border-radius:50%;background:#CFC5B8}
+.pv-toggle[aria-pressed="true"]::before{background:#2F6FEB}
+.pv-toggle:focus-visible{outline:3px solid #2F6FEB;outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="pv-bar"><p><b>Aperçu</b>Rencontre 4D · page de vente + commande en 1 étape (version claire)</p><button class="pv-toggle" type="button" aria-pressed="false">Afficher les repères systeme.io</button></div>
+
+<section class="sio-section">
+  <div class="sio-container">
+    <div class="sio-row">
+      <div class="sio-col-left">
+<div class="pv-slot" data-label="Code HTML · 01-hero.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 01 · Hero (colonne GAUCHE)
+     Élément systeme.io : « Code HTML ». Titre, promesse + prix, vidéo, bouton vers le formulaire. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-hero{display:flex;flex-direction:column;gap:18px}
+.r4d-badge{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border:1.5px solid var(--r4d-pink);border-radius:999px;background:var(--r4d-pink-soft);color:var(--r4d-pink-ink);font-size:11px;font-weight:800;letter-spacing:2px;line-height:1;text-transform:uppercase}
+.r4d-badge span{font-size:13px;letter-spacing:0}
+.r4d-h1{font-size:40px;font-size:clamp(34px,10.2vw,52px);line-height:.98}
+.r4d-h1 .r4d-pink{display:block}
+.r4d-lead{font-size:19px;font-weight:700;line-height:1.45;color:var(--r4d-ink)}
+.r4d-sub{font-size:16.5px;line-height:1.65}
+.r4d-sub strong{font-weight:700;color:var(--r4d-ink)}
+.r4d-sub .r4d-price{color:var(--r4d-pink-ink);white-space:nowrap}
+.r4d-video{margin-top:4px}
+.r4d-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:3px solid var(--r4d-pink);border-radius:16px;background:#0D0B0C;box-shadow:0 24px 48px -22px rgba(255,67,113,.6)}
+.r4d-video figcaption{margin-top:10px;font-size:12px;font-weight:600;letter-spacing:.5px;line-height:1.5;text-transform:uppercase;color:var(--r4d-muted)}
+.r4d-cta-wrap{display:flex;flex-direction:column;gap:12px;width:100%;max-width:500px;margin-top:4px}
+.r4d-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 22px;border-radius:12px;background:var(--r4d-pink);color:#fff !important;text-decoration:none !important;font-family:'Oswald',Impact,sans-serif;font-size:20px;font-weight:700;letter-spacing:.8px;line-height:1.2;text-transform:uppercase;box-shadow:0 14px 28px -12px rgba(255,67,113,.8);transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+.r4d-cta:hover{background:#F2345F;transform:translateY(-3px);box-shadow:0 20px 32px -14px rgba(255,67,113,.85)}
+.r4d-cta:focus-visible{outline:3px solid var(--r4d-ink);outline-offset:3px}
+.r4d-tagline{text-align:center;text-wrap:balance;font-size:12px;font-weight:600;letter-spacing:1.5px;line-height:1.6;text-transform:uppercase;color:var(--r4d-ink)}
+.r4d-tagline > span{white-space:nowrap}
+.r4d-arrow-d{display:none}
+.r4d-tagline b{font-weight:800;color:var(--r4d-pink-ink)}
+@media (min-width:801px){.r4d-arrow-m{display:none}.r4d-arrow-d{display:inline}.r4d-hero{gap:20px}.r4d-h1{font-size:clamp(44px,5.4vw,66px)}.r4d-lead{font-size:21px}.r4d-sub{font-size:17px}.r4d-cta{padding:20px 24px;font-size:22px}}
+@media (max-width:360px){.r4d-cta{padding:16px 14px;font-size:17px;letter-spacing:.4px}}
+@media (prefers-reduced-motion:reduce){.r4d-cta{transition:none}.r4d-cta:hover{transform:none}}
+</style>
+<div class="r4d r4d-hero">
+  <p class="r4d-badge"><span aria-hidden="true">♡</span>Manifestation amoureuse</p>
+  <h1 class="r4d-title r4d-h1">T’as pas besoin de chercher l’amour. <span class="r4d-pink">Fais-le venir à toi.</span></h1>
+  <p class="r4d-lead">Le problème, ce n’est pas toi. C’est l’énergie depuis laquelle tu entres dans une relation.</p>
+  <p class="r4d-sub">Remplis tes infos et accède <strong>immédiatement</strong> à <strong>Rencontre 4D</strong>, le programme de 28&nbsp;jours pour changer ton identité intérieure et attirer la relation idéale… naturellement. <strong class="r4d-price">Seulement 99&nbsp;€</strong> (ou 2&nbsp;×&nbsp;55&nbsp;€).</p>
+  <figure class="r4d-video">
+    <video controls preload="none" playsinline controlslist="nodownload" poster="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a3297e370f179.45074999_YOUTUBETHUMBNAIL9.png">
+      <source src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a31d0b6566500.23843816_assomptionfinal1_2.mp4" type="video/mp4">
+    </video>
+    <figcaption>🕐 11&nbsp;min pour comprendre pourquoi tu répètes la même histoire… et comment changer ça.</figcaption>
+  </figure>
+  <div class="r4d-cta-wrap">
+    <a class="r4d-cta" href="#r4d-commande">Accéder au programme <span class="r4d-arrow-m" aria-hidden="true">↓</span><span class="r4d-arrow-d" aria-hidden="true">→</span></a>
+    <p class="r4d-tagline"><span>Offre <b>limitée</b> •</span> <span>Accès <b>à vie</b> •</span> <span><b>Bonus</b> communauté</span></p>
+  </div>
+</div>
+</div></div>
+<div class="pv-slot" data-label="Code HTML · 02-programme.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 02 · Le programme en 4 puces (colonne GAUCHE, sous le hero)
+     Élément systeme.io : « Code HTML ». Remplace « Comment ça marche » + « Ce que les 28 jours vont changer ». -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-prog{display:flex;flex-direction:column;gap:22px;padding-top:56px}
+.r4d-prog .r4d-h2{font-size:30px;font-size:clamp(28px,8vw,40px);line-height:1.04}
+.r4d-nowrap{white-space:nowrap}
+.r4d-checks{display:flex;flex-direction:column;gap:20px}
+.r4d-checks li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;align-items:start}
+.r4d-checks svg{display:block;width:26px;height:26px;margin-top:2px}
+.r4d-checks p{font-size:16.5px;line-height:1.6}
+.r4d-checks strong{display:block;margin-bottom:3px;font-family:'Oswald',Impact,sans-serif;font-size:18px;font-weight:700;letter-spacing:.5px;line-height:1.3;text-transform:uppercase;color:var(--r4d-ink)}
+.r4d-checks em{font-style:normal;font-weight:600;color:var(--r4d-pink-ink)}
+.r4d-chips{display:flex;flex-wrap:wrap;gap:8px}
+.r4d-chips li{display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid var(--r4d-line);border-radius:999px;background:var(--r4d-card);font-size:13px;font-weight:600;line-height:1.2;color:var(--r4d-ink)}
+.r4d-chips li::before{content:"✓";font-weight:800;color:var(--r4d-pink-ink)}
+@media (min-width:801px){.r4d-prog .r4d-h2{font-size:clamp(30px,3.3vw,44px)}}
+@media (max-width:800px){.r4d-prog{padding-top:44px}}
+</style>
+<div class="r4d r4d-prog">
+  <h2 class="r4d-title r4d-h2">Ce que tu vas vivre <span class="r4d-pink r4d-nowrap">en 28 jours</span></h2>
+  <ul class="r4d-checks">
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>1. Identifier &amp; guérir</strong>Tu mets le doigt sur ce qui se répète&nbsp;: la croyance qui te parasite en amour, la blessure qui te maintient dans la douleur, le scénario subconscient qui tourne en boucle. Puis tu le guéris avec des exercices adaptés à ta blessure.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>2. Manifester</strong>Tu graves une nouvelle identité amoureuse dans ton subconscient, avec des protocoles précis, au bon moment de la journée, en état Thêta. <em>Valable aussi si tu es en couple et que l’amour bat de l’aile.</em></p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>3. Maintenir</strong>Tu ancres ce nouvel état, même quand une relation réveille tes vieilles peurs, grâce aux protocoles «&nbsp;urgence émotionnelle&nbsp;». Ta nouvelle identité amoureuse devient ton état par défaut.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="13" fill="#FF4371"/><path d="M7.5 13.5l3.6 3.6 7.4-7.6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>+ Bonus&nbsp;: la communauté</strong>Un espace pour poser tes questions et partager tes victoires. Et ton accès au programme est à vie.</p>
+    </li>
+  </ul>
+  <ul class="r4d-chips">
+    <li>Aucune expérience requise</li>
+    <li>Célibataire ou en couple</li>
+    <li>15&nbsp;min par jour</li>
+  </ul>
+</div>
+</div></div>
+<div class="pv-slot" data-label="Code HTML · 03-chiffres.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 03 · Bandeau chiffres (colonne GAUCHE, sous le programme)
+     Élément systeme.io : « Code HTML ». Même bandeau rose qu'avant, en version compacte. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-stats{padding-top:36px}
+.r4d-stats ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px;padding:24px 14px;border-radius:18px;background:var(--r4d-pink);text-align:center}
+.r4d-stats li{display:flex;flex-direction:column;align-items:center;gap:6px}
+.r4d-stats strong{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1;color:#140A0D}
+.r4d-stats strong span{color:#fff}
+.r4d-stats li > span{font-size:11px;font-weight:700;letter-spacing:1px;line-height:1.3;text-transform:uppercase;color:#140A0D}
+@media (min-width:1100px){.r4d-stats ul{grid-template-columns:repeat(4,minmax(0,1fr));padding:26px 16px}.r4d-stats strong{font-size:34px}}
+@media (max-width:800px){.r4d-stats{padding-top:32px}}
+</style>
+<div class="r4d r4d-stats">
+  <ul>
+    <li><strong>1.500+</strong><span>membres actifs</span></li>
+    <li><strong>28</strong><span>jours de programme</span></li>
+    <li><strong>4.9<span aria-hidden="true">★</span></strong><span>note communauté</span></li>
+    <li><strong>15&nbsp;min</strong><span>par jour suffisent</span></li>
+  </ul>
+</div>
+</div></div>
+<div class="pv-slot" data-label="Code HTML · 04-temoignages.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 04 · Témoignages (colonne GAUCHE)
+     Élément systeme.io : « Code HTML ». Extraits mot pour mot des témoignages de la communauté ([…] = passage coupé). -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-proof{display:flex;flex-direction:column;gap:18px;padding-top:56px}
+.r4d-proof .r4d-h2{font-size:30px;font-size:clamp(28px,8vw,40px);line-height:1.04}
+.r4d-stars{color:var(--r4d-gold);font-size:15px;letter-spacing:2px;line-height:1}
+.r4d-proof-sub{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:14px;line-height:1.5;color:var(--r4d-muted)}
+.r4d-proof-sub b{font-weight:700;color:var(--r4d-ink)}
+.r4d-quotes{columns:1;column-gap:14px}
+.r4d-quote{display:inline-block;width:100%;margin:0 0 14px;padding:18px;break-inside:avoid;background:var(--r4d-card);border:1px solid var(--r4d-line);border-radius:16px;box-shadow:0 1px 2px rgba(20,18,19,.04),0 10px 24px -20px rgba(20,18,19,.25)}
+.r4d-quote-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.r4d-avatar{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--r4d-pink-soft);color:var(--r4d-pink-ink);font-family:'Oswald',Impact,sans-serif;font-size:17px;font-weight:700}
+.r4d-who{display:flex;flex-direction:column;gap:3px;min-width:0;line-height:1.25}
+.r4d-who strong{font-size:15px;font-weight:700;color:var(--r4d-ink)}
+.r4d-who .r4d-stars{font-size:12px;letter-spacing:1px}
+.r4d-quote blockquote{font-size:14.5px;line-height:1.6;color:var(--r4d-text)}
+.r4d-proof-foot{font-size:14.5px;font-weight:600;line-height:1.5;text-align:center;color:var(--r4d-ink)}
+@media (min-width:801px){.r4d-proof .r4d-h2{font-size:clamp(30px,3.3vw,44px)}}
+@media (min-width:1100px){.r4d-quotes{columns:2}}
+@media (max-width:800px){.r4d-proof{padding-top:44px}}
+</style>
+<div class="r4d r4d-proof">
+  <h2 class="r4d-title r4d-h2">Ils ont <span class="r4d-pink">changé</span> leur relation à l’amour</h2>
+  <p class="r4d-proof-sub"><span class="r4d-stars" role="img" aria-label="Note 4.9 sur 5">★★★★★</span><span><b>4.9/5</b> · Tous les témoignages proviennent de l’espace communautaire.</span></p>
+  <div class="r4d-quotes">
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">S</span><span class="r4d-who"><strong>Stéphanie</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;J’ai suivi le protocole du module Rencontre 4D, et j’ai rencontré un homme qui correspond exactement à mon désir. Notre première rencontre était comme je l’avais imaginée… voire encore mieux. C’est tout nouveau, mais au fond de moi, je sais que c’est lui.&nbsp;»</blockquote>
+    </figure>
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">N</span><span class="r4d-who"><strong>Natalia</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;Aujourd’hui, ça fait presque un mois et demi que je suis en couple avec une personne qui me correspond vraiment. […] Ce qui me touche le plus, c’est que des scènes que j’imaginais le matin sont devenues ma réalité&nbsp;: rire ensemble, discuter, préparer le café…&nbsp;»</blockquote>
+    </figure>
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">F</span><span class="r4d-who"><strong>Felana</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;J’étais dans une relation à distance avec un homme qui vit au Royaume-Uni, et grâce aux exercices de Rencontre 4D, nous venons de passer deux semaines formidables ensemble à Madagascar. C’était exactement ce que je désirais.&nbsp;»</blockquote>
+    </figure>
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">L</span><span class="r4d-who"><strong>Laure</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;J’ai fait le programme Rencontre 4D alors que j’étais célibataire depuis plusieurs années, dans une petite ville où il était difficile de rencontrer quelqu’un. […] Et notre première rencontre a été incroyablement fluide. On aurait dit qu’on se connaissait depuis toujours.&nbsp;»</blockquote>
+    </figure>
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">A</span><span class="r4d-who"><strong>Agnès</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;Ce programme a été une vraie bombe pour moi. Le travail sur la guérison des blessures, l’enfant intérieur, puis la naissance de mon nouveau moi ont été des moments extrêmement forts.&nbsp;»</blockquote>
+    </figure>
+    <figure class="r4d-quote">
+      <figcaption class="r4d-quote-head"><span class="r4d-avatar" aria-hidden="true">O</span><span class="r4d-who"><strong>Odilia</strong><span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span></span></figcaption>
+      <blockquote>«&nbsp;J’ai réussi à changer ma vibration, et je le vois se manifester dans mon quotidien. […] je ne retombe plus aussi facilement dans mes anciens schémas.&nbsp;»</blockquote>
+    </figure>
+  </div>
+  <p class="r4d-proof-foot">🤝 Ça a déjà aidé <strong>300+ personnes</strong> à vivre leur relation de rêve&nbsp;!</p>
+</div>
+</div></div>
+<div class="pv-slot" data-label="Code HTML · 05-zak.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 05 · Qui est derrière le programme (colonne GAUCHE)
+     Élément systeme.io : « Code HTML ». Version courte de la présentation de Zak. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-zak{display:flex;flex-direction:column;gap:14px;padding-top:56px}
+.r4d-kicker{font-size:12px;font-weight:800;letter-spacing:1.8px;line-height:1.4;text-transform:uppercase;color:var(--r4d-pink-ink)}
+.r4d-zak-card{display:grid;grid-template-columns:84px minmax(0,1fr);gap:16px;align-items:center;padding:20px;background:var(--r4d-card);border:1px solid var(--r4d-line);border-radius:18px;box-shadow:0 1px 2px rgba(20,18,19,.04),0 14px 30px -24px rgba(20,18,19,.3)}
+.r4d-zak-photo{display:block;width:84px;height:104px;object-fit:cover;object-position:50% 18%;border-radius:12px;background:#0D0B0C}
+.r4d-zak-name{font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.2;color:var(--r4d-ink)}
+.r4d-zak-text{grid-column:1 / -1;display:flex;flex-direction:column;gap:10px}
+.r4d-zak-text p{font-size:15.5px;line-height:1.65}
+.r4d-zak-text strong{font-weight:700;color:var(--r4d-ink)}
+@media (min-width:960px){
+  .r4d-zak-card{grid-template-columns:150px minmax(0,1fr);grid-template-rows:auto 1fr;gap:10px 22px;align-items:start;padding:22px}
+  .r4d-zak-photo{grid-row:1 / span 2;width:150px;height:188px}
+  .r4d-zak-text{grid-column:2}
+}
+@media (max-width:800px){.r4d-zak{padding-top:44px}}
+</style>
+<div class="r4d r4d-zak">
+  <p class="r4d-kicker">Qui est derrière le programme&nbsp;?</p>
+  <div class="r4d-zak-card">
+    <img class="r4d-zak-photo" src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6a32a5b7b09e94.05318879_Aujourdhuijevisualise4.png" alt="Zak, créateur de Rencontre 4D" width="844" height="1500" loading="lazy" decoding="async">
+    <h3 class="r4d-zak-name">👋 Hello, c’est Zak&nbsp;!</h3>
+    <div class="r4d-zak-text">
+      <p>Quand j’ai mis en application tout ce que j’avais appris sur le fonctionnement du cerveau, j’ai manifesté une relation idéale, exactement comme je l’avais imaginée. Même physiquement&nbsp;: elle ressemble comme deux gouttes d’eau à la personne que je visualisais.</p>
+      <p><strong>Aujourd’hui, nous sommes mariés depuis plus de 8&nbsp;ans</strong> et nous avons une formidable petite fille.</p>
+      <p>Rencontre 4D, c’est 10&nbsp;ans d’expérience condensés dans un programme pragmatique. Pas des conseils de séduction&nbsp;: un vrai travail neurologique sur ce qui t’empêche de recevoir ce que tu désires vraiment.</p>
+    </div>
+  </div>
+</div>
+</div></div>
+<div class="pv-slot" data-label="Code HTML · 06-faq.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 06 · FAQ courte + mention résultats/remboursement (colonne GAUCHE, dernier bloc)
+     Élément systeme.io : « Code HTML ». Les questions s'ouvrent au clic, sans script. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-faq{display:flex;flex-direction:column;gap:18px;padding-top:56px}
+.r4d-faq .r4d-h2{font-size:28px;font-size:clamp(26px,7.4vw,36px);line-height:1.04}
+.r4d-faq-list{display:flex;flex-direction:column;gap:10px}
+.r4d-faq details{background:var(--r4d-card);border:1px solid var(--r4d-line);border-radius:14px;transition:border-color .2s ease}
+.r4d-faq details[open]{border-color:#FFC2D2}
+.r4d-faq summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;cursor:pointer;list-style:none;font-size:15.5px;font-weight:700;line-height:1.4;color:var(--r4d-ink)}
+.r4d-faq summary::-webkit-details-marker{display:none}
+.r4d-faq summary::after{content:"+";flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--r4d-pink-soft);color:var(--r4d-pink-ink);font-size:18px;font-weight:700;line-height:1}
+.r4d-faq details[open] summary::after{content:"–"}
+.r4d-faq summary:focus-visible{outline:3px solid var(--r4d-pink);outline-offset:2px;border-radius:14px}
+.r4d-faq details p{padding:0 18px 16px;font-size:15px;line-height:1.65}
+.r4d-disclaimer{font-size:13px;font-style:italic;line-height:1.6;text-align:center;color:var(--r4d-muted)}
+@media (min-width:801px){.r4d-faq .r4d-h2{font-size:clamp(28px,2.8vw,38px)}}
+@media (max-width:800px){.r4d-faq{padding:44px 0 40px}}
+</style>
+<div class="r4d r4d-faq">
+  <h2 class="r4d-title r4d-h2">Questions <span class="r4d-pink">fréquentes</span></h2>
+  <div class="r4d-faq-list">
+    <details>
+      <summary>Ce programme est-il pour les débutants&nbsp;?</summary>
+      <p>Oui. Il est fait pour les débutants sans aucune expérience comme pour les personnes plus avancées dans le process de manifestation.</p>
+    </details>
+    <details>
+      <summary>Je suis en couple, ça pose problème&nbsp;?</summary>
+      <p>Non. Le programme a été créé pour répondre à tous les cas de figure&nbsp;: certains exercices sont différents en fonction de ta situation relationnelle.</p>
+    </details>
+    <details>
+      <summary>Combien de temps ça me prend&nbsp;?</summary>
+      <p>15 minutes par jour suffisent, pendant 28 jours. Et tu gardes l’accès à vie.</p>
+    </details>
+    <details>
+      <summary>Pourquoi si peu cher&nbsp;? Où est le piège&nbsp;?</summary>
+      <p>Un tel programme est souvent vendu aux alentours de 399–499&nbsp;€. C’est ma politique&nbsp;: j’essaie de trouver l’équilibre entre accessibilité et rentabilité.</p>
+    </details>
+  </div>
+  <p class="r4d-disclaimer">Les résultats varient d’une personne à l’autre et dépendent surtout de ton implication. Rencontre 4D étant un produit digital, il n’est pas remboursable.</p>
+</div>
+</div></div>
+      </div>
+      <div class="sio-col-right">
+        <div class="sio-card">
+<div class="pv-slot" data-label="Code HTML · 10-commande-entete.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 10 · Entête du formulaire (colonne DROITE, tout en haut de la carte blanche)
+     Élément systeme.io : « Code HTML ». Les champs, le paiement et le bouton restent les éléments NATIFS systeme.io en dessous.
+     Ce bloc porte aussi l'ancre #r4d-commande : les boutons « Accéder au programme » font défiler jusqu'ici. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-co-head{display:flex;flex-direction:column;gap:12px;scroll-margin-top:40px}
+.r4d-co-kicker{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.8px;line-height:1.4;text-transform:uppercase;color:var(--r4d-pink-ink)}
+.r4d-co-kicker span{flex:none;width:8px;height:8px;border-radius:50%;background:var(--r4d-pink);box-shadow:0 0 0 4px var(--r4d-pink-soft)}
+.r4d-co-title{font-size:32px;line-height:1.04}
+@media (min-width:801px){.r4d-co-title{font-size:clamp(26px,2.6vw,36px)}}
+.r4d-co-list{display:grid;gap:8px;padding:14px 16px;background:#FBF8F4;border:1px solid var(--r4d-line);border-radius:12px}
+.r4d-co-list li{position:relative;padding-left:26px;font-size:14px;font-weight:500;line-height:1.45;color:var(--r4d-ink)}
+.r4d-co-list li::before{content:"";position:absolute;top:1px;left:0;width:17px;height:17px;border-radius:50%;background:var(--r4d-pink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat}
+</style>
+<div class="r4d r4d-co-head" id="r4d-commande">
+  <p class="r4d-co-kicker"><span aria-hidden="true"></span>Accès immédiat après paiement</p>
+  <h2 class="r4d-title r4d-co-title">Rejoins <span class="r4d-pink">Rencontre 4D</span></h2>
+  <ul class="r4d-co-list">
+    <li>Le programme complet&nbsp;: identifier &amp; guérir, manifester, maintenir</li>
+    <li>15&nbsp;min par jour pendant 28&nbsp;jours</li>
+    <li>La communauté en bonus</li>
+    <li>Accès à vie</li>
+  </ul>
+</div>
+<script>
+(function () {
+  if (window.__r4dScroll) return;
+  window.__r4dScroll = true;
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href="#r4d-commande"]');
+    var target = document.getElementById('r4d-commande');
+    if (!link || !target) return;
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+})();
+</script>
+</div></div>
+
+<div class="pv-slot pv-native" data-label="Éléments natifs systeme.io (champs, paiement, formule, bouton)">
+  <div class="pv-form" aria-label="Simulation du formulaire de commande systeme.io">
+    <p class="pv-label">Prénom*</p>
+    <div class="pv-input">Ton prénom</div>
+    <p class="pv-label">Email*</p>
+    <div class="pv-input">Ton adresse email</div>
+
+    <p class="pv-label">Méthode de paiement*</p>
+    <div class="pv-pay">
+      <div class="pv-pay-head">
+        <span class="pv-radio is-on" aria-hidden="true"></span>
+        <span>Carte de crédit</span>
+        <span class="pv-brands" aria-hidden="true"><i>VISA</i><i>MC</i><i>AMEX</i></span>
+      </div>
+      <div class="pv-pay-body">
+        <div class="pv-applepay">Apple&nbsp;Pay</div>
+        <p class="pv-label pv-label-sm">Numéro de carte*</p>
+        <div class="pv-input">1234 1234 1234 1234</div>
+        <div class="pv-two">
+          <div><p class="pv-label pv-label-sm">Date d’expiration*</p><div class="pv-input">MM / AA</div></div>
+          <div><p class="pv-label pv-label-sm">Code de sécurité*</p><div class="pv-input">CVC</div></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="pv-label">Choisis ta formule</p>
+    <div class="pv-offer">
+      <button type="button" class="pv-plan is-on" data-today="99,00 €" data-total="">
+        <span class="pv-radio" aria-hidden="true"></span>
+        <span class="pv-plan-name">Paiement en 1 fois</span>
+        <span class="pv-plan-price">99,00 €</span>
+      </button>
+      <button type="button" class="pv-plan" data-today="55,00 €" data-total="110,00 €">
+        <span class="pv-radio" aria-hidden="true"></span>
+        <span class="pv-plan-name">Paiement en 2 fois</span>
+        <span class="pv-plan-price">55,00 € chaque mois – 2 fois</span>
+      </button>
+      <div class="pv-sum"><span>À payer aujourd’hui</span><strong data-pv-today>99,00 €</strong></div>
+      <div class="pv-sum pv-sum-total" data-pv-total-row hidden><span>Total après tous les paiements</span><strong data-pv-total>110,00 €</strong></div>
+    </div>
+    <p class="pv-hint">En 1 fois, tu économises 11&nbsp;€.</p>
+
+    <div class="pv-paybtn">Acheter maintenant<small>Accès immédiat au programme</small></div>
+    <p class="pv-cgv">En continuant, j’accepte les <u>termes et conditions</u></p>
+    <p class="pv-contact">Des questions&nbsp;? Contactez <strong>contact@mgacademie.fr</strong></p>
+  </div>
+</div>
+
+<div class="pv-slot" data-label="Code HTML · 11-commande-reassurance.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 11 · Réassurance sous le bouton de paiement (colonne DROITE, dernier élément de la carte blanche)
+     Élément systeme.io : « Code HTML ». Paiement sécurisé + un témoignage court au moment de payer. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-co-foot{display:flex;flex-direction:column;gap:14px}
+.r4d-secure{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;line-height:1.4;text-align:center;color:var(--r4d-muted)}
+.r4d-secure svg{display:block;flex:none;width:14px;height:14px}
+.r4d-mini{padding:14px 16px;background:var(--r4d-pink-soft);border:1px solid #FFD3DF;border-radius:12px}
+.r4d-mini .r4d-stars{display:block;margin-bottom:6px;color:var(--r4d-gold);font-size:13px;letter-spacing:1px;line-height:1}
+.r4d-mini blockquote{font-size:14px;font-weight:600;line-height:1.5;color:var(--r4d-ink)}
+.r4d-mini figcaption{margin-top:4px;font-size:12px;line-height:1.4;color:var(--r4d-muted)}
+</style>
+<div class="r4d r4d-co-foot">
+  <p class="r4d-secure"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="2.5" y="7" width="11" height="8" rx="2" fill="currentColor"/></svg>Paiement 100&nbsp;% sécurisé · Carte bancaire &amp; Apple&nbsp;Pay</p>
+  <figure class="r4d-mini">
+    <span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+    <blockquote>«&nbsp;Ce qui me touche le plus, c’est que des scènes que j’imaginais le matin sont devenues ma réalité.&nbsp;»</blockquote>
+    <figcaption>Natalia, membre de la communauté</figcaption>
+  </figure>
+</div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="sio-footer">Copyright © 2022-2026 Tous droits réservés | MG Academy</div>
+
+<div class="pv-slot" data-label="Code HTML · 20-barre-mobile.html"><div class="sio-rawhtml">
+<!-- Rencontre 4D · Bloc 20 · Barre d'accès rapide sur mobile (OPTIONNEL, à placer n'importe où, par ex. tout en bas)
+     Élément systeme.io : « Code HTML ». Visible uniquement sur mobile, elle apparaît quand on descend dans la page
+     et disparaît dès que le formulaire est à l'écran. Nécessite le bloc 10 (qui porte l’ancre #r4d-commande). -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d-sticky{position:fixed;left:0;right:0;bottom:0;z-index:9999;box-sizing:border-box;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.97);border-top:1px solid #ECE4D8;box-shadow:0 -12px 30px -20px rgba(20,18,19,.4);font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;text-align:left;visibility:hidden;transform:translateY(110%);transition:transform .25s ease,visibility 0s linear .25s}
+.r4d-sticky.is-visible{visibility:visible;transform:none;transition:transform .25s ease,visibility 0s}
+.r4d-sticky *{box-sizing:border-box}
+.r4d-sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:560px;margin:0 auto}
+.r4d-sticky-price{display:flex;flex-direction:column;margin:0;line-height:1.1}
+.r4d-sticky-price strong{font-family:'Oswald',Impact,sans-serif;font-size:24px;font-weight:700;color:#141213}
+.r4d-sticky-price span{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6E6668}
+.r4d-sticky-btn{flex:1;max-width:270px;display:flex;align-items:center;justify-content:center;padding:13px 14px;border-radius:10px;background:#FF4371;color:#fff !important;text-decoration:none !important;font-family:'Oswald',Impact,sans-serif;font-size:16px;font-weight:700;letter-spacing:.6px;line-height:1.2;text-transform:uppercase;white-space:nowrap}
+.r4d-sticky-btn:focus-visible{outline:3px solid #141213;outline-offset:2px}
+@media (max-width:360px){.r4d-sticky-btn{padding:12px 10px;font-size:14px}}
+@media (min-width:801px){.r4d-sticky{display:none !important}}
+@media (prefers-reduced-motion:reduce){.r4d-sticky,.r4d-sticky.is-visible{transition:none}}
+</style>
+<aside class="r4d-sticky" id="r4d-sticky" aria-label="Accès rapide au formulaire">
+  <div class="r4d-sticky-inner">
+    <p class="r4d-sticky-price"><strong>99&nbsp;€</strong><span>Accès à vie</span></p>
+    <a class="r4d-sticky-btn" href="#r4d-commande">Accéder au programme</a>
+  </div>
+</aside>
+<script>
+(function () {
+  function init() {
+    var bar = document.getElementById('r4d-sticky');
+    var target = document.getElementById('r4d-commande');
+    if (!bar || bar.__r4dReady) return;
+    if (!target) { bar.parentNode.removeChild(bar); return; }
+    bar.__r4dReady = true;
+    document.body.appendChild(bar);
+    var pending = false;
+    function update() {
+      pending = false;
+      var scrolled = (window.scrollY || window.pageYOffset) > 500;
+      var formAhead = target.getBoundingClientRect().top > window.innerHeight * 0.85;
+      bar.classList.toggle('is-visible', scrolled && formAhead);
+    }
+    function onScroll() { if (!pending) { pending = true; window.requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
+  if (document.readyState === 'complete') init();
+  else window.addEventListener('load', init);
+})();
+</script>
+</div></div>
+
+<script>
+(function () {
+  var toggle = document.querySelector('.pv-toggle');
+  toggle.addEventListener('click', function () {
+    var on = document.body.classList.toggle('pv-guides');
+    toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+    toggle.textContent = on ? 'Masquer les repères systeme.io' : 'Afficher les repères systeme.io';
+  });
+  var plans = document.querySelectorAll('.pv-plan');
+  var today = document.querySelector('[data-pv-today]');
+  var totalRow = document.querySelector('[data-pv-total-row]');
+  var total = document.querySelector('[data-pv-total]');
+  plans.forEach(function (plan) {
+    plan.addEventListener('click', function () {
+      plans.forEach(function (p) { p.classList.toggle('is-on', p === plan); });
+      today.textContent = plan.dataset.today;
+      totalRow.hidden = !plan.dataset.total;
+      if (plan.dataset.total) total.textContent = plan.dataset.total;
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- Rencontre 4D · Bloc 10 · Entête du formulaire (colonne DROITE, tout en haut de la carte blanche)
+     Élément systeme.io : « Code HTML ». Les champs, le paiement et le bouton restent les éléments NATIFS systeme.io en dessous.
+     Ce bloc porte aussi l'ancre #r4d-commande : les boutons « Accéder au programme » font défiler jusqu'ici. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+.r4d-title{font-family:'Oswald',Impact,'Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2px;color:var(--r4d-ink)}
+.r4d-pink{color:var(--r4d-pink)}
+
+.r4d-co-head{display:flex;flex-direction:column;gap:12px;scroll-margin-top:40px}
+.r4d-co-kicker{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:1.8px;line-height:1.4;text-transform:uppercase;color:var(--r4d-pink-ink)}
+.r4d-co-kicker span{flex:none;width:8px;height:8px;border-radius:50%;background:var(--r4d-pink);box-shadow:0 0 0 4px var(--r4d-pink-soft)}
+.r4d-co-title{font-size:32px;line-height:1.04}
+@media (min-width:801px){.r4d-co-title{font-size:clamp(26px,2.6vw,36px)}}
+.r4d-co-list{display:grid;gap:8px;padding:14px 16px;background:#FBF8F4;border:1px solid var(--r4d-line);border-radius:12px}
+.r4d-co-list li{position:relative;padding-left:26px;font-size:14px;font-weight:500;line-height:1.45;color:var(--r4d-ink)}
+.r4d-co-list li::before{content:"";position:absolute;top:1px;left:0;width:17px;height:17px;border-radius:50%;background:var(--r4d-pink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3l2.2 2.2 4.6-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 11px no-repeat}
+</style>
+<div class="r4d r4d-co-head" id="r4d-commande">
+  <p class="r4d-co-kicker"><span aria-hidden="true"></span>Accès immédiat après paiement</p>
+  <h2 class="r4d-title r4d-co-title">Rejoins <span class="r4d-pink">Rencontre 4D</span></h2>
+  <ul class="r4d-co-list">
+    <li>Le programme complet&nbsp;: identifier &amp; guérir, manifester, maintenir</li>
+    <li>15&nbsp;min par jour pendant 28&nbsp;jours</li>
+    <li>La communauté en bonus</li>
+    <li>Accès à vie</li>
+  </ul>
+</div>
+<script>
+(function () {
+  if (window.__r4dScroll) return;
+  window.__r4dScroll = true;
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a[href="#r4d-commande"]');
+    var target = document.getElementById('r4d-commande');
+    if (!link || !target) return;
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  });
+})();
+</script>

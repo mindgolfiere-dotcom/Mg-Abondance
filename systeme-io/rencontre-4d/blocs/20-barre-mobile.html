@@ -1,0 +1,49 @@
+<!-- Rencontre 4D · Bloc 20 · Barre d'accès rapide sur mobile (OPTIONNEL, à placer n'importe où, par ex. tout en bas)
+     Élément systeme.io : « Code HTML ». Visible uniquement sur mobile, elle apparaît quand on descend dans la page
+     et disparaît dès que le formulaire est à l'écran. Nécessite le bloc 10 (qui porte l’ancre #r4d-commande). -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d-sticky{position:fixed;left:0;right:0;bottom:0;z-index:9999;box-sizing:border-box;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.97);border-top:1px solid #ECE4D8;box-shadow:0 -12px 30px -20px rgba(20,18,19,.4);font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;text-align:left;visibility:hidden;transform:translateY(110%);transition:transform .25s ease,visibility 0s linear .25s}
+.r4d-sticky.is-visible{visibility:visible;transform:none;transition:transform .25s ease,visibility 0s}
+.r4d-sticky *{box-sizing:border-box}
+.r4d-sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:560px;margin:0 auto}
+.r4d-sticky-price{display:flex;flex-direction:column;margin:0;line-height:1.1}
+.r4d-sticky-price strong{font-family:'Oswald',Impact,sans-serif;font-size:24px;font-weight:700;color:#141213}
+.r4d-sticky-price span{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6E6668}
+.r4d-sticky-btn{flex:1;max-width:270px;display:flex;align-items:center;justify-content:center;padding:13px 14px;border-radius:10px;background:#FF4371;color:#fff !important;text-decoration:none !important;font-family:'Oswald',Impact,sans-serif;font-size:16px;font-weight:700;letter-spacing:.6px;line-height:1.2;text-transform:uppercase;white-space:nowrap}
+.r4d-sticky-btn:focus-visible{outline:3px solid #141213;outline-offset:2px}
+@media (max-width:360px){.r4d-sticky-btn{padding:12px 10px;font-size:14px}}
+@media (min-width:801px){.r4d-sticky{display:none !important}}
+@media (prefers-reduced-motion:reduce){.r4d-sticky,.r4d-sticky.is-visible{transition:none}}
+</style>
+<aside class="r4d-sticky" id="r4d-sticky" aria-label="Accès rapide au formulaire">
+  <div class="r4d-sticky-inner">
+    <p class="r4d-sticky-price"><strong>99&nbsp;€</strong><span>Accès à vie</span></p>
+    <a class="r4d-sticky-btn" href="#r4d-commande">Accéder au programme</a>
+  </div>
+</aside>
+<script>
+(function () {
+  function init() {
+    var bar = document.getElementById('r4d-sticky');
+    var target = document.getElementById('r4d-commande');
+    if (!bar || bar.__r4dReady) return;
+    if (!target) { bar.parentNode.removeChild(bar); return; }
+    bar.__r4dReady = true;
+    document.body.appendChild(bar);
+    var pending = false;
+    function update() {
+      pending = false;
+      var scrolled = (window.scrollY || window.pageYOffset) > 500;
+      var formAhead = target.getBoundingClientRect().top > window.innerHeight * 0.85;
+      bar.classList.toggle('is-visible', scrolled && formAhead);
+    }
+    function onScroll() { if (!pending) { pending = true; window.requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
+  if (document.readyState === 'complete') init();
+  else window.addEventListener('load', init);
+})();
+</script>
