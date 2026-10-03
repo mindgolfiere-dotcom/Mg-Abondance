@@ -1,0 +1,25 @@
+<!-- Rencontre 4D · Bloc 11 · Réassurance sous le bouton de paiement (colonne DROITE, dernier élément de la carte blanche)
+     Élément systeme.io : « Code HTML ». Paiement sécurisé + un témoignage court au moment de payer. -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap');
+.r4d{--r4d-ink:#141213;--r4d-text:#3D3739;--r4d-muted:#6E6668;--r4d-line:#ECE4D8;--r4d-card:#FFFFFF;--r4d-pink:#FF4371;--r4d-pink-ink:#D42A5B;--r4d-pink-soft:#FFEDF2;--r4d-gold:#F2B01E;width:100%;margin:0;text-align:left;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--r4d-text);-webkit-font-smoothing:antialiased}
+.r4d *,.r4d *::before,.r4d *::after{box-sizing:border-box}
+:where(.r4d) :where(p,h1,h2,h3,ul,li,figure,blockquote,figcaption){margin:0;padding:0}
+:where(.r4d) :where(ul){list-style:none}
+
+.r4d-co-foot{display:flex;flex-direction:column;gap:14px}
+.r4d-secure{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;line-height:1.4;text-align:center;color:var(--r4d-muted)}
+.r4d-secure svg{display:block;flex:none;width:14px;height:14px}
+.r4d-mini{padding:14px 16px;background:var(--r4d-pink-soft);border:1px solid #FFD3DF;border-radius:12px}
+.r4d-mini .r4d-stars{display:block;margin-bottom:6px;color:var(--r4d-gold);font-size:13px;letter-spacing:1px;line-height:1}
+.r4d-mini blockquote{font-size:14px;font-weight:600;line-height:1.5;color:var(--r4d-ink)}
+.r4d-mini figcaption{margin-top:4px;font-size:12px;line-height:1.4;color:var(--r4d-muted)}
+</style>
+<div class="r4d r4d-co-foot">
+  <p class="r4d-secure"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="2.5" y="7" width="11" height="8" rx="2" fill="currentColor"/></svg>Paiement 100&nbsp;% sécurisé · Carte bancaire &amp; Apple&nbsp;Pay</p>
+  <figure class="r4d-mini">
+    <span class="r4d-stars" role="img" aria-label="5 étoiles sur 5">★★★★★</span>
+    <blockquote>«&nbsp;Ce qui me touche le plus, c’est que des scènes que j’imaginais le matin sont devenues ma réalité.&nbsp;»</blockquote>
+    <figcaption>Natalia, membre de la communauté</figcaption>
+  </figure>
+</div>
