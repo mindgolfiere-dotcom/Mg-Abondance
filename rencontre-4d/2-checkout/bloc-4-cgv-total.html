@@ -1,0 +1,58 @@
+<style>
+.r4cg{font-family:'Montserrat',Arial,sans-serif;text-align:left;margin:6px 0 16px;color:var(--r4-deep,#231c25)}
+.r4cg label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;background:var(--r4-soft,#f5f2f6);border:2px solid var(--r4-line,#d3cdd6);border-radius:6px;padding:14px 16px;font-size:13.5px;line-height:1.6;color:oklch(35% .015 317);transition:border-color .15s}
+.r4cg label:hover{border-color:var(--r4-action,#c4472f)}
+.r4cg input{flex:0 0 22px;width:22px;height:22px;margin:1px 0 0;accent-color:var(--r4-action,#c4472f);cursor:pointer}
+.r4cg a{color:var(--r4-action,#c4472f);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.r4cg strong{color:var(--r4-deep,#231c25)}
+.r4cg .err{display:none;margin:8px 0 0;color:oklch(52% .2 25);font-weight:800;font-size:13px}
+.r4cg.bad label{border-color:oklch(52% .2 25);background:oklch(96% .025 25);animation:r4cgShake .35s}
+.r4cg.bad .err{display:block}
+@keyframes r4cgShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.r4cg .total{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:16px;padding:14px 2px 0;border-top:1px dashed var(--r4-line,#d3cdd6)}
+.r4cg .total>span{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.r4cg .total b{font-family:'Anton','Arial Narrow',sans-serif;font-weight:400;font-size:34px;line-height:1;color:var(--r4-deep,#231c25);white-space:nowrap}
+.r4cg .total s{font-family:'Montserrat',Arial,sans-serif;font-size:14px;font-weight:600;color:var(--r4-muted,#5f5966);margin-right:8px;text-decoration-color:var(--r4-action,#c4472f);text-decoration-thickness:2px}
+.r4cg .detail{margin:2px 0 0;font-size:12px;color:var(--r4-muted,#5f5966);text-align:right}
+.r4cg .detail[hidden],.r4cg .total s[hidden]{display:none}
+.r4cg .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media(prefers-reduced-motion:reduce){.r4cg.bad label{animation:none}}
+</style>
+<div class="r4cg" id="r4cg-box">
+  <label><input type="checkbox" id="r4cg-ok"><span>J’accepte les <a href="https://www.mgacademie.fr/15-5-a93ea111" target="_blank" rel="noopener">conditions générales de vente</a>. Je comprends que <strong>les achats ne sont pas remboursables</strong> et je demande l’accès immédiat aux contenus, en renonçant à mon droit de rétractation.</span></label>
+  <p class="err" role="alert">Coche la case pour valider ta commande.</p>
+  <div class="total" aria-live="polite"><span>Total en un paiement</span><b><s data-r4cg-old><span class="sr">Prix après le lancement : </span>297 €</s><span data-r4cg-total>99 €</span></b></div>
+  <p class="detail" data-r4cg-detail hidden>Rencontre 4D 99 € + La Vision Claire 9 €</p>
+</div>
+<script>
+(function(){
+  var PRIX = 99, BUMP = 9; /* prix de Rencontre 4D et de l'order bump La Vision Claire */
+  function ok() { var c = document.getElementById('r4cg-ok'); return c && c.checked; }
+
+  /* 1. Pas de paiement sans la case CGV cochée (bouton principal + bouton 2 × 55 €) */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[id^="payment-button-"],#r4co-2x');
+    if (!b || ok()) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    var box = document.getElementById('r4cg-box');
+    box.classList.remove('bad'); void box.offsetWidth; box.classList.add('bad');
+    box.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }, true);
+  document.addEventListener('change', function (e) {
+    if (e.target.id === 'r4cg-ok' && e.target.checked) document.getElementById('r4cg-box').classList.remove('bad');
+  });
+
+  /* 2. Total affiché, mis à jour quand on coche l'order bump */
+  function majTotal() {
+    var bump = document.querySelector('[id^="orderbump-"] input[type=checkbox]');
+    var avec = !!(bump && bump.checked);
+    var t = document.querySelector('[data-r4cg-total]'), d = document.querySelector('[data-r4cg-detail]'), o = document.querySelector('[data-r4cg-old]');
+    if (t) t.textContent = (PRIX + (avec ? BUMP : 0)) + ' €';
+    if (d) d.hidden = !avec;
+    if (o) o.hidden = avec;
+  }
+  document.addEventListener('change', function (e) { if (e.target.closest && e.target.closest('[id^="orderbump-"]')) setTimeout(majTotal, 0); });
+  document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('[id^="orderbump-"]')) setTimeout(majTotal, 50); });
+  var n = 0; (function attend() { if (document.querySelector('[id^="orderbump-"]')) majTotal(); else if (++n < 60) setTimeout(attend, 300); })();
+})();
+</script>

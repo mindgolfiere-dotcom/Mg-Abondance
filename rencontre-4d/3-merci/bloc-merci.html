@@ -1,0 +1,140 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* ===== Rencontre 4D · Page de remerciement · même direction artistique que la page de vente ===== */
+body{background:oklch(99.11% 0 0)!important}
+.r4ty{--deep:oklch(22.83% .0176 317.64);--white:oklch(99.11% 0 0);--action:oklch(56.74% .1714 32.87);--light:oklch(88% .018 317);--muted:oklch(47% .015 317);--soft:oklch(96.16% .0062 317.75);--line:oklch(83% .01 317);font-family:'Montserrat',Arial,sans-serif;background:var(--white);color:var(--deep);font-size:16px;line-height:1.8;text-align:left;overflow-x:clip;position:relative}
+.r4ty *{box-sizing:border-box}.r4ty p,.r4ty h1,.r4ty h2,.r4ty h3,.r4ty figure,.r4ty ol{margin:0}.r4ty img{display:block;width:100%;height:auto}.r4ty a{color:inherit}
+.r4ty .wrap{width:min(1040px,calc(100% - 64px));margin-inline:auto}.r4ty .center{text-align:center}
+.r4ty h1,.r4ty h2,.r4ty h3{font-family:'Anton','Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
+.r4ty h1{font-size:clamp(42px,5.6vw,76px)}.r4ty h2{font-size:clamp(30px,3.8vw,48px)}.r4ty h3{font-size:26px}
+.r4ty .hand{font-family:'Caveat',cursive;font-weight:600;line-height:1.2}
+.r4ty .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:85px;border-bottom:1px solid var(--line)}
+.r4ty .wordmark{font-family:'Anton',sans-serif;line-height:1.15;font-size:26px;letter-spacing:.015em;text-decoration:none}
+.r4ty .wordmark span{font-family:'Montserrat',sans-serif;font-size:10px;display:block;font-weight:700;letter-spacing:.18em;padding-top:4px}
+.r4ty .nav-note{font-size:12px;font-weight:600;color:var(--muted)}
+/* hero */
+.r4ty .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding:60px 0 70px}
+.r4ty .ok{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:var(--soft);border:1px solid var(--line);font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.r4ty .ok b{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--action);color:var(--white);font-size:14px;animation:r4tyPing 2.4s ease-out infinite}
+@keyframes r4tyPing{0%{box-shadow:0 0 0 0 oklch(56.74% .1714 32.87 / .45)}70%,100%{box-shadow:0 0 0 12px oklch(56.74% .1714 32.87 / 0)}}
+.r4ty .hero h1{margin-top:22px}
+.r4ty .hero h1 span{color:var(--action)}
+.r4ty .hero .intro{font-size:18px;line-height:1.75;margin-top:22px;max-width:560px}
+.r4ty .hero .eta{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:14px;font-weight:700}
+.r4ty .hero .eta::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--action);animation:r4tyBlink 1.2s ease-in-out infinite}
+@keyframes r4tyBlink{50%{opacity:.2}}
+.r4ty .polaroid img{aspect-ratio:4/4.7;object-fit:cover;object-position:center 30%;border:8px solid #fff;border-bottom-width:8px;border-radius:6px;transform:rotate(3deg);box-shadow:0 22px 50px oklch(22.83% .0176 317.64 / .18)}
+.r4ty .polaroid figcaption{font-size:31px;color:var(--action);text-align:center;margin-top:14px;transform:rotate(-2deg)}
+/* étapes */
+.r4ty .soft{background:var(--soft)}
+.r4ty .section{padding:80px 0}
+.r4ty .section-head{max-width:720px;margin:0 auto 34px}
+.r4ty .section-head p{margin-top:16px}
+.r4ty .steps{list-style:none;padding:0;max-width:880px;margin:0 auto}
+.r4ty .step{display:grid;grid-template-columns:96px 1fr;gap:26px;align-items:start;padding:34px 0;border-top:1px solid oklch(82% .01 317)}
+.r4ty .step:last-child{border-bottom:1px solid oklch(82% .01 317)}
+.r4ty .step-no{font-family:'Anton',sans-serif;font-size:76px;line-height:.9;color:oklch(48% .025 317)}
+.r4ty .step h3{margin-bottom:10px}
+.r4ty .step p{font-size:15px;max-width:640px}
+.r4ty .step p+p{margin-top:10px}
+.r4ty .step strong{color:var(--deep)}
+.r4ty .flag{display:inline-block;margin-top:14px;padding:12px 16px;background:#fff;border-left:4px solid var(--action);border-radius:0 4px 4px 0;font-size:14px;line-height:1.7}
+.r4ty .chip{display:inline-block;padding:1px 9px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:700}
+/* bloc sombre */
+.r4ty .dark{background:var(--deep);color:var(--white)}
+.r4ty .dark p{color:var(--light)}
+.r4ty .help{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.r4ty .help .hand{font-size:32px;color:var(--light);margin-top:12px}
+.r4ty .btn{display:inline-flex;justify-content:center;align-items:center;gap:16px;min-height:60px;max-width:100%;padding:18px 28px;background:var(--action);color:var(--white);font-size:15px;font-weight:800;line-height:1.4;text-decoration:none;border-radius:4px;box-shadow:0 4px 0 oklch(37% .13 33);transition:transform .2s cubic-bezier(.16,1,.3,1),background .2s;word-break:break-word}
+.r4ty .btn:hover{background:oklch(50% .165 33);transform:translateY(-2px)}
+.r4ty .btn:focus-visible{outline:3px solid var(--white);outline-offset:4px}
+.r4ty .bonus{margin-top:30px;padding-top:22px;border-top:1px solid oklch(54% .025 317);font-size:14px}
+.r4ty .footer{padding:28px 0;background:oklch(18% .018 317);color:var(--light);font-size:11px}
+.r4ty .footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 25px}
+.r4ty .footer a{text-underline-offset:4px}
+/* confettis */
+.r4ty .confetti{position:absolute;inset:0 0 auto 0;height:100vh;pointer-events:none;overflow:hidden;z-index:5}
+.r4ty .confetti i{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;opacity:0;animation:r4tyFall linear forwards}
+@keyframes r4tyFall{0%{opacity:1;transform:translate3d(0,0,0) rotate(0)}100%{opacity:0;transform:translate3d(var(--dx),100vh,0) rotate(var(--rot))}}
+@media(max-width:760px){
+.r4ty .wrap{width:calc(100% - 40px)}
+.r4ty .nav{min-height:76px}.r4ty .nav-note{display:none}.r4ty .wordmark{font-size:23px}
+.r4ty .hero{grid-template-columns:1fr;gap:34px;padding:38px 0 50px}
+.r4ty .ok{font-size:11px}
+.r4ty h1{font-size:clamp(40px,10.5vw,58px)}
+.r4ty .hero .intro{font-size:15px}
+.r4ty .polaroid{width:min(62%,240px);margin-inline:auto}
+.r4ty .polaroid figcaption{font-size:26px}
+.r4ty .section{padding:54px 0}
+.r4ty .step{grid-template-columns:52px 1fr;gap:14px;padding:26px 0}
+.r4ty .step-no{font-size:46px}
+.r4ty h3{font-size:23px}
+.r4ty .step p{font-size:14px}
+.r4ty .help{grid-template-columns:1fr;gap:26px}
+.r4ty .btn{width:100%;font-size:13px;padding:17px 14px}
+.r4ty .footer .wrap{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){.r4ty *,.r4ty *::before{animation:none!important;transition:none!important}.r4ty .confetti{display:none}}
+</style>
+
+<main class="r4ty" id="r4ty-page">
+  <div class="confetti" aria-hidden="true"></div>
+  <header class="wrap nav"><span class="wordmark">MG ACADEMY<span>AVEC ZAK</span></span><span class="nav-note">Rencontre 4D · Ton accès</span></header>
+
+  <section class="wrap hero">
+    <div>
+      <p class="ok"><b aria-hidden="true">✓</b>Paiement confirmé</p>
+      <h1>Bienvenue dans <span>Rencontre 4D.</span></h1>
+      <p class="intro">Ton accès est en route. Voilà exactement ce qui se passe maintenant, et ce que tu fais pour bien commencer.</p>
+      <p class="eta">Ton email d'accès arrive en général en moins de 10 minutes.</p>
+    </div>
+    <figure class="polaroid"><img src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6ac188ce0a6f05.47747797_r4d-zak-cafe.webp" alt="Zak, créateur du programme Rencontre 4D" width="1125" height="1406"><figcaption class="hand">Content de t'avoir avec nous.</figcaption></figure>
+  </section>
+
+  <section class="section soft"><div class="wrap">
+    <div class="section-head center"><h2>Tes 4 étapes<br>pour commencer.</h2><p>Garde cette page ouverte le temps de recevoir ton accès.</p></div>
+    <ol class="steps">
+      <li class="step"><div class="step-no" aria-hidden="true">01</div><div><h3>Ouvre l'email d'accès.</h3><p>Tu reçois un email avec ton lien d'accès au programme, généralement en moins de 10 minutes.</p></div></li>
+      <li class="step"><div class="step-no" aria-hidden="true">02</div><div><h3>Accepte l'invitation Skool.</h3><p>Tu reçois aussi une invitation <strong>en anglais</strong> pour rejoindre Skool, la plateforme où se trouve le programme.</p><p class="flag"><strong>Ouvre-la sans la traduire avec ton navigateur</strong>, sinon le bouton ne fonctionne plus.</p></div></li>
+      <li class="step"><div class="step-no" aria-hidden="true">03</div><div><h3>Tu ne vois rien ?</h3><p>Regarde dans tes courriers indésirables. Sur Gmail, vérifie aussi l'onglet <span class="chip">« Promotions »</span>.</p></div></li>
+      <li class="step"><div class="step-no" aria-hidden="true">04</div><div><h3>Commence par l'introduction.</h3><p>Dans la salle de classe, ouvre Rencontre 4D et lis l'introduction avant le Jour 1. Ensuite, suis les jours dans l'ordre : chacun prépare le suivant.</p></div></li>
+    </ol>
+  </div></section>
+
+  <section class="section dark"><div class="wrap">
+    <div class="help">
+      <div><h2>Un souci avec<br>ton accès ?</h2><p style="margin-top:14px">Écris-moi en précisant l'adresse email utilisée pour ta commande.</p><p class="hand">On règle ça ensemble.</p></div>
+      <a class="btn" href="mailto:contact@mgacademie.fr?subject=Acc%C3%A8s%20Rencontre%204D">CONTACT@MGACADEMIE.FR <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="bonus">Tu as aussi ajouté <strong>La Vision Claire</strong> ? Son accès t'arrive dans un email séparé.</p>
+  </div></section>
+
+  <footer class="footer"><div class="wrap"><span>© 2022-2026 MG Academy · Tous droits réservés</span><a href="https://www.mgacademie.fr/15-5-a93ea111" target="_blank" rel="noopener">Conditions générales de vente</a></div></footer>
+</main>
+
+<script>
+(function(){
+  var page = document.getElementById('r4ty-page'); if (!page) return;
+  /* bloc pleine largeur : on retire les marges de la section Systeme.io qui le contient */
+  for (var n = page.parentElement; n && n !== document.body; n = n.parentElement) {
+    n.style.setProperty('max-width', 'none', 'important'); n.style.setProperty('width', '100%', 'important');
+    if (/^(section|row)-/.test(n.id)) { n.style.setProperty('padding', '0', 'important'); n.style.setProperty('margin', '0', 'important'); }
+    if (/^section-/.test(n.id)) break;
+  }
+  /* petite pluie de confettis aux couleurs de la page, une seule fois */
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var box = page.querySelector('.confetti'), couleurs = ['oklch(56.74% .1714 32.87)', 'oklch(22.83% .0176 317.64)', 'oklch(71% .155 40)', 'oklch(88% .018 317)'];
+  for (var i = 0; i < 46; i++) {
+    var c = document.createElement('i');
+    c.style.left = (Math.random() * 100) + '%';
+    c.style.background = couleurs[i % couleurs.length];
+    c.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+    c.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+    c.style.animationDuration = (2.4 + Math.random() * 2.2) + 's';
+    c.style.animationDelay = (Math.random() * .9) + 's';
+    if (i % 3 === 0) { c.style.width = '7px'; c.style.height = '7px'; c.style.borderRadius = '50%'; }
+    box.appendChild(c);
+  }
+  setTimeout(function () { box.remove(); }, 6000);
+})();
+</script>

@@ -1,0 +1,208 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* ===== Rencontre 4D · Checkout · même direction artistique que la page de vente ===== */
+:root{--r4-deep:oklch(22.83% .0176 317.64);--r4-white:oklch(99.11% 0 0);--r4-action:oklch(56.74% .1714 32.87);--r4-action-dark:oklch(37% .13 33);--r4-action-light:oklch(71% .155 40);--r4-light:oklch(88% .018 317);--r4-muted:oklch(47% .015 317);--r4-soft:oklch(96.16% .0062 317.75);--r4-line:oklch(83% .01 317)}
+body{background:var(--r4-white)!important}
+.r4co{font-family:'Montserrat',Arial,sans-serif;background:var(--r4-white);color:var(--r4-deep);font-size:16px;line-height:1.8;text-align:left;overflow-x:clip}
+.r4co *{box-sizing:border-box}.r4co p,.r4co h1,.r4co h2,.r4co h3,.r4co figure,.r4co ul{margin:0}.r4co img{display:block;width:100%;height:auto}.r4co a{color:inherit}
+.r4co .wrap{width:min(1040px,calc(100% - 64px));margin-inline:auto}.r4co .center{text-align:center}
+.r4co h1,.r4co h2{font-family:'Anton','Arial Narrow',sans-serif;font-weight:400;text-transform:uppercase;line-height:1.12;letter-spacing:-.015em;text-wrap:balance}
+.r4co h1{font-size:clamp(38px,5vw,64px)}.r4co h2{font-size:clamp(30px,3.6vw,46px)}
+.r4co .hand{font-family:'Caveat',cursive;font-size:30px;line-height:1.2;font-weight:600}
+.r4co .sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* en-tête */
+.r4co .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:85px;border-bottom:1px solid var(--r4-line)}
+.r4co .wordmark{font-family:'Anton',sans-serif;line-height:1.15;font-size:26px;letter-spacing:.015em}
+.r4co .wordmark span{font-family:'Montserrat',sans-serif;font-size:10px;display:block;font-weight:700;letter-spacing:.18em;padding-top:4px}
+.r4co .secure{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--r4-muted)}
+.r4co .secure svg{width:15px;height:15px;flex:none}
+/* étapes */
+.r4co .steps{display:flex;justify-content:center;gap:10px;list-style:none;padding:26px 0 0;margin:0;font-size:12px;font-weight:700;color:var(--r4-muted)}
+.r4co .steps li{display:flex;align-items:center;gap:8px}
+.r4co .steps li+li::before{content:"";width:34px;height:1px;background:var(--r4-line);margin-right:2px}
+.r4co .steps b{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--r4-line);font-size:11px}
+.r4co .steps .done b{background:var(--r4-deep);border-color:var(--r4-deep);color:var(--r4-white)}
+.r4co .steps .now{color:var(--r4-deep)}
+.r4co .steps .now b{background:var(--r4-action);border-color:var(--r4-action);color:var(--r4-white)}
+/* hero */
+.r4co .co-hero{padding:34px 0 34px}
+.r4co .hero-tag{margin-bottom:16px;font-weight:700;font-size:13px;letter-spacing:.05em;color:var(--r4-muted)}
+.r4co .co-hero h1 span{color:var(--r4-action)}
+.r4co .co-hero .intro{font-size:17px;line-height:1.75;margin:20px auto 0;max-width:640px}
+/* récap de commande */
+.r4co .recap{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;background:var(--r4-deep);color:var(--r4-white);border-radius:6px;padding:34px;max-width:960px;margin:0 auto}
+.r4co .screen{background:oklch(20% .018 317);padding:9px;border-radius:10px;border:1px solid oklch(54% .025 317);transform:rotate(-1.5deg)}
+.r4co .screen-label{display:flex;justify-content:space-between;gap:16px;font-size:10px;color:var(--r4-light);padding:0 4px 7px}
+.r4co .screen img{border-radius:3px}
+.r4co .recap-label{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--r4-light)}
+.r4co .recap h2{font-size:clamp(34px,4vw,48px);margin-top:4px}
+.r4co .recap ul{list-style:none;padding:0;margin:12px 0 0;font-size:14px;line-height:1.7;color:var(--r4-light)}
+.r4co .recap li{display:flex;gap:10px;padding:3px 0}
+.r4co .recap li b{color:var(--r4-white)}
+/* prix « waw » */
+.r4co .deal{display:flex;flex-direction:column;align-items:flex-start;margin-top:18px}
+.r4co .deal-row{display:flex;align-items:center;flex-wrap:wrap;gap:4px 26px;padding-right:50px}
+.r4co .deal-old{display:flex;flex-direction:column;align-items:center}
+.r4co .deal-old-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--r4-light);line-height:1.3}
+.r4co .deal-old-amt{position:relative;font-family:'Anton',sans-serif;font-size:44px;line-height:1.05;color:oklch(68% .015 317);padding:0 5px;text-decoration:none}
+.r4co .deal-strike{position:absolute;left:-10%;top:4%;width:120%;height:90%;overflow:visible;pointer-events:none}
+.r4co .deal-strike path{fill:none;stroke:oklch(70% .17 36);stroke-width:7;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:0}
+.r4co.js .deal-strike path{stroke-dashoffset:240;animation:r4coDraw .55s .45s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes r4coDraw{to{stroke-dashoffset:0}}
+.r4co .deal-new{position:relative;font-family:'Anton',sans-serif;font-size:104px;line-height:.98;color:var(--r4-action-light);white-space:nowrap}
+.r4co.js .deal-new{animation:r4coPop .55s .95s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes r4coPop{0%{transform:scale(.94)}55%{transform:scale(1.07)}100%{transform:scale(1)}}
+.r4co .deal-badge{position:absolute;top:-14px;right:-56px;width:70px;height:70px;border-radius:50%;background:var(--r4-white);color:var(--r4-deep);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:23px;line-height:1;box-shadow:0 5px 0 var(--r4-action);transform:rotate(12deg);animation:r4coWobble 3.2s ease-in-out infinite}
+@keyframes r4coWobble{0%,100%{transform:rotate(12deg) scale(1)}50%{transform:rotate(4deg) scale(1.08)}}
+.r4co .deal-save{margin-top:12px;font-size:14px;font-weight:600;color:var(--r4-light)}
+.r4co .deal-save strong{color:var(--r4-white);font-weight:800;background:linear-gradient(transparent 60%,oklch(45% .12 33) 60%);padding:0 2px}
+/* compte à rebours */
+.r4co .cd{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 18px;max-width:960px;margin:0 auto;padding:16px 20px;background:var(--r4-action);color:var(--r4-white);border-radius:0 0 6px 6px}
+.r4co .cd[hidden]{display:none}
+.r4co .cd-label{display:flex;align-items:center;gap:9px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.r4co .cd-label::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:currentColor;animation:r4coBlink 1.2s ease-in-out infinite}
+@keyframes r4coBlink{50%{opacity:.25}}
+.r4co .cd-units{display:flex;gap:7px}
+.r4co .cd-units>span{min-width:56px;padding:5px 6px 4px;background:var(--r4-deep);border-radius:4px;display:flex;flex-direction:column;align-items:center}
+.r4co .cd-units b{font-family:'Anton',sans-serif;font-weight:400;font-size:24px;line-height:1.1;font-variant-numeric:tabular-nums}
+.r4co .cd-units small{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--r4-light)}
+.r4co .recap:has(+ .cd:not([hidden])){border-radius:6px 6px 0 0}
+.r4co .go-down{color:var(--r4-action);font-size:29px;transform:rotate(-2deg);margin:26px auto 0;text-align:center}
+.r4co .go-down span{display:inline-block;animation:r4coBounce 1.6s ease-in-out infinite}
+@keyframes r4coBounce{50%{transform:translateY(6px)}}
+
+/* ===== Formulaire natif Systeme.io (champs, paiement, bump, bouton) ===== */
+.r4co-formsec,[id^="section-"]:has([id^="payment-button-"]){background:var(--r4-soft)!important;padding-top:44px!important;padding-bottom:56px!important}
+.r4co-card,[id^="row-"]:has([id^="payment-button-"]):not(:has([id^="row-"] [id^="payment-button-"])){background:#fff!important;max-width:640px!important;width:auto!important;margin-left:auto!important;margin-right:auto!important;border:1px solid var(--r4-line)!important;border-top:6px solid var(--r4-action)!important;border-radius:6px!important;box-shadow:0 26px 60px oklch(22.83% .0176 317.64 / .12)!important;padding:34px 34px 26px!important}
+[id^="form-input-"]{font-family:'Montserrat',Arial,sans-serif!important;font-size:16px!important;color:var(--r4-deep)!important;height:56px!important;padding:0 16px!important;background:#fff!important;border:1.5px solid var(--r4-line)!important;border-radius:4px!important;box-shadow:none!important;transition:border-color .15s,box-shadow .15s}
+[id^="form-input-"]::placeholder{color:oklch(55% .012 317)!important}
+[id^="form-input-"]:focus{border-color:var(--r4-action)!important;box-shadow:0 0 0 3px oklch(56.74% .1714 32.87 / .16)!important;outline:none!important}
+[id^="payment-method-"],[id^="payment-method-"] *{font-family:'Montserrat',Arial,sans-serif!important}
+[id^="payment-method-"]::before{content:"2 \00B7  Ton paiement";display:block;font:800 12px/1.4 'Montserrat',Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--r4-deep);margin:0;padding:16px 18px 4px}
+[id^="offerprice-"]{display:none!important}
+/* order bump */
+[id^="orderbump-"]{border:2px dashed var(--r4-action)!important;border-radius:6px!important;background:#fff!important;overflow:hidden;padding:0!important;box-shadow:0 12px 30px oklch(56.74% .1714 32.87 / .13)!important}
+[id^="orderbump-"]>label,[id^="orderbump-"]>div:first-child{background:var(--r4-action);padding:13px 16px!important;margin:0!important;cursor:pointer;animation:r4coBump 2s ease-in-out infinite}
+[id^="orderbump-"]>label *,[id^="orderbump-"]>div:first-child *{font-family:'Montserrat',Arial,sans-serif!important;font-weight:800!important;font-size:16px!important;line-height:1.35!important;color:#fff!important}
+[id^="orderbump-"]>label>div:first-child{filter:brightness(0) invert(1)}
+[id^="orderbump-"] input[type=checkbox]{width:24px!important;height:24px!important;flex:none;accent-color:var(--r4-deep);cursor:pointer}
+@keyframes r4coBump{0%,100%{background:oklch(56.74% .1714 32.87)}50%{background:oklch(62% .17 37)}}
+/* bouton de paiement */
+[id^="payment-button-"]{position:relative;overflow:hidden;isolation:isolate;width:100%!important;min-height:74px;background:var(--r4-action)!important;color:#fff!important;border:0!important;border-radius:4px!important;box-shadow:0 5px 0 var(--r4-action-dark)!important;font-family:'Montserrat',Arial,sans-serif!important;text-transform:uppercase;letter-spacing:.02em;cursor:pointer;transition:transform .2s cubic-bezier(.16,1,.3,1),background .2s}
+[id^="payment-button-"] *{font-family:'Montserrat',Arial,sans-serif!important;color:#fff!important}
+[id^="payment-button-"]>div:first-child{font-size:18px!important;font-weight:800!important;line-height:1.3!important}
+[id^="payment-button-"]>div:first-child::after{content:"\2192";display:inline-block;margin-left:14px;font-size:22px;line-height:1;vertical-align:-2px}
+[id^="payment-button-"] small{display:block;font-size:12px!important;font-weight:600!important;text-transform:none;letter-spacing:0;opacity:.92;margin-top:4px}
+[id^="payment-button-"]:hover{background:oklch(50% .165 33)!important;transform:translateY(-2px)}
+[id^="payment-button-"]:active{transform:translateY(1px)}
+[id^="payment-button-"]:focus-visible{outline:3px solid var(--r4-deep)!important;outline-offset:4px}
+[id^="payment-button-"]::after{content:"";position:absolute;top:0;bottom:0;left:-80%;width:45%;background:linear-gradient(105deg,transparent,oklch(100% 0 0 / .34),transparent);transform:skewX(-18deg);animation:r4coShine 3.8s ease-in-out infinite;pointer-events:none;z-index:-1}
+@keyframes r4coShine{0%,55%{left:-80%}100%{left:135%}}
+
+@media(max-width:760px){
+.r4co .wrap{width:calc(100% - 32px)}
+.r4co .nav{min-height:72px}.r4co .wordmark{font-size:22px}.r4co .secure{font-size:11px}
+.r4co .steps{gap:6px;font-size:10px;padding-top:20px}.r4co .steps li+li::before{width:14px}.r4co .steps b{width:21px;height:21px;font-size:10px}
+.r4co .co-hero{padding:24px 0 26px}.r4co .hero-tag{font-size:11px}.r4co h1{font-size:clamp(34px,9.4vw,46px)}.r4co .co-hero .intro{font-size:15px}
+.r4co .recap{grid-template-columns:1fr;gap:24px;padding:24px 20px}
+.r4co .recap .screen{display:none}
+.r4co .cd-label{font-size:10px;letter-spacing:.05em}
+.r4co .deal-old-amt{font-size:36px}.r4co .deal-new{font-size:86px}.r4co .deal-badge{width:58px;height:58px;font-size:19px;right:-46px;top:-18px}
+.r4co .cd{flex-direction:column;gap:8px;padding:14px 12px}.r4co .cd-units>span{min-width:52px}
+.r4co-formsec,[id^="section-"]:has([id^="payment-button-"]){padding:28px 0 40px!important}
+.r4co-card,[id^="row-"]:has([id^="payment-button-"]):not(:has([id^="row-"] [id^="payment-button-"])){margin-left:12px!important;margin-right:12px!important;padding:24px 18px 20px!important}
+[id^="orderbump-"]>label *,[id^="orderbump-"]>div:first-child *{font-size:14px!important}
+[id^="payment-button-"]>div:first-child{font-size:15px!important}
+}
+@media(prefers-reduced-motion:reduce){
+.r4co *,.r4co *::before,.r4co *::after,[id^="orderbump-"]>label,[id^="payment-button-"]::after{animation:none!important;transition:none!important}
+.r4co.js .deal-strike path{stroke-dashoffset:0}
+}
+</style>
+
+<div class="r4co r4co-band" id="r4co-haut">
+  <header class="wrap nav">
+    <span class="wordmark">MG ACADEMY<span>AVEC ZAK</span></span>
+    <span class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Paiement sécurisé · Stripe</span>
+  </header>
+  <ol class="steps" aria-label="Étapes de ta commande">
+    <li class="done"><b aria-hidden="true">✓</b>Le programme</li>
+    <li class="now" aria-current="step"><b aria-hidden="true">2</b>Paiement</li>
+    <li><b aria-hidden="true">3</b>Ton accès</li>
+  </ol>
+  <section class="wrap co-hero center">
+    <p class="hero-tag">RENCONTRE 4D · DERNIÈRE ÉTAPE</p>
+    <h1>Plus qu'une étape avant <span>ton jour 1.</span></h1>
+    <p class="intro">Remplis le formulaire, valide ton paiement, et ton accès au programme sur Skool t'arrive par email juste après.</p>
+  </section>
+  <div class="wrap">
+    <div class="recap">
+      <figure class="screen"><div class="screen-label"><span>RENCONTRE 4D</span><span>Ton programme sur Skool</span></div><img src="https://d1yei2z3i6k35z.cloudfront.net/3622065/6ac186c52e8e38.30331741_r4d-classroom2.webp" alt="La salle de classe Rencontre 4D sur Skool" width="2280" height="1424"></figure>
+      <div>
+        <p class="recap-label">TA COMMANDE</p>
+        <h2>Rencontre 4D</h2>
+        <ul>
+          <li><span aria-hidden="true">✓</span><span><b>Le parcours complet de 28 jours</b>, en quatre phases</span></li>
+          <li><span aria-hidden="true">✓</span><span><b>48 leçons vidéo</b> + les exercices de chaque jour</span></li>
+          <li><span aria-hidden="true">✓</span><span><b>L'accès à vie sur Skool</b> et l'espace Questions &amp; Réponses</span></li>
+        </ul>
+        <div class="deal">
+          <div class="deal-row">
+            <div class="deal-old"><span class="deal-old-label">Après le 18 octobre</span><s class="deal-old-amt"><span class="sr">Prix après le lancement : </span>297 €<svg class="deal-strike" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 31 C 30 24, 62 15, 96 9"/></svg></s></div>
+            <div class="deal-new"><span class="sr">Prix de lancement : </span>99 €<span class="deal-badge">−67 %</span></div>
+          </div>
+          <p class="deal-save">Tu économises <strong>198 €</strong> · ou 2 × 55 € (110 € au total)</p>
+        </div>
+      </div>
+    </div>
+    <div class="cd" data-r4co-cd role="timer" aria-label="Temps restant avant la fin du prix de lancement">
+      <span class="cd-label">Le prix de lancement se termine dans</span>
+      <div class="cd-units"><span><b data-u="d">--</b><small>jours</small></span><span><b data-u="h">--</b><small>heures</small></span><span><b data-u="m">--</b><small>min</small></span><span><b data-u="s">--</b><small>sec</small></span></div>
+    </div>
+    <p class="hand go-down">Ton accès t'attend juste en dessous <span aria-hidden="true">↓</span></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* Fin du prix de lancement : dimanche 18 octobre 2026, 23h59 heure de Paris */
+  var FIN = new Date('2026-10-18T23:59:59+02:00').getTime();
+  var haut = document.getElementById('r4co-haut'); if (!haut) return;
+  haut.classList.add('js');
+
+  /* compte à rebours */
+  var cds = document.querySelectorAll('[data-r4co-cd]');
+  function p(n) { return (n < 10 ? '0' : '') + n; }
+  (function tick() {
+    var r = FIN - Date.now();
+    if (r <= 0) { cds.forEach(function (c) { c.hidden = true; }); return; }
+    var v = { d: Math.floor(r / 864e5), h: Math.floor(r / 36e5) % 24, m: Math.floor(r / 6e4) % 60, s: Math.floor(r / 1e3) % 60 };
+    cds.forEach(function (c) { c.querySelectorAll('[data-u]').forEach(function (b) { b.textContent = p(v[b.getAttribute('data-u')]); }); });
+    setTimeout(tick, 1000 - (Date.now() % 1000) + 10);
+  })();
+
+  /* blocs pleine largeur : on retire les marges de la section Systeme.io qui les contient */
+  function pleineLargeur() {
+    document.querySelectorAll('.r4co-band').forEach(function (el) {
+      for (var n = el.parentElement; n && n !== document.body; n = n.parentElement) {
+        n.style.setProperty('max-width', 'none', 'important'); n.style.setProperty('width', '100%', 'important');
+        if (/^(section|row)-/.test(n.id)) { n.style.setProperty('padding', '0', 'important'); n.style.setProperty('margin', '0', 'important'); }
+        if (/^section-/.test(n.id)) break;
+      }
+    });
+  }
+  pleineLargeur();
+  document.addEventListener('DOMContentLoaded', pleineLargeur);
+  window.addEventListener('load', pleineLargeur);
+
+  /* habillage du formulaire natif : la ligne qui contient le bouton de paiement devient une carte */
+  var essais = 0;
+  (function habille() {
+    var pb = document.querySelector('[id^="payment-button-"]');
+    if (!pb) { if (++essais < 80) setTimeout(habille, 250); return; }
+    var row = pb.closest('[id^="row-"]'), sec = pb.closest('[id^="section-"]');
+    if (row) row.classList.add('r4co-card');
+    if (sec) sec.classList.add('r4co-formsec');
+  })();
+})();
+</script>
