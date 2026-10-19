@@ -1,0 +1,756 @@
+{
+ "variant": "chalk",
+ "cta": {
+  "at": "S6:Dans",
+  "keyword": "ABONDANCE",
+  "auto": true,
+  "line1": "Commente",
+  "line2": "je t'envoie l'accès en DM",
+  "extra": [
+   {
+    "t": "S6:MG",
+    "do": "text",
+    "text": "MG Academy",
+    "x": 540,
+    "y": 820,
+    "size": 60,
+    "anchor": "middle",
+    "weight": 700,
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S6:gratuite",
+    "do": "text",
+    "text": "1re semaine gratuite",
+    "x": 540,
+    "y": 900,
+    "size": 48,
+    "anchor": "middle",
+    "weight": 700,
+    "cls": "accent",
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S6:belle",
+    "do": "prop",
+    "name": "sparkle",
+    "x": 880,
+    "y": 780,
+    "scale": 1.2,
+    "pop": 0.3,
+    "sfx": "pop"
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "id": "sc1",
+   "in": "S1:@",
+   "out": "S2:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S1:subconscient",
+     "do": "prop",
+     "name": "brain",
+     "id": "brain",
+     "x": 540,
+     "y": 1180,
+     "scale": 1.7,
+     "draw": 0.8,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S1:magique",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 690,
+     "y": 1090,
+     "scale": 1.1,
+     "pop": 0.25,
+     "sfx": "magic"
+    },
+    {
+     "t": "S1:magique+0.15",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 400,
+     "y": 1100,
+     "scale": 0.8,
+     "pop": 0.25
+    },
+    {
+     "t": "S1:fabuleux",
+     "do": "text",
+     "text": "fabuleux",
+     "x": 690,
+     "y": 1200,
+     "size": 50,
+     "rot": -8,
+     "cls": "accent",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S1:con",
+     "do": "text",
+     "text": "...un peu con",
+     "x": 150,
+     "y": 1280,
+     "size": 44,
+     "rot": 4,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S1:con+0.2",
+     "do": "shake",
+     "target": "brain",
+     "px": 5
+    },
+    {
+     "t": "S1:différence",
+     "do": "prop",
+     "name": "thought",
+     "id": "b1",
+     "x": 300,
+     "y": 1420,
+     "w": 250,
+     "h": 110,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S1:scène",
+     "do": "text",
+     "text": "imaginé",
+     "x": 300,
+     "y": 1432,
+     "size": 40,
+     "anchor": "middle",
+     "noPencil": true
+    },
+    {
+     "t": "S1:imaginée",
+     "do": "prop",
+     "name": "thought",
+     "id": "b2",
+     "x": 780,
+     "y": 1420,
+     "w": 250,
+     "h": 110,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S1:réalité",
+     "do": "text",
+     "text": "réel",
+     "x": 780,
+     "y": 1432,
+     "size": 40,
+     "anchor": "middle",
+     "noPencil": true
+    },
+    {
+     "t": "S1:réalité+0.25",
+     "do": "text",
+     "text": "=",
+     "x": 540,
+     "y": 1440,
+     "size": 90,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent",
+     "write": 0.3,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S1:réalité+0.5",
+     "do": "text",
+     "text": "?",
+     "x": 640,
+     "y": 1120,
+     "size": 80,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent",
+     "write": 0.25,
+     "sfx": "pop"
+    }
+   ]
+  },
+  {
+   "id": "sc2a",
+   "in": "S2:@",
+   "out": "S2:contre",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S2:souvenir",
+     "do": "text",
+     "text": "SOUVENIR",
+     "x": 540,
+     "y": 1110,
+     "size": 62,
+     "anchor": "middle",
+     "weight": 700,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:souvenir+0.6",
+     "do": "path",
+     "d": "M330 1128 Q540 1150 750 1126",
+     "width": 4,
+     "cls": "accent",
+     "draw": 0.3,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:mangé",
+     "do": "prop",
+     "name": "calendar",
+     "x": 290,
+     "y": 1290,
+     "scale": 1.3,
+     "label": "20 sept. 2014",
+     "draw": 0.7,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:septembre",
+     "do": "prop",
+     "name": "plate",
+     "x": 600,
+     "y": 1300,
+     "scale": 1.1,
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:rien",
+     "do": "stickman",
+     "pose": "shrug",
+     "x": 820,
+     "y": 1460,
+     "scale": 1.15,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:rien+0.3",
+     "do": "text",
+     "text": "?",
+     "x": 820,
+     "y": 1250,
+     "size": 70,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent",
+     "write": 0.2,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:émotion",
+     "do": "prop",
+     "name": "heart",
+     "id": "h1",
+     "x": 440,
+     "y": 1450,
+     "scale": 1.1,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:particulière",
+     "do": "prop",
+     "name": "cross",
+     "x": 440,
+     "y": 1450,
+     "scale": 0.9,
+     "draw": 0.25,
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc2b",
+   "in": "S2:contre",
+   "out": "S3:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S2:téléphonique",
+     "do": "prop",
+     "name": "phone",
+     "id": "phone",
+     "x": 220,
+     "y": 1260,
+     "scale": 1.4,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:téléphonique+0.4",
+     "do": "shake",
+     "target": "phone",
+     "px": 8
+    },
+    {
+     "t": "S2:bonne",
+     "do": "stickman",
+     "pose": "cheer",
+     "x": 520,
+     "y": 1470,
+     "scale": 1.15,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:bonne+0.2",
+     "do": "prop",
+     "name": "burst",
+     "x": 520,
+     "y": 1250,
+     "scale": 0.9,
+     "pop": 0.25
+    },
+    {
+     "t": "S2:mauvaise",
+     "do": "stickman",
+     "pose": "sad",
+     "x": 800,
+     "y": 1470,
+     "scale": 1.15,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:rappellerais",
+     "do": "prop",
+     "name": "calendar",
+     "x": 220,
+     "y": 1450,
+     "scale": 0.9,
+     "label": "20 sept.",
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:rappellerais+0.3",
+     "do": "prop",
+     "name": "check",
+     "x": 290,
+     "y": 1410,
+     "scale": 1.0,
+     "draw": 0.25,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:Image",
+     "do": "text",
+     "text": "IMAGE",
+     "x": 160,
+     "y": 1130,
+     "size": 50,
+     "weight": 700,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:émotion#2",
+     "do": "text",
+     "text": "+ ÉMOTION",
+     "x": 390,
+     "y": 1130,
+     "size": 50,
+     "weight": 700,
+     "cls": "accent",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:égale",
+     "do": "text",
+     "text": "= SOUVENIR",
+     "x": 540,
+     "y": 1210,
+     "size": 56,
+     "anchor": "middle",
+     "weight": 700,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:souvenir#4+0.4",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 840,
+     "y": 1150,
+     "scale": 1.0,
+     "pop": 0.25,
+     "sfx": "magic"
+    }
+   ]
+  },
+  {
+   "id": "sc3",
+   "in": "S3:@",
+   "out": "S4:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S3:visualisation",
+     "do": "prop",
+     "name": "eye",
+     "x": 280,
+     "y": 1200,
+     "scale": 1.2,
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S3:sans",
+     "do": "text",
+     "text": "sans émotion",
+     "x": 280,
+     "y": 1320,
+     "size": 40,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S3:fantaisiste",
+     "do": "prop",
+     "name": "zzz",
+     "x": 380,
+     "y": 1120,
+     "scale": 1.0,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S3:Mais",
+     "do": "prop",
+     "name": "arrow",
+     "x": 440,
+     "y": 1240,
+     "dx": 160,
+     "dy": 0,
+     "curve": -20,
+     "draw": 0.35,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S3:émotion#2",
+     "do": "prop",
+     "name": "heart",
+     "id": "bigheart",
+     "x": 760,
+     "y": 1230,
+     "scale": 1.7,
+     "pop": 0.35,
+     "sfx": "pop"
+    },
+    {
+     "t": "S3:change",
+     "do": "prop",
+     "name": "burst",
+     "x": 760,
+     "y": 1230,
+     "scale": 1.5,
+     "pop": 0.25,
+     "sfx": "magic"
+    },
+    {
+     "t": "S3:tout",
+     "do": "text",
+     "text": "ça change tout",
+     "x": 760,
+     "y": 1400,
+     "size": 44,
+     "anchor": "middle",
+     "cls": "accent",
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc4",
+   "in": "S4:@",
+   "out": "S5:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S4:Lui",
+     "do": "prop",
+     "name": "brain",
+     "id": "brain2",
+     "x": 250,
+     "y": 1200,
+     "scale": 1.3,
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S4:croire",
+     "do": "prop",
+     "name": "thought",
+     "id": "th2",
+     "x": 520,
+     "y": 1150,
+     "w": 240,
+     "h": 110,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S4:acquis",
+     "do": "prop",
+     "name": "check",
+     "x": 520,
+     "y": 1150,
+     "scale": 1.1,
+     "draw": 0.25,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:10",
+     "do": "prop",
+     "name": "money",
+     "x": 790,
+     "y": 1190,
+     "scale": 1.3,
+     "pop": 0.35,
+     "sfx": "kaching"
+    },
+    {
+     "t": "S4:par",
+     "do": "text",
+     "text": "10 000 € / mois",
+     "x": 790,
+     "y": 1300,
+     "size": 38,
+     "anchor": "middle",
+     "cls": "accent",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:réorganiser",
+     "do": "path",
+     "d": "M160 1430 L900 1430 M230 1416 L230 1444 M370 1416 L370 1444 M510 1416 L510 1444 M650 1416 L650 1444 M790 1416 L790 1444",
+     "width": 4,
+     "draw": 0.8,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S4:journée",
+     "do": "text",
+     "text": "ta journée",
+     "x": 540,
+     "y": 1490,
+     "size": 40,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:résultat",
+     "do": "prop",
+     "name": "arrow",
+     "x": 300,
+     "y": 1270,
+     "dx": 90,
+     "dy": 130,
+     "curve": 30,
+     "draw": 0.3,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S4:obtenu",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 840,
+     "y": 1400,
+     "scale": 1.0,
+     "pop": 0.25,
+     "sfx": "pop"
+    }
+   ]
+  },
+  {
+   "id": "sc5",
+   "in": "S5:@",
+   "out": "S6:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S5:@+0.2",
+     "do": "path",
+     "id": "bridge",
+     "d": "M150 1300 Q300 1220 420 1300 T690 1300 T930 1300",
+     "width": 4,
+     "cls": "soft",
+     "draw": 1.0,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S5:@+0.3",
+     "do": "prop",
+     "name": "box",
+     "id": "bA",
+     "x": 160,
+     "y": 1300,
+     "w": 80,
+     "h": 70,
+     "label": "A",
+     "size": 36,
+     "pop": 0.2
+    },
+    {
+     "t": "S5:B",
+     "do": "prop",
+     "name": "box",
+     "id": "bB",
+     "x": 310,
+     "y": 1300,
+     "w": 80,
+     "h": 70,
+     "label": "B",
+     "size": 36,
+     "pop": 0.2,
+     "sfx": "pop"
+    },
+    {
+     "t": "S5:B+0.35",
+     "do": "prop",
+     "name": "cross",
+     "x": 310,
+     "y": 1300,
+     "scale": 0.8,
+     "draw": 0.2,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S5:passer#2",
+     "do": "prop",
+     "name": "box",
+     "id": "bC",
+     "x": 460,
+     "y": 1300,
+     "w": 80,
+     "h": 70,
+     "label": "C",
+     "size": 36,
+     "pop": 0.2
+    },
+    {
+     "t": "S5:ni-0.3",
+     "do": "prop",
+     "name": "box",
+     "id": "bD",
+     "x": 610,
+     "y": 1300,
+     "w": 80,
+     "h": 70,
+     "label": "D",
+     "size": 36,
+     "pop": 0.2,
+     "sfx": "pop"
+    },
+    {
+     "t": "S5:ni",
+     "do": "prop",
+     "name": "cross",
+     "x": 610,
+     "y": 1300,
+     "scale": 0.8,
+     "draw": 0.2,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S5:ni+0.3",
+     "do": "prop",
+     "name": "box",
+     "id": "bE",
+     "x": 760,
+     "y": 1300,
+     "w": 80,
+     "h": 70,
+     "label": "E",
+     "size": 36,
+     "pop": 0.2,
+     "sfx": "pop"
+    },
+    {
+     "t": "S5:ni+0.55",
+     "do": "prop",
+     "name": "cross",
+     "x": 760,
+     "y": 1300,
+     "scale": 0.8,
+     "draw": 0.2,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S5:yeux",
+     "do": "prop",
+     "name": "eye",
+     "x": 540,
+     "y": 1090,
+     "scale": 1.1,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S5:opportunités",
+     "do": "prop",
+     "name": "arrow",
+     "x": 180,
+     "y": 1260,
+     "dx": 270,
+     "dy": 0,
+     "curve": -70,
+     "draw": 0.35,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S5:événements",
+     "do": "prop",
+     "name": "arrow",
+     "x": 480,
+     "y": 1260,
+     "dx": 380,
+     "dy": 0,
+     "curve": -80,
+     "draw": 0.4,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S5:automatiquement",
+     "do": "stickman",
+     "pose": "stand",
+     "x": 300,
+     "y": 1480,
+     "scale": 1.0,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S5:rien",
+     "do": "text",
+     "text": "rien à faire",
+     "x": 560,
+     "y": 1460,
+     "size": 44,
+     "cls": "accent",
+     "rot": -3,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S5:rien+0.4",
+     "do": "prop",
+     "name": "zzz",
+     "x": 400,
+     "y": 1340,
+     "scale": 0.9,
+     "pop": 0.25
+    }
+   ]
+  }
+ ]
+}
