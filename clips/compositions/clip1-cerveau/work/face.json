@@ -2,17 +2,17 @@
  "src": null,
  "cutlist": "clips/compositions/clip1-cerveau/work/cutlist.json",
  "crop": {
-  "x": 357,
+  "x": 329,
   "y": 5,
   "w": 1161,
   "h": 1075
  },
  "face": {
   "face_centre": [
-   937.8865966796875,
-   578.8541259765625
+   909.3606567382812,
+   540.967529296875
   ],
-  "face_height": 627.1170654296875,
+  "face_height": 597.2440795898438,
   "detections": 6
  },
  "fps": "30",
@@ -20,9 +20,9 @@
   1080,
   1000
  ],
- "expected_frames": 2611,
- "rendered_frames": 2611,
- "duration": 87.04,
+ "expected_frames": 2517,
+ "rendered_frames": 2517,
+ "duration": 83.904,
  "zoom": 0.93,
  "headroom": 0.42
 }
