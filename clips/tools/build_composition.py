@@ -197,7 +197,7 @@ def main():
             if act["do"] == "text":
                 dur = act.get("write") or max(0.35, min(1.4, len(act.get("text", "")) * 0.045))
             else:
-                dur = act.get("draw") or (0.35 if name in ("pop", "ding", "stroke-short") else min(full, 1.2))
+                dur = act.get("draw") or (0.35 if name in ("pop", "ding", "stroke-short") else min(full, 1.2 if name != "vibrate" else 0.9))
             dur = min(dur + 0.15, full, max(0.1, total - act["t"] - 0.02))
             gain = act.get("gain", 0.55 if name in ("stroke", "stroke-short", "typing") else 0.7)
             media_start = 0.0

@@ -278,7 +278,7 @@
    "exit": "erase",
    "actions": [
     {
-     "t": "S2:téléphonique",
+     "t": "S2:reçu",
      "do": "prop",
      "name": "phone",
      "id": "phone",
@@ -289,10 +289,11 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:téléphonique+0.4",
+     "t": "S2:téléphonique",
      "do": "shake",
      "target": "phone",
-     "px": 8
+     "px": 8,
+     "sfx": "vibrate"
     },
     {
      "t": "S2:bonne",

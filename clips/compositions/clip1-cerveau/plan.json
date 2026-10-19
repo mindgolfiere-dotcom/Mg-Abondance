@@ -253,7 +253,7 @@
    "exitDur": null,
    "actions": [
     {
-     "t": 26.07,
+     "t": 25.485,
      "do": "prop",
      "name": "phone",
      "id": "phone",
@@ -264,10 +264,11 @@
      "sfx": "stroke"
     },
     {
-     "t": 26.47,
+     "t": 26.07,
      "do": "shake",
      "target": "phone",
-     "px": 8
+     "px": 8,
+     "sfx": "vibrate"
     },
     {
      "t": 27.66,
