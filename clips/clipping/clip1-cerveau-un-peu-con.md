@@ -33,3 +33,21 @@ Total estimé : 92 s avant coupe des silences, 78 à 84 s après.
 - S6 : la phrase « Elle est pas belle la vie, quand même ? » vient de la toute fin de la vidéo ; elle sert de chute pendant que l'animation CTA est en plein écran.
 - Option conversion : enregistrer 3 s en plus, face caméra, « Commente ABONDANCE, je t'envoie l'accès en DM ». Sans cette prise, le CTA mot-clé est porté par l'animation plein écran et les sous-titres.
 - Option preuve sociale : 2 ou 3 captures de témoignages de membres, redessinées en post-it sur le tableau pendant « Tu as des manifestations tous les jours ».
+
+## Montage final (cut list réelle)
+
+Montage final posé sur le rush OBS `2026-09-25 09-51-23.mp4` (transcription Whisper mot à mot). Chaque pause audible > 0,25 s est ramenée à 0,18 s ; les reprises et faux départs du rush sont écartés (prise retenue = la plus proche du texte publié, sinon la dernière).
+
+| # | Rôle | Paroles conservées (montage final) | Durée |
+|---|---|---|---|
+| S1 | hook | « le subconscient est vraiment magique et j'adore ce mec, il est fabuleux, il est un peu con quand même Il ne fera absolument pas la différence entre la scène que tu as imaginée et la réalité » | 10.8 s |
+| S2a | dev | « si je te demande de te souvenir de ce que tu as mangé le 20 septembre 2014, mais t'en sais rien, pourquoi tu ne te rappelles pas de ce souvenir? Parce qu'il ne te procurait pas une émotion particulière, Par contre si ce même 20 septembre 2014, en mangeant, » | 18.0 s |
+| S2b | dev | « tu avais reçu un appel téléphonique qui t'annonçait une très très bonne nouvelle ou une très très mauvaise nouvelle, crois-moi que tu te rappellerais de ce que tu mangeais ce jour-là. image plus émotion pour le cerveau égale souvenir. » | 11.6 s |
+| S3 | dev | « une visualisation sans émotion, c'est juste une imagination fantaisiste. Mais quand tu mets de l'émotion, là, ça change tout. » | 5.8 s |
+| S4 | dev | « Lui, il va croire que c'est déjà acquis, tu as déjà tes 10 000€ par mois. Et donc, il va faire un truc assez génial, il va réorganiser ta journée en fonction du résultat que tu as prétendument déjà obtenu. » | 13.6 s |
+| S5a | dev | « Il n'est pas nécessaire de passer par le B Il n'est pas nécessaire de passer par le D ni par le E » | 5.2 s |
+| S5b | dev | « il va t'ouvrir les yeux sur les opportunités, qui vont dans le sens de« j'ai 10 000€ par mois». Et ça va se faire automatiquement. T'auras rien à faire. » | 9.3 s |
+| S6a | cta | « Dans la MG Academy, on ne fait que ça, t'as des manifestations tous les jours, » | 4.8 s |
+| S6b | cta | « Si tu veux tester la première semaine est gratuite » | 2.9 s |
+| S6c | cta | « Elle est pas belle la vie quand même, » | 1.8 s |
+| | | **Total parole** | **83.9 s** (+1,5 s de tenue du CTA) |
