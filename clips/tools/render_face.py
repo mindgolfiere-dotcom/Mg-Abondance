@@ -95,7 +95,7 @@ def measure_loudness(path):
 
 def normalize_loudness(path, target):
     """Bring the speech to the target integrated loudness with a plain gain (dynamics untouched), then a
-    true-peak limiter at -1 dBTP. Audio-only re-encode: the video stream is copied, frames stay identical."""
+    true-peak limiter around -1.5 dBTP. Audio-only re-encode: the video stream is copied, frames stay identical."""
     I, P = measure_loudness(path)
     if I is None:
         print("loudness: measurement failed, left as is")
@@ -106,7 +106,7 @@ def normalize_loudness(path, target):
         return
     tmp = os.path.splitext(path)[0] + "_norm.mp4"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", path, "-c:v", "copy",
-                    "-af", f"volume={gain:.2f}dB,alimiter=limit=0.891:attack=5:release=60:level=false",
+                    "-af", f"volume={gain:.2f}dB,alimiter=limit=0.84:attack=5:release=60:level=false",
                     "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", tmp], check=True)
     os.replace(tmp, path)
     I2, P2 = measure_loudness(path)
@@ -124,7 +124,7 @@ def main():
     ap.add_argument("--headroom", type=float, default=0.42, help="face centre position as a fraction of crop height")
     ap.add_argument("--crf", type=int, default=16)
     ap.add_argument("--preview", action="store_true")
-    ap.add_argument("--lufs", type=float, default=-16.0, help="integrated loudness target for the speech (0 = leave as is); linear gain + true-peak limiter at -1 dBTP")
+    ap.add_argument("--lufs", type=float, default=-16.0, help="integrated loudness target for the speech (0 = leave as is); linear gain + true-peak limiter around -1.5 dBTP")
     args = ap.parse_args()
 
     cl = json.load(open(args.cutlist))
