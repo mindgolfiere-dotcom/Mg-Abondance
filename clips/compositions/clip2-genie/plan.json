@@ -528,7 +528,7 @@
   {
    "id": "cta",
    "in": 67.26,
-   "out": 67.645,
+   "out": 86.086,
    "exit": "none",
    "actions": [
     {
@@ -749,13 +749,13 @@
      "dur": 0.5
     },
     {
-     "t": 66.295,
+     "t": 84.736,
      "do": "punch",
      "target": "kw",
      "scale": 1.12
     },
     {
-     "t": 66.295,
+     "t": 84.736,
      "do": "prop",
      "name": "sparkle",
      "x": 360,
@@ -765,7 +765,7 @@
      "sfx": "magic"
     },
     {
-     "t": 66.695,
+     "t": 85.136,
      "do": "prop",
      "name": "sparkle",
      "x": 760,
@@ -784,7 +784,7 @@
   "pipY": 300,
   "capY": -330,
   "keyword": "ABONDANCE",
-  "faceOut": 66.145
+  "faceOut": 84.586
  },
  "punches": [
   {
@@ -2760,5 +2760,5 @@
    ]
   }
  ],
- "duration": 67.645
+ "duration": 86.086
 }

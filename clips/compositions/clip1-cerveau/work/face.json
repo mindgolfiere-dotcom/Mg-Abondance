@@ -2,10 +2,10 @@
  "src": null,
  "cutlist": "clips/compositions/clip1-cerveau/work/cutlist.json",
  "crop": {
-  "x": 506,
-  "y": 243,
-  "w": 864,
-  "h": 800
+  "x": 357,
+  "y": 5,
+  "w": 1161,
+  "h": 1075
  },
  "face": {
   "face_centre": [
@@ -23,6 +23,6 @@
  "expected_frames": 2611,
  "rendered_frames": 2611,
  "duration": 87.04,
- "zoom": 1.25,
+ "zoom": 0.93,
  "headroom": 0.42
 }

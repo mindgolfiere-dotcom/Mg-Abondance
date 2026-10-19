@@ -211,9 +211,12 @@ def main():
     sfx_tags, missing = [], set()
     srnd = random.Random(7)
     k = 0
+    lanes = []   # per Studio track: time until which it is busy (sfx sorted by start below)
     for sc in scenes:
         if sc.get("exit") == "erase" and sc["out"] < total - 0.3:
             sc["actions"] = sc["actions"] + [{"t": round(sc["out"], 3), "do": "sfx-only", "sfx": "erase", "draw": sc.get("exitDur") or 0.55, "gain": 0.5}]
+    all_acts = sorted((act for sc in scenes for act in sc["actions"] if act.get("sfx")), key=lambda x: x["t"])
+    for sc in [{"actions": all_acts}]:
         for act in sc["actions"]:
             name = act.get("sfx")
             if not name:
@@ -238,8 +241,13 @@ def main():
                 media_start = round(srnd.uniform(0.2, full - dur - 0.5), 2)   # different bit of the recording each time
             fade = min(0.12, dur / 3)
             auto = {"version": 1, "lanes": [{"target": "volume", "points": [{"t": 0, "v": 0}, {"t": 0.03, "v": 1}, {"t": round(dur - fade, 3), "v": 1}, {"t": round(dur, 3), "v": 0}]}]}
+            lane = next((i for i, busy in enumerate(lanes) if busy <= act["t"]), None)
+            if lane is None:
+                lanes.append(0.0)
+                lane = len(lanes) - 1
+            lanes[lane] = act["t"] + dur + 0.02
             sfx_tags.append(f'<audio id="sfx{k}" src="assets/sfx/{fname}.wav" data-start="{act["t"]:.3f}" data-duration="{dur:.3f}" '
-                            f'data-media-start="{media_start}" data-track-index="{20 + (k % 6)}" data-volume="{gain}" '
+                            f'data-media-start="{media_start}" data-track-index="{20 + lane}" data-volume="{gain}" '
                             f"data-automation='{json.dumps(auto)}'></audio>")
             k += 1
     if missing:

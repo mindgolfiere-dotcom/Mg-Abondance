@@ -1,0 +1,28 @@
+{
+ "src": null,
+ "cutlist": "clips/compositions/clip2-genie/work/cutlist.json",
+ "crop": {
+  "x": 286,
+  "y": 5,
+  "w": 1161,
+  "h": 1075
+ },
+ "face": {
+  "face_centre": [
+   866.1732788085938,
+   600.9105834960938
+  ],
+  "face_height": 581.1911010742188,
+  "detections": 6
+ },
+ "fps": "30",
+ "out_size": [
+  1080,
+  1000
+ ],
+ "expected_frames": 2537,
+ "rendered_frames": 2537,
+ "duration": 84.586,
+ "zoom": 0.93,
+ "headroom": 0.42
+}

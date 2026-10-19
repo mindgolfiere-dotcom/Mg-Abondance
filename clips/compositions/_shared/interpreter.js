@@ -72,7 +72,7 @@ window.MGBuild = function build() {
       gsap.set(wrap, { transformOrigin: "0 0" });
       tl.to(wrap, { x: c.pipX, y: c.pipY, scale: c.pipScale, duration: 0.75, ease: "power3.inOut" }, c.at);
       tl.to(wrap, { clipPath: "circle(44% at 50% 48%)", duration: 0.6, ease: "power2.inOut" }, c.at + 0.1);
-      tl.to("#tear", { opacity: 0, duration: 0.3 }, c.at);
+      if (document.getElementById("tear")) tl.to("#tear", { opacity: 0, duration: 0.3 }, c.at);
       tl.to("#captions", { y: c.capY, duration: 0.75, ease: "power3.inOut" }, c.at);
       tl.to("#grad-bottom", { opacity: 1, duration: 0.5 }, c.at);
       if (c.faceOut && c.faceOut < PLAN.duration - 0.2) {
