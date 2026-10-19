@@ -120,7 +120,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--crop", default="auto")
     ap.add_argument("--out-size", default="1080x1000")
-    ap.add_argument("--zoom", type=float, default=1.25, help="face scale relative to a 1:1 crop of a 1080p frame")
+    ap.add_argument("--zoom", type=float, default=0.93, help="face scale relative to a 1:1 crop of a 1080p frame (<1 = use more of the frame; 0.93 keeps the full height of a 1080p source)")
     ap.add_argument("--headroom", type=float, default=0.42, help="face centre position as a fraction of crop height")
     ap.add_argument("--crf", type=int, default=16)
     ap.add_argument("--preview", action="store_true")

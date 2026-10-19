@@ -9,7 +9,7 @@ cd "$ROOT"
 echo "### 1. cut list"
 python3 -I "$T/build_cutlist.py" "$P/work/seg/segments.json" "$P/work/spec.json" "$P/work/cutlist.json"
 echo "### 2. face track"
-python3 -I "$T/render_face.py" --cutlist "$P/work/cutlist.json" --out "$P/work/face.mp4" --out-size 1080x1000 --zoom 1.25
+python3 -I "$T/render_face.py" --cutlist "$P/work/cutlist.json" --out "$P/work/face.mp4" --out-size 1080x1000 --zoom 0.93
 echo "### 3. composition"
 python3 -I "$T/build_composition.py" --project "$P" --cutlist "$P/work/cutlist.json" --face "$P/work/face.mp4" --storyboard "$P/storyboard.json" --variant "$VARIANT" --sfx-dir "$ROOT/clips/compositions/_shared/sfx" --title "$TITLE"
 echo "### 4. hyperframes check"

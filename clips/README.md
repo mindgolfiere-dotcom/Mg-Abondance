@@ -25,7 +25,7 @@ python3 -I clips/tools/locate_segments.py --src master.mp4 --words master_words.
 # 3. Cut list : ancres de texte → index d'images, coupe de toute pause > 0,25 s, sous-titres re-synchronisés
 python3 -I clips/tools/build_cutlist.py work/seg/segments.json spec.json work/cutlist.json
 # 4. Piste visage : coupes exactes, cadrage automatique sur le visage (YuNet), micro-fondus audio
-python3 -I clips/tools/render_face.py --cutlist work/cutlist.json --out work/face.mp4 --out-size 1080x1000 --zoom 1.25
+python3 -I clips/tools/render_face.py --cutlist work/cutlist.json --out work/face.mp4 --out-size 1080x1000 --zoom 0.93
 # 5. Composition HyperFrames (visage + tableau + sous-titres + SFX + CTA plein écran)
 python3 -I clips/tools/build_composition.py --project clips/compositions/clip1-cerveau --cutlist work/cutlist.json --face work/face.mp4 --storyboard clips/compositions/clip1-cerveau/storyboard.json
 cd clips/compositions/clip1-cerveau && npx hyperframes check && npx hyperframes render --quality delivery --output out/clip1.mp4
