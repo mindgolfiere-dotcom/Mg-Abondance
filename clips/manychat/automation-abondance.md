@@ -6,16 +6,16 @@ L'API publique ManyChat ne crée pas de flows ni de déclencheurs par commentair
 
 | Variable | Valeur |
 |---|---|
-| `SKOOL_URL` | page Skool MG Abondance (1re semaine gratuite) : **à fournir** |
-| `R4D_URL` | page de vente Rencontre 4D : **à fournir** |
+| Skool MG Abondance | https://www.skool.com/mgabondance/about |
+| Rencontre 4D | https://www.mgacademie.fr/rencontre4d |
 | Compte Instagram | @zakblanjardins (Zak \| MG Meditation), déjà relié à vidIQ |
 
 ## Règle de routage par sujet
 
 | Sujet du clip | Mot-clé à commenter | Flow | Destination |
 |---|---|---|---|
-| Abondance, manifestation, argent, business | **ABONDANCE** | `IG · Commentaire ABONDANCE` | `SKOOL_URL` |
-| Amour, rencontre, relationnel | **RENCONTRE** | `IG · Commentaire RENCONTRE` | `R4D_URL` |
+| Abondance, manifestation, argent, business | **ABONDANCE** | `IG · Commentaire ABONDANCE` | https://www.skool.com/mgabondance/about |
+| Amour, rencontre, relationnel | **RENCONTRE** | `IG · Commentaire RENCONTRE` | https://www.mgacademie.fr/rencontre4d |
 
 Les deux clips de cette série (cerveau « un peu con », génie de la lampe) parlent de manifestation : ils utilisent **ABONDANCE**.
 
@@ -40,27 +40,27 @@ Les deux clips de cette série (cerveau « un peu con », génie de la lampe) pa
 > [Bouton] **Recevoir mon accès** → action : *Go to next step* (le clic ouvre la fenêtre de 24 h et autorise la suite)
 
 **DM 2 (après le clic)** :
-> Voici ton accès 👉 `SKOOL_URL`
+> Voici ton accès 👉 https://www.skool.com/mgabondance/about
 > À l'intérieur : les exercices guidés visualisation + émotion, et les victoires des membres chaque jour.
 > Commence par la vidéo « Bienvenue » (4 min), puis l'exercice du matin.
 >
-> [Bouton] **Ouvrir MG Abondance** → URL `SKOOL_URL` (tracking activé)
+> [Bouton] **Ouvrir MG Abondance** → URL https://www.skool.com/mgabondance/about (tracking activé)
 
 Actions à la fin de DM 2 : *Add tag* `lead-abondance`, *Add tag* `src-reel-{{nom du reel}}`, *Set custom field* `last_keyword = ABONDANCE`, *Set custom field* `last_offer = MG Abondance`.
 
 **Relance 1** (Smart delay 6 h, condition : n'a pas cliqué le bouton « Ouvrir ») :
-> Tu as vu le lien ? Pour que la semaine gratuite démarre, il faut juste cliquer ici 👇 `SKOOL_URL`
+> Tu as vu le lien ? Pour que la semaine gratuite démarre, il faut juste cliquer ici 👇 https://www.skool.com/mgabondance/about
 > Si tu as une question sur ce qu'il y a dedans, réponds-moi ici, je lis tout.
 
 **Relance 2** (Smart delay 16 h après la relance 1, même condition, dernière dans la fenêtre de 24 h) :
-> Dernier rappel : la semaine gratuite t'attend, ce message expire ce soir 🙂 `SKOOL_URL`
+> Dernier rappel : la semaine gratuite t'attend, ce message expire ce soir 🙂 https://www.skool.com/mgabondance/about
 
 Si l'utilisateur ne clique jamais sur « Recevoir mon accès », aucune relance ne peut partir (règle Instagram des 24 h : seule la Private reply est autorisée sans interaction). C'est voulu : le bouton de DM 1 sert justement à obtenir l'interaction.
 
 ## Flow « IG · Commentaire RENCONTRE »
 
 Identique, avec : mot-clé `rencontre` (variantes `amour`, `relation`), DM 1 orienté relationnel
-(« Tu as commenté RENCONTRE… je t'envoie Rencontre 4D »), DM 2 vers `R4D_URL`, tags `lead-rencontre`, custom field `last_offer = Rencontre 4D`.
+(« Tu as commenté RENCONTRE… je t'envoie Rencontre 4D »), DM 2 vers https://www.mgacademie.fr/rencontre4d, tags `lead-rencontre`, custom field `last_offer = Rencontre 4D`.
 
 ## Réglages globaux à vérifier
 
@@ -78,5 +78,5 @@ Identique, avec : mot-clé `rencontre` (variantes `amour`, `relation`), DM 1 ori
 
 ## Mesure
 
-- Objectif de conversion suivi : commentaires ABONDANCE → clics `SKOOL_URL` (ManyChat) → inscriptions Skool (comparer avec le nombre de nouveaux membres sur la période).
+- Objectif de conversion suivi : commentaires ABONDANCE → clics https://www.skool.com/mgabondance/about (ManyChat) → inscriptions Skool (comparer avec le nombre de nouveaux membres sur la période).
 - Les deux clips portent un tag `src-reel-…` distinct pour comparer la variante tableau noir et la variante papier.
