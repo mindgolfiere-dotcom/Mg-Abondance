@@ -134,6 +134,13 @@
      "cls": "accent",
      "write": 0.25,
      "sfx": "pop"
+    },
+    {
+     "t": 9.105,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },
@@ -228,6 +235,13 @@
      "scale": 0.9,
      "draw": 0.25,
      "sfx": "stroke-short"
+    },
+    {
+     "t": 22.72,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },
@@ -346,6 +360,13 @@
      "scale": 1.0,
      "pop": 0.25,
      "sfx": "magic"
+    },
+    {
+     "t": 34.97,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },
@@ -429,6 +450,13 @@
      "anchor": "middle",
      "cls": "accent",
      "sfx": "stroke-short"
+    },
+    {
+     "t": 40.435,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },
@@ -532,6 +560,13 @@
      "scale": 1.0,
      "pop": 0.25,
      "sfx": "pop"
+    },
+    {
+     "t": 50.4,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },
@@ -713,6 +748,13 @@
      "y": 1340,
      "scale": 0.9,
      "pop": 0.25
+    },
+    {
+     "t": 64.205,
+     "do": "sfx-only",
+     "sfx": "erase",
+     "draw": 0.55,
+     "gain": 0.5
     }
    ]
   },

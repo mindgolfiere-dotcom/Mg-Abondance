@@ -6,7 +6,7 @@ window.MGBuild = function build() {
     const objs = {};
     // tools layer (pencil + eraser) sits above all scenes
     const tools = MG.el("g", { id: "tools" }, svg);
-    const pencilG = MG.prop(tools, PLAN.variant === "chalk" ? "pencil" : "pencil", { seed: 101, scale: 1.0, cls: "tool" });
+    const pencilG = MG.prop(tools, PLAN.variant === "chalk" ? "chalk" : "pencil", { seed: 101, scale: 1.0, cls: "tool" });
     gsap.set(pencilG, { opacity: 0 });
     MG.setPencil(pencilG);
     const eraserG = MG.prop(tools, "eraser", { seed: 102, scale: 1.2, cls: "tool", y: 1400 });
@@ -22,6 +22,7 @@ window.MGBuild = function build() {
         const t = a.t;
         let node = null;
         const id = a.id || `${sc.id}-${k}`;
+        if (a.do === "sfx-only") return;
         if (a.do === "prop") {
           node = MG.prop(g, a.name, { x: a.x, y: a.y, scale: a.scale || 1, rot: a.rot || 0, seed: a.seed || (k * 7 + 3), w: a.w, h: a.h, label: a.label, sym: a.sym, n: a.n, step: a.step, labels: a.labels, dx: a.dx, dy: a.dy, curve: a.curve, cls: a.cls });
         } else if (a.do === "stickman") {
