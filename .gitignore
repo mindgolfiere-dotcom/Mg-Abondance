@@ -36,3 +36,4 @@ clips/compositions/*/out/
 clips/compositions/*/.hyperframes/
 clips/compositions/*/node_modules/
 clips/qc/*.png
+__pycache__/
