@@ -7,7 +7,7 @@ Output JSON: {"media": path, "duration": s, "language": "fr", "segments": [...],
               "words": [{"w": "mot", "s": start, "e": end, "p": prob}, ...]}
 Words are the ground truth for the cut list and the captions.
 """
-import argparse, json, subprocess, sys, time
+import argparse, json, os, re, subprocess, sys, time
 import numpy as np
 
 
@@ -16,6 +16,20 @@ def load_audio(path, sr=16000):
     out = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vn", "-f", "f32le", "-ac", "1", "-ar", str(sr), "-"],
                          capture_output=True, check=True)
     return np.frombuffer(out.stdout, np.float32).copy()
+
+
+def apply_glossary(words, glossary):
+    """Fix brand names and proper nouns the ASR cannot know (case-aware, punctuation kept)."""
+    rep = {k.lower(): v for k, v in glossary.get("replace", {}).items()}
+    for w in words:
+        m = re.match(r"^([^\w]*)([\w'\u2019-]+)([^\w]*)$", w["w"])
+        if not m:
+            continue
+        pre, core, post = m.groups()
+        key = core.lower()
+        if key in rep:
+            w["w"] = pre + rep[key] + post
+    return words
 
 
 def merge_tokens(words):
@@ -47,8 +61,12 @@ def main():
     ap.add_argument("out")
     ap.add_argument("--model", default="large-v3-turbo")
     ap.add_argument("--lang", default="fr")
-    ap.add_argument("--prompt", default="Zak, MG Academy, MG Méditation, manifestation, subconscient, 4D, 3D, Neville Goddard, 10 000 € par mois.")
+    ap.add_argument("--glossary", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "glossary.json"))
+    ap.add_argument("--prompt", default=None)
     args = ap.parse_args()
+    glossary = json.load(open(args.glossary)) if os.path.exists(args.glossary) else {"prompt": "", "replace": {}, "phrases": {}}
+    if args.prompt is None:
+        args.prompt = glossary.get("prompt", "")
 
     from faster_whisper import WhisperModel
     t0 = time.time()
@@ -64,7 +82,7 @@ def main():
         segs.append({"s": round(seg.start, 3), "e": round(seg.end, 3), "text": seg.text.strip()})
         for w in (seg.words or []):
             words.append({"w": w.word.strip(), "s": round(w.start, 3), "e": round(w.end, 3), "p": round(w.probability, 3)})
-    words = merge_tokens(words)
+    words = apply_glossary(merge_tokens(words), glossary)
     data = {"media": args.media, "duration": media_duration(args.media), "language": info.language,
             "model": args.model, "segments": segs, "words": words}
     json.dump(data, open(args.out, "w"), ensure_ascii=False, indent=1)

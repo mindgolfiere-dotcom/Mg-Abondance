@@ -343,6 +343,9 @@ window.MG = (function () {
       stroke(g, "M0 0 L-8 -8 L-30 -56 L-18 -62 L4 -14 Z M-30 -56 L-18 -62 L-24 -74 Z", { seed: s, width: 3, passes: 1, step: 5 });
       stroke(g, "M-6 -18 L-28 -62", { seed: s + 1, width: 2, passes: 1, cls: "soft" });
     },
+    chalk(g, s) {
+      stroke(g, "M0 0 L-6 -4 L-22 -52 C-24 -58 -14 -62 -12 -56 L4 -8 Z", { seed: s, width: 3, passes: 1, step: 5, fill: "var(--ink)", fillOpacity: 0.9 });
+    },
     eraser(g, s) { stroke(g, "M-40 -14 L30 -14 L40 14 L-30 14 Z M-30 14 L-40 -14 M0 -14 L10 14", { seed: s, width: 4, step: 6, fill: "var(--paper-fill)", fillOpacity: 1 }); },
     igComment(g, s, o) {
       const w = (o && o.w) || 520;

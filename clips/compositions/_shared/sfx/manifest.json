@@ -1,15 +1,62 @@
-{"source": "Epidemic Sound (abonnement MG)", "note": "fichiers non versionnés; re-téléchargeables par id via le connecteur Epidemic Sound",
+{
+ "source": "Epidemic Sound (abonnement MG)",
+ "note": "fichiers non versionnés; re-téléchargeables par id via le connecteur Epidemic Sound",
  "files": {
-  "pencil-long": {"id": "43f24449-566b-4656-98e9-e451ad7f07ea", "title": "Objects, Writing, Pencil, Write, Draw, Sketch, Paper"},
-  "pencil-short": {"id": "c78ab3d1-0b3b-46f7-b711-338f15244400", "title": "Objects, Writing, Write With Pencil, Paper"},
-  "chalk-long": {"id": "7bc663a7-d396-45c3-a5a4-8d3a30b54218", "title": "Objects, Writing, Chalk, Writing On Blackboard 02"},
-  "chalk-line": {"id": "50c8c840-3ba4-4b35-90cd-10879792e01f", "title": "Objects, Writing, Chalk, Draw Line On Blackboard"},
-  "pop": {"id": "5c5c3085-0e0b-4c29-bba3-c8779dc6daa9", "title": "Cartoon, Pop, Small Lid"},
-  "kaching": {"id": "6caad476-d3e4-44ad-afa1-1e9187c46bd0", "title": "Cash Register, Kaching, Money"},
-  "whoosh": {"id": "c406a00b-d4b3-42e9-ba76-707ba5174543", "title": "Swooshes, Whoosh, Designed, Generic, Air"},
-  "magic": {"id": "05d5b9a5-32d2-418b-a357-373101a03a4b", "title": "Magic, Shimmer, Spell, Cast, Twinkle, Glimmer 09"},
-  "ding": {"id": "998fe887-42ea-4d38-9fd2-f430d8475bb1", "title": "User Interface, Click, UI Buttons, Confirm, Menu"},
-  "eraser": {"id": "50ce65d9-5305-497f-90b5-77439a5dabd0", "title": "Objects, Writing, Eraser, Rubbing On Paper"},
-  "typing": {"id": "c7ac1cb5-8e80-4fdc-bcab-23626f61340a", "title": "Computers, Keyboard, Apple, Typing"},
-  "genie": {"id": "37879a77-c5ef-4aa6-9cae-89d0afff9a39", "title": "Magic, Shimmer, Magical Oil Lamp, Genie In A Bottle"}
- }}
+  "pencil-long": {
+   "id": "43f24449-566b-4656-98e9-e451ad7f07ea",
+   "title": "Objects, Writing, Pencil, Write, Draw, Sketch, Paper"
+  },
+  "pencil-short": {
+   "id": "c78ab3d1-0b3b-46f7-b711-338f15244400",
+   "title": "Objects, Writing, Write With Pencil, Paper"
+  },
+  "chalk-long": {
+   "id": "7bc663a7-d396-45c3-a5a4-8d3a30b54218",
+   "title": "Objects, Writing, Chalk, Writing On Blackboard 02"
+  },
+  "chalk-line": {
+   "id": "50c8c840-3ba4-4b35-90cd-10879792e01f",
+   "title": "Objects, Writing, Chalk, Draw Line On Blackboard"
+  },
+  "pop": {
+   "id": "5c5c3085-0e0b-4c29-bba3-c8779dc6daa9",
+   "title": "Cartoon, Pop, Small Lid"
+  },
+  "kaching": {
+   "id": "6caad476-d3e4-44ad-afa1-1e9187c46bd0",
+   "title": "Cash Register, Kaching, Money"
+  },
+  "whoosh": {
+   "id": "c406a00b-d4b3-42e9-ba76-707ba5174543",
+   "title": "Swooshes, Whoosh, Designed, Generic, Air"
+  },
+  "magic": {
+   "id": "05d5b9a5-32d2-418b-a357-373101a03a4b",
+   "title": "Magic, Shimmer, Spell, Cast, Twinkle, Glimmer 09"
+  },
+  "ding": {
+   "id": "998fe887-42ea-4d38-9fd2-f430d8475bb1",
+   "title": "User Interface, Click, UI Buttons, Confirm, Menu"
+  },
+  "eraser": {
+   "id": "50ce65d9-5305-497f-90b5-77439a5dabd0",
+   "title": "Objects, Writing, Eraser, Rubbing On Paper"
+  },
+  "typing": {
+   "id": "c7ac1cb5-8e80-4fdc-bcab-23626f61340a",
+   "title": "Computers, Keyboard, Apple, Typing"
+  },
+  "genie": {
+   "id": "37879a77-c5ef-4aa6-9cae-89d0afff9a39",
+   "title": "Magic, Shimmer, Magical Oil Lamp, Genie In A Bottle"
+  },
+  "vibrate": {
+   "id": "03f231ee-fe76-4c33-9b4a-2a3f50ee2f67",
+   "title": "Communications, Cellphone, Samsung A25 Mobile Cell Phone Vibration"
+  },
+  "whistle": {
+   "id": "c4317a8e-675d-4ee9-adeb-074129e170af",
+   "title": "Cartoon, Whistle, Slip, Trip, Up"
+  }
+ }
+}

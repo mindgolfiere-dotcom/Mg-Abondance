@@ -179,6 +179,8 @@ def main():
     srnd = random.Random(7)
     k = 0
     for sc in scenes:
+        if sc.get("exit") == "erase" and sc["out"] < total - 0.3:
+            sc["actions"] = sc["actions"] + [{"t": round(sc["out"], 3), "do": "sfx-only", "sfx": "erase", "draw": sc.get("exitDur") or 0.55, "gain": 0.5}]
         for act in sc["actions"]:
             name = act.get("sfx")
             if not name:
