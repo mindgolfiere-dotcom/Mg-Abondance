@@ -1,0 +1,598 @@
+{
+ "variant": "paper",
+ "cta": {
+  "at": "S7a:Tout",
+  "keyword": "ABONDANCE",
+  "auto": true,
+  "line1": "Commente",
+  "line2": "je t'envoie l'accès en DM",
+  "extra": [
+   {
+    "t": "S7b:MG",
+    "do": "image",
+    "src": "skool_cards.jpg",
+    "id": "skool",
+    "x": 400,
+    "y": 318,
+    "w": 640,
+    "rot": -2,
+    "pop": 0.4,
+    "sfx": "pop"
+   },
+   {
+    "t": "S7b:MG+0.3",
+    "do": "text",
+    "text": "MG Academy",
+    "x": 285,
+    "y": 790,
+    "size": 54,
+    "anchor": "middle",
+    "weight": 700,
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S7c:1500",
+    "do": "image",
+    "src": "vic_Remy_Gr.jpg",
+    "x": 470,
+    "y": 745,
+    "w": 500,
+    "rot": 1.5,
+    "pop": 0.35,
+    "sfx": "pop"
+   },
+   {
+    "t": "S7c:tous",
+    "do": "image",
+    "src": "vic_Helene_L.jpg",
+    "x": 500,
+    "y": 775,
+    "w": 500,
+    "rot": -1.2,
+    "pop": 0.35,
+    "sfx": "pop"
+   },
+   {
+    "t": "S7c:manifeste",
+    "do": "image",
+    "src": "vic_Aurelie_S.jpg",
+    "x": 530,
+    "y": 805,
+    "w": 500,
+    "rot": 2,
+    "pop": 0.35,
+    "sfx": "pop"
+   },
+   {
+    "t": "S7d:gratuite",
+    "do": "text",
+    "text": "1re semaine",
+    "x": 285,
+    "y": 852,
+    "size": 40,
+    "anchor": "middle",
+    "weight": 700,
+    "cls": "accent",
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S7d:gratuite+0.35",
+    "do": "text",
+    "text": "GRATUITE",
+    "x": 285,
+    "y": 904,
+    "size": 46,
+    "anchor": "middle",
+    "weight": 700,
+    "cls": "accent",
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S7e:bullshit",
+    "do": "text",
+    "text": "0 bullshit",
+    "x": 930,
+    "y": 345,
+    "size": 40,
+    "anchor": "middle",
+    "weight": 700,
+    "rot": 12,
+    "cls": "accent",
+    "sfx": "stroke-short"
+   },
+   {
+    "t": "S7e:bullshit+0.1",
+    "do": "wiggle",
+    "target": "skool",
+    "deg": 2,
+    "dur": 0.5
+   }
+  ]
+ },
+ "scenes": [
+  {
+   "id": "sc1",
+   "in": "S1:@",
+   "out": "S2:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S1:Fermer",
+     "do": "stickman",
+     "pose": "think",
+     "x": 260,
+     "y": 1470,
+     "scale": 1.25,
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S1:fort",
+     "do": "prop",
+     "name": "thought",
+     "id": "th",
+     "x": 560,
+     "y": 1190,
+     "w": 270,
+     "h": 120,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S1:fort+0.25",
+     "do": "prop",
+     "name": "money",
+     "id": "bag",
+     "x": 560,
+     "y": 1195,
+     "scale": 0.9,
+     "pop": 0.3,
+     "sfx": "kaching"
+    },
+    {
+     "t": "S1:ouvrir",
+     "do": "prop",
+     "name": "eye",
+     "x": 150,
+     "y": 1180,
+     "scale": 0.8,
+     "draw": 0.4,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S1:truc",
+     "do": "prop",
+     "name": "arrow",
+     "x": 640,
+     "y": 1290,
+     "dx": 120,
+     "dy": 140,
+     "curve": -30,
+     "draw": 0.3,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S1:possible",
+     "do": "prop",
+     "name": "cross",
+     "x": 560,
+     "y": 1190,
+     "scale": 1.5,
+     "draw": 0.25,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S1:lampe",
+     "do": "prop",
+     "name": "lamp",
+     "id": "lamp",
+     "x": 790,
+     "y": 1430,
+     "scale": 1.3,
+     "draw": 0.7,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S1:Aladdin",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 850,
+     "y": 1310,
+     "scale": 1.1,
+     "pop": 0.25,
+     "sfx": "genie"
+    },
+    {
+     "t": "S1:Aladdin+0.15",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 720,
+     "y": 1350,
+     "scale": 0.8,
+     "pop": 0.25
+    },
+    {
+     "t": "S1:Aladdin+0.3",
+     "do": "wiggle",
+     "target": "lamp",
+     "dur": 0.5,
+     "deg": 6
+    },
+    {
+     "t": "S1:Disney",
+     "do": "text",
+     "text": "(c'est un dessin animé)",
+     "x": 780,
+     "y": 1500,
+     "size": 30,
+     "anchor": "middle",
+     "rot": -3,
+     "cls": "soft",
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc2",
+   "in": "S2:@",
+   "out": "S4:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S2:accélérer",
+     "do": "prop",
+     "name": "clock",
+     "id": "clock",
+     "x": 260,
+     "y": 1210,
+     "scale": 1.2,
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2:6",
+     "do": "text",
+     "text": "6 mois",
+     "x": 260,
+     "y": 1340,
+     "size": 44,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:prennent",
+     "do": "path",
+     "d": "M190 1325 L330 1350",
+     "width": 5,
+     "cls": "accent-red",
+     "draw": 0.2,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:24",
+     "do": "prop",
+     "name": "arrow",
+     "x": 380,
+     "y": 1230,
+     "dx": 180,
+     "dy": 0,
+     "curve": -25,
+     "draw": 0.3,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S2:24+0.3",
+     "do": "text",
+     "text": "24 h",
+     "x": 700,
+     "y": 1210,
+     "size": 64,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:semaines",
+     "do": "text",
+     "text": "à quelques semaines",
+     "x": 700,
+     "y": 1300,
+     "size": 36,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S2:exacte",
+     "do": "stickman",
+     "pose": "shrug",
+     "x": 820,
+     "y": 1480,
+     "scale": 1.0,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S2:fonctionne",
+     "do": "prop",
+     "name": "check",
+     "x": 560,
+     "y": 1430,
+     "scale": 1.4,
+     "draw": 0.3,
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc4a",
+   "in": "S4:@",
+   "out": "S4:chaque",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S4:10",
+     "do": "prop",
+     "name": "money",
+     "x": 250,
+     "y": 1200,
+     "scale": 1.2,
+     "pop": 0.3,
+     "sfx": "kaching"
+    },
+    {
+     "t": "S4:10+0.3",
+     "do": "text",
+     "text": "10 000 €",
+     "x": 250,
+     "y": 1320,
+     "size": 40,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:semaines",
+     "do": "prop",
+     "name": "calendar",
+     "x": 540,
+     "y": 1210,
+     "scale": 1.2,
+     "label": "3 sem.",
+     "draw": 0.6,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S4:visualisation",
+     "do": "prop",
+     "name": "eye",
+     "x": 810,
+     "y": 1170,
+     "scale": 0.9,
+     "draw": 0.4,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:émotion",
+     "do": "prop",
+     "name": "heart",
+     "x": 810,
+     "y": 1300,
+     "scale": 0.9,
+     "pop": 0.3,
+     "sfx": "pop"
+    },
+    {
+     "t": "S4:émotion+0.3",
+     "do": "text",
+     "text": "chaque jour",
+     "x": 540,
+     "y": 1470,
+     "size": 40,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc4b",
+   "in": "S4:chaque",
+   "out": "S6a:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S4:matin",
+     "do": "stickman",
+     "pose": "scroll",
+     "x": 260,
+     "y": 1470,
+     "scale": 1.2,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S4:matin+0.3",
+     "do": "prop",
+     "name": "phone",
+     "x": 330,
+     "y": 1380,
+     "scale": 0.8,
+     "pop": 0.25,
+     "sfx": "pop"
+    },
+    {
+     "t": "S4:rien",
+     "do": "text",
+     "text": "toujours rien...",
+     "id": "rien",
+     "x": 690,
+     "y": 1220,
+     "size": 46,
+     "anchor": "middle",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:compte",
+     "do": "prop",
+     "name": "box",
+     "x": 690,
+     "y": 1320,
+     "w": 260,
+     "h": 70,
+     "label": "0 €",
+     "size": 36,
+     "draw": 0.4,
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:rien#2",
+     "do": "shake",
+     "target": "rien",
+     "px": 6
+    },
+    {
+     "t": "S4:énergie",
+     "do": "prop",
+     "name": "arrow",
+     "x": 390,
+     "y": 1250,
+     "dx": 0,
+     "dy": -110,
+     "curve": 40,
+     "draw": 0.3,
+     "sfx": "whoosh"
+    },
+    {
+     "t": "S4:dimension",
+     "do": "prop",
+     "name": "box",
+     "x": 390,
+     "y": 1090,
+     "w": 120,
+     "h": 70,
+     "label": "4D",
+     "size": 36,
+     "pop": 0.25,
+     "sfx": "pop"
+    },
+    {
+     "t": "S4:avoir",
+     "do": "text",
+     "text": "avoir",
+     "x": 860,
+     "y": 1440,
+     "size": 44,
+     "anchor": "middle",
+     "cls": "soft",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S4:pas",
+     "do": "text",
+     "text": "PAS avoir",
+     "x": 700,
+     "y": 1460,
+     "size": 60,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent-red",
+     "write": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S4:avoir#2+0.3",
+     "do": "prop",
+     "name": "cross",
+     "x": 860,
+     "y": 1430,
+     "scale": 0.7,
+     "draw": 0.2,
+     "sfx": "stroke-short"
+    }
+   ]
+  },
+  {
+   "id": "sc6",
+   "in": "S6a:@",
+   "out": "S7a:@",
+   "exit": "erase",
+   "actions": [
+    {
+     "t": "S6a:15",
+     "do": "prop",
+     "name": "clock",
+     "x": 230,
+     "y": 1200,
+     "scale": 1.1,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S6a:secondes",
+     "do": "text",
+     "text": "15-20 s",
+     "x": 230,
+     "y": 1320,
+     "size": 44,
+     "anchor": "middle",
+     "cls": "accent",
+     "sfx": "stroke-short"
+    },
+    {
+     "t": "S6a:intention",
+     "do": "prop",
+     "name": "bulb",
+     "x": 230,
+     "y": 1450,
+     "scale": 1.0,
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S6b:seule",
+     "do": "prop",
+     "name": "bubble",
+     "id": "qb",
+     "x": 640,
+     "y": 1290,
+     "w": 470,
+     "h": 220,
+     "pop": 0.35,
+     "sfx": "pop"
+    },
+    {
+     "t": "S6b:question",
+     "do": "text",
+     "text": "Qu'est-ce que je pourrais",
+     "x": 640,
+     "y": 1255,
+     "size": 36,
+     "anchor": "middle",
+     "weight": 700,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S6c:remarquer",
+     "do": "text",
+     "text": "remarquer aujourd'hui ?",
+     "x": 640,
+     "y": 1310,
+     "size": 36,
+     "anchor": "middle",
+     "weight": 700,
+     "cls": "accent",
+     "sfx": "stroke"
+    },
+    {
+     "t": "S6c:jours",
+     "do": "prop",
+     "name": "sparkle",
+     "x": 840,
+     "y": 1160,
+     "scale": 1.0,
+     "pop": 0.25,
+     "sfx": "magic"
+    }
+   ]
+  }
+ ]
+}

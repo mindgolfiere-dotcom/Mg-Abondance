@@ -22,3 +22,19 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# clips pipeline: media, renders, caches
+clips/compositions/_shared/sfx/*.wav
+clips/compositions/_shared/sfx/_orig/
+clips/compositions/_demo*/
+clips/compositions/*/assets/face.mp4
+clips/compositions/*/assets/sfx/
+clips/compositions/*/work/*.mp4
+clips/compositions/*/work/*.mov
+clips/compositions/*/work/seg/
+clips/compositions/*/out/
+clips/compositions/*/.hyperframes/
+clips/compositions/*/node_modules/
+clips/qc/*.png
+__pycache__/
+clips/compositions/*/work/*.png

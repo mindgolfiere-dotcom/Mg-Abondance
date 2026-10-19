@@ -1,0 +1,27 @@
+{
+ "prompt": "Zak, MG Academy, MG Méditation, MG Abondance, Tonik, Skool, manifestation, subconscient, 4D, 3D, Neville Goddard, Joe Dispenza, 10 000 € par mois, synchronicité, pont des incidences.",
+ "replace": {
+  "tonique": "Tonik",
+  "toniques": "Tonik",
+  "tonic": "Tonik",
+  "zac": "Zak",
+  "zack": "Zak",
+  "godard": "Goddard",
+  "amg": "MG",
+  "school": "Skool",
+  "4d": "4D",
+  "3d": "3D",
+  "cad": "4D",
+  "ce d": "4D",
+  "l'amg": "la MG",
+  "l'mg": "la MG",
+  "mj": "MG"
+ },
+ "phrases": {
+  "AMG Academy": "MG Academy",
+  "MG Académie": "MG Academy",
+  "la 4e dimension": "la 4e dimension",
+  "Neville Godard": "Neville Goddard",
+  "ville Godard": "Neville Goddard"
+ }
+}
