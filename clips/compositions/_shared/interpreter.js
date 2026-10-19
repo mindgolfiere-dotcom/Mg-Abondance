@@ -29,6 +29,8 @@ window.MGBuild = function build() {
           node = MG.stickman(g, { x: a.x, y: a.y, scale: a.scale || 1, pose: a.pose || "stand", seed: a.seed || (k * 13 + 5) });
         } else if (a.do === "text") {
           node = MG.text(g, a.text, { x: a.x, y: a.y, size: a.size || 44, anchor: a.anchor, rot: a.rot || 0, cls: a.cls, weight: a.weight, font: a.font, w: a.w });
+        } else if (a.do === "image") {
+          node = MG.image(g, a.href, { x: a.x, y: a.y, w: a.w, h: a.h, rot: a.rot || 0, seed: a.seed || (k * 11 + 7), pad: a.pad, tape: a.tape, tapeRot: a.tapeRot, cls: a.cls });
         } else if (a.do === "path") {
           node = MG.stroke(g, a.d, { seed: a.seed || (k * 5 + 1), width: a.width || 4, cls: a.cls, fill: a.fill, step: a.step });
           if (a.x || a.y || a.scale) node.setAttribute("transform", `translate(${a.x || 0},${a.y || 0}) scale(${a.scale || 1})`);

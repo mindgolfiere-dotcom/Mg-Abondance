@@ -14,7 +14,7 @@ Usage:
   so the framing is stable across cuts. Punch-ins are done in the composition, not here.
 Writes <out>.json next to the output: crop, fps, duration, expected frame count.
 """
-import argparse, json, os, subprocess, sys
+import argparse, re, json, os, subprocess, sys
 from fractions import Fraction
 
 
@@ -80,6 +80,36 @@ def detect_face_crop(src, info, cutlist, out_w, out_h, zoom, headroom, debug_png
     return crop, {"face_centre": [cx, cy], "face_height": fh, "detections": len(centers)}
 
 
+def measure_loudness(path):
+    """Integrated loudness (LUFS) and true peak (dBTP) via ebur128."""
+    out = subprocess.run(["ffmpeg", "-v", "info", "-i", path, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    tail = out[out.rfind("Summary:"):]
+    I = re.search(r"I:\s*(-?[0-9.]+) LUFS", tail)
+    P = re.search(r"Peak:\s*(-?[0-9.]+) dBFS", tail)
+    return (float(I.group(1)) if I else None, float(P.group(1)) if P else None)
+
+
+def normalize_loudness(path, target):
+    """Bring the speech to the target integrated loudness with a plain gain (dynamics untouched), then a
+    true-peak limiter at -1 dBTP. Audio-only re-encode: the video stream is copied, frames stay identical."""
+    I, P = measure_loudness(path)
+    if I is None:
+        print("loudness: measurement failed, left as is")
+        return
+    gain = target - I
+    if abs(gain) < 0.3:
+        print(f"loudness: {I:.1f} LUFS (peak {P:.1f} dBTP), within 0.3 dB of {target:.1f}, left as is")
+        return
+    tmp = os.path.splitext(path)[0] + "_norm.mp4"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", path, "-c:v", "copy",
+                    "-af", f"volume={gain:.2f}dB,alimiter=limit=0.891:attack=5:release=60:level=false",
+                    "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, path)
+    I2, P2 = measure_loudness(path)
+    print(f"loudness: {I:.1f} LUFS -> {I2:.1f} LUFS (gain {gain:+.1f} dB, peak {P2:.1f} dBTP)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default=None, help="master (only needed when the cut list has no per-clip files)")
@@ -91,6 +121,7 @@ def main():
     ap.add_argument("--headroom", type=float, default=0.42, help="face centre position as a fraction of crop height")
     ap.add_argument("--crf", type=int, default=16)
     ap.add_argument("--preview", action="store_true")
+    ap.add_argument("--lufs", type=float, default=-16.0, help="integrated loudness target for the speech (0 = leave as is); linear gain + true-peak limiter at -1 dBTP")
     args = ap.parse_args()
 
     cl = json.load(open(args.cutlist))
@@ -138,6 +169,8 @@ def main():
             "-movflags", "+faststart", args.out]
     print(f"{n} sub-clips, {total_frames} frames expected ({total_frames / float(fps):.2f}s)")
     subprocess.run(cmd, check=True)
+    if args.lufs:
+        normalize_loudness(args.out, args.lufs)
     got = probe(args.out)
     nb = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-count_frames", "-show_entries",
                          "stream=nb_read_frames", "-of", "default=nw=1:nk=1", args.out], capture_output=True, text=True).stdout.strip()

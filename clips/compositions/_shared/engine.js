@@ -365,6 +365,25 @@ window.MG = (function () {
     (PROPS[name] || PROPS.box)(g, o.seed || 3, o);
     return outer;
   }
+
+  // A pinned photo: shadow, white paper backing, the picture, a sketched frame and a bit of tape on top.
+  function image(parent, href, o) {
+    o = o || {};
+    const outer = el("g", { class: "img" + (o.cls ? " " + o.cls : ""), transform: `translate(${o.x || 0},${o.y || 0})` }, parent);
+    const g = el("g", { class: "inner", transform: `rotate(${o.rot || 0})` }, outer);
+    outer._inner = g;
+    const w = o.w || 400, h = o.h || 300, pad = o.pad == null ? 10 : o.pad;
+    el("rect", { x: -pad + 7, y: -pad + 9, width: w + 2 * pad, height: h + 2 * pad, fill: "#000", opacity: 0.28, rx: 2, class: "shadow" }, g);
+    el("rect", { x: -pad, y: -pad, width: w + 2 * pad, height: h + 2 * pad, fill: "#fdfcf8", rx: 2, class: "paper" }, g);
+    el("image", { href, x: 0, y: 0, width: w, height: h, preserveAspectRatio: "none" }, g);
+    stroke(g, `M${-pad} ${-pad} L${w + pad} ${-pad} L${w + pad} ${h + pad} L${-pad} ${h + pad} Z`, { seed: o.seed || 5, width: o.width || 3, step: 9, amp: 0.8, passes: 1 });
+    if (o.tape !== false) {
+      const tw = Math.min(90, w * 0.25), th = 28;
+      el("rect", { x: w / 2 - tw / 2, y: -pad - th / 2, width: tw, height: th, fill: "#f3d76a", opacity: 0.8, class: "tape",
+                   transform: `rotate(${o.tapeRot == null ? -5 : o.tapeRot} ${w / 2} ${-pad})` }, g);
+    }
+    return outer;
+  }
   function scene(parent, id) { const g = el("g", { class: "scene", id }, parent); return g; }
   // Captions: words appear one by one inside their group; current word highlighted.
   function captions(tl, groups, accent) {
@@ -383,5 +402,6 @@ window.MG = (function () {
       });
     });
   }
-  return { rng, el, stroke, text, draw, write, pop, fade, wiggle, shake, erase, stickman, prop, scene, captions, setPencil, POSES, PROPS, pencilShow, inner };
+  return { rng, el, stroke, text, draw, write, pop, fade, wiggle, shake, erase, stickman, prop, scene, captions, setPencil, POSES, PROPS, pencilShow, inner, image,
+  };
 })();

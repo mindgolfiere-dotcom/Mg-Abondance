@@ -13,7 +13,8 @@
    "start": "le subconscient est vraiment magique",
    "end": "entre la scène que tu as imaginée et la réalité",
    "drops": [
-    "parce qu'il ne va pas faire la différence"
+    "parce qu'il ne va pas faire la différence",
+    "mais"
    ],
    "expected": "le subconscient est vraiment magique. J'adore ce mec, il est fabuleux. Mais il est un peu con quand même parce qu'il ne va pas faire la différence. Il ne fera absolument pas la différence entre la scène que tu as imaginée et la réalité"
   },

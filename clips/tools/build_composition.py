@@ -92,6 +92,31 @@ def audio_duration(path):
     return float(out.stdout.strip() or 0)
 
 
+
+def prepare_images(scenes, assets, proj):
+    """Copy every image action's source into assets/img and set href (+ height from the file's aspect)."""
+    try:
+        from PIL import Image
+    except ImportError:  # pragma: no cover
+        Image = None
+    os.makedirs(os.path.join(assets, "img"), exist_ok=True)
+    for sc in scenes:
+        for act in sc["actions"]:
+            if act.get("do") != "image":
+                continue
+            src = act["src"]
+            cands = [src, os.path.join(SHARED, "img", src), os.path.join(proj, src)]
+            path = next((c for c in cands if os.path.exists(c)), None)
+            if not path:
+                raise SystemExit(f"image not found: {src!r}")
+            base = os.path.basename(path)
+            shutil.copy(path, os.path.join(assets, "img", base))
+            act["href"] = f"assets/img/{base}"
+            if Image is not None and not act.get("h"):
+                iw, ih = Image.open(path).size
+                act["h"] = round(act.get("w", 400) * ih / iw)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--project", required=True)
@@ -221,6 +246,7 @@ def main():
         for i, g in enumerate(caps, 1):
             f.write(f"{i}\n{srt_time(g['start'])} --> {srt_time(g['end'])}\n{' '.join(w['w'] for w in g['words'])}\n\n")
 
+    prepare_images(scenes, assets, proj)
     plan = {"variant": variant, "scenes": scenes, "cta": cta, "punches": punches, "captions": caps, "duration": total}
     json.dump(plan, open(os.path.join(proj, "plan.json"), "w"), ensure_ascii=False, indent=1)
 
