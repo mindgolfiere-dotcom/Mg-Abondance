@@ -1,0 +1,126 @@
+{
+ "fps": 30,
+ "max_silence": 0.25,
+ "keep_silence": 0.18,
+ "pad_in": 0.08,
+ "pad_out": 0.12,
+ "source": "Shade · Rush 8.mp4 (asset f30a0179-63bf-46ce-8ffb-c9b47e750e24), rush de « Manifestation Rapide : Possible en 24h ? »",
+ "segments": [
+  {
+   "id": "S1",
+   "role": "hook",
+   "start": "fermer les yeux et visualiser très très fort",
+   "end": "c'est dans Aladdin et c'est un Disney",
+   "expected": "fermer les yeux et visualiser très très fort les ouvrir et voir ton truc se réaliser juste là devant toi, c'est juste pas possible. En fait si, ça existe, ça s'appelle le génie de la lampe, c'est dans Aladdin et c'est un Disney"
+  },
+  {
+   "id": "S2",
+   "role": "dev",
+   "start": "Il est cependant possible d'accélérer",
+   "end": "mais ça fonctionne",
+   "expected": "Il est cependant possible d'accélérer le processus de manifestation pour ce qui devait prendre six mois prennent entre 24 heures et quelques semaines. Je sais, ce n'est pas une science exacte, mais ça fonctionne",
+   "drops": [
+    "Je sais,"
+   ]
+  },
+  {
+   "id": "S3",
+   "role": "dev",
+   "start": "L'accélérateur énergétique qui va faire en sorte",
+   "end": "tridimensionnelle, c'est ton attention",
+   "expected": "L'accélérateur énergétique qui va faire en sorte de transformer ton désir 4D en une réalité tridimensionnelle, c'est ton attention"
+  },
+  {
+   "id": "S4",
+   "role": "dev",
+   "start": "si toi tu veux dix mille euros",
+   "end": "C'est le fait de ne pas les avoir",
+   "drops": [
+    "etc. et que durant ta pratique, chaque matin, donc t'es là sur ta ligne du temps,",
+    "Ah ben tiens, tu regardes",
+    "Tu regardes tes ventes et y'a toujours rien. Et puis là tu te demandes, pourquoi ça marche pas? En disant et en pensant tout ça,",
+    "par mois ou 10.000 euros tout court",
+    "désormais"
+   ],
+   "expected": "si toi tu veux dix mille euros et que pendant trois semaines tu pratiques visualisation, émotions, etc. et que durant ta pratique, chaque matin, donc t'es là sur ta ligne du temps, et chaque matin, tu te dis, ah ben tiens, y'a toujours rien. Ah ben tiens, tu regardes ton compte en banque et y'a toujours rien. Tu regardes tes ventes et y'a toujours rien. Et puis là tu te demandes, pourquoi ça marche pas? En disant et en pensant tout ça, l'énergie principale que tu communiques à ta quatrième dimension désormais n'est plus le fait d'avoir déjà tes 10.000 euros par mois ou 10.000 euros tout court. C'est le fait de ne pas les avoir"
+  },
+  {
+   "id": "S5",
+   "role": "dev",
+   "start": "Et la version entre les deux qui gagnera",
+   "end": "consacré le plus d'attention",
+   "expected": "Et la version entre les deux qui gagnera, qui se matérialisera dans la troisième dimension sera la version à laquelle tu auras consacré le plus d'attention",
+   "drops": [
+    "entre les deux"
+   ]
+  },
+  {
+   "id": "S6a",
+   "role": "dev",
+   "start": "tu vas prendre 15 à 20 secondes",
+   "end": "Pour mettre une intention dans ta journée",
+   "drops": [
+    "d'accord?"
+   ],
+   "expected": "tu vas prendre 15 à 20 secondes, pas plus, d'accord? Pour mettre une intention dans ta journée"
+  },
+  {
+   "id": "S6b",
+   "role": "dev",
+   "start": "Et là, tu vas te poser une seule question",
+   "end": "tu vas te poser une seule question",
+   "expected": "Et là, tu vas te poser une seule question"
+  },
+  {
+   "id": "S6c",
+   "role": "dev",
+   "start": "Si ma réalité était déjà en train de s'organiser dans cette direction",
+   "end": "que je ne remarquerai pas les autres jours",
+   "expected": "Si ma réalité était déjà en train de s'organiser dans cette direction, dans la direction de mon objectif, Qu'est-ce que je pourrais remarquer aujourd'hui que je ne remarquerai pas les autres jours",
+   "drops": [
+    "dans cette direction,"
+   ]
+  },
+  {
+   "id": "S7a",
+   "role": "cta",
+   "start": "Tout ça, là, tout ce que je viens de te dire",
+   "end": "de manière beaucoup plus approfondie",
+   "expected": "Tout ça, là, tout ce que je viens de te dire, je l'enseigne de manière beaucoup plus approfondie",
+   "drops": [
+    "Tout ça, là,"
+   ]
+  },
+  {
+   "id": "S7b",
+   "role": "cta",
+   "start": "Ça s'appelle MG Academy",
+   "end": "Ça s'appelle MG Academy",
+   "expected": "Ça s'appelle MG Academy"
+  },
+  {
+   "id": "S7c",
+   "role": "cta",
+   "start": "On a plus de 1500 élèves",
+   "end": "il y a un truc qui se manifeste",
+   "drops": [
+    "1500 membres"
+   ],
+   "expected": "On a plus de 1500 élèves, 1500 membres qui sont actuellement en pleine manifestation, et tous les jours il y a un truc qui se manifeste"
+  },
+  {
+   "id": "S7d",
+   "role": "cta",
+   "start": "Si tu veux nous rejoindre, la première semaine est gratuite",
+   "end": "tu viens, tu regardes tout",
+   "expected": "Si tu veux nous rejoindre, la première semaine est gratuite. Tu payes rien, tu viens, tu regardes tout"
+  },
+  {
+   "id": "S7e",
+   "role": "cta",
+   "start": "Et je t'enseigne aucun bullshit",
+   "end": "Et je t'enseigne aucun bullshit",
+   "expected": "Et je t'enseigne aucun bullshit"
+  }
+ ]
+}

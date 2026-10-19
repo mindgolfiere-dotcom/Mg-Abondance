@@ -1,0 +1,99 @@
+{
+ "fps": 30,
+ "max_silence": 0.25,
+ "keep_silence": 0.18,
+ "pad_in": 0.08,
+ "pad_out": 0.12,
+ "source": "Shade · 2026-09-25 09-51-23.mp4 (asset 0e0d6a23-f17c-4adf-8d1a-a1dab3b6ee8c), rush de « Comment fonctionne VRAIMENT la manifestation »",
+ "segments": [
+  {
+   "id": "S1",
+   "role": "hook",
+   "rewind": true,
+   "start": "le subconscient est vraiment magique",
+   "end": "entre la scène que tu as imaginée et la réalité",
+   "drops": [
+    "parce qu'il ne va pas faire la différence"
+   ],
+   "expected": "le subconscient est vraiment magique. J'adore ce mec, il est fabuleux. Mais il est un peu con quand même parce qu'il ne va pas faire la différence. Il ne fera absolument pas la différence entre la scène que tu as imaginée et la réalité"
+  },
+  {
+   "id": "S2a",
+   "role": "dev",
+   "start": "si je te demande de te souvenir de ce que tu as mangé",
+   "end": "Si ce même 20 septembre 2014, en mangeant",
+   "drops": [
+    "On est d'accord, tu n'en sais rien",
+    "on est d'accord. On est absolument certain que tu as mangé quelque chose",
+    "Et donc, aux oubliettes",
+    "Pourtant, tu as mangé quelque chose ce jour-là,"
+   ],
+   "expected": "si je te demande de te souvenir de ce que tu as mangé le 20 septembre 2014, mais tu n'en sais rien. On est d'accord, tu n'en sais rien. Pourtant, tu as mangé quelque chose ce jour-là, on est d'accord. On est absolument certain que tu as mangé quelque chose. Pourquoi tu ne te rappelles pas de ce souvenir? Parce qu'il ne te procurait pas une émotion particulière. Et donc, aux oubliettes. Par contre, Si ce même 20 septembre 2014, en mangeant"
+  },
+  {
+   "id": "S2b",
+   "role": "dev",
+   "start": "tu avais reçu un appel téléphonique qui t'annonçait",
+   "end": "pour le cerveau égale souvenir",
+   "drops": [
+    "Parce que forte charge émotionnelle, donc"
+   ],
+   "expected": "tu avais reçu un appel téléphonique qui t'annonçait une très très bonne nouvelle ou une très très mauvaise nouvelle, crois-moi que tu te rappellerais de ce que tu mangeais ce jour-là. Parce que forte charge émotionnelle, donc image plus émotion pour le cerveau égale souvenir"
+  },
+  {
+   "id": "S3",
+   "role": "dev",
+   "start": "Une visualisation sans émotion",
+   "end": "là, ça change tout",
+   "expected": "Une visualisation sans émotion, c'est juste une imagination fantaisiste. Mais quand tu mets de l'émotion, là, ça change tout"
+  },
+  {
+   "id": "S4",
+   "role": "dev",
+   "start": "lui il va croire que c'est déjà là",
+   "end": "prétendument déjà obtenu",
+   "expected": "lui il va croire que c'est déjà là, c'est déjà acquis, tu as déjà tes 10 000 euros par mois. Et donc ce qu'il va faire, il va faire un truc assez génial, il va réorganiser ta journée en fonction du résultat que tu as prétendument déjà obtenu",
+   "drops": [
+    "ce qu'il va faire,"
+   ]
+  },
+  {
+   "id": "S5a",
+   "role": "dev",
+   "start": "Il n'est pas nécessaire de passer par le B",
+   "end": "de passer par le D ni par le E",
+   "expected": "Il n'est pas nécessaire de passer par le B parce qu'il a déjà 10 000 euros par mois. Il n'est pas nécessaire de passer par le D ni par le E"
+  },
+  {
+   "id": "S5b",
+   "role": "dev",
+   "start": "il va t'ouvrir les yeux sur les opportunités",
+   "end": "T'auras rien à faire",
+   "expected": "il va t'ouvrir les yeux sur les opportunités, sur les événements qui vont dans le sens de j'ai 10 000 euros par mois. Et ça va se faire automatiquement. T'auras rien à faire",
+   "drops": [
+    "sur les événements"
+   ]
+  },
+  {
+   "id": "S6a",
+   "role": "cta",
+   "start": "Dans l'AMG Academy, on ne fait que ça",
+   "end": "T'as des manifestations tous les jours",
+   "expected": "Dans l'AMG Academy, on ne fait que ça. T'as des manifestations tous les jours"
+  },
+  {
+   "id": "S6b",
+   "role": "cta",
+   "start": "Si tu veux tester la première semaine",
+   "end": "la première semaine et gratuite",
+   "expected": "Si tu veux tester la première semaine et gratuite"
+  },
+  {
+   "id": "S6c",
+   "role": "cta",
+   "start": "Elle est pas belle la vie quand même",
+   "end": "Elle est pas belle la vie quand même",
+   "expected": "Elle est pas belle la vie quand même"
+  }
+ ]
+}

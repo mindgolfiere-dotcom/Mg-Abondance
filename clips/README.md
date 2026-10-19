@@ -43,3 +43,19 @@ python3 -I clips/tools/qc.py all --cutlist work/cutlist.json --face work/face.mp
 - Safe zone Instagram : éléments critiques dans x 108-860 / y 270-1500 ; dégradés vers le noir masqués en douceur sur le bord droit et le bas ; l'outil de build avertit quand une action du storyboard sort de la zone.
 - Déterminisme du rendu : aucune valeur aléatoire non seedée ; chaque tremblement de trait vient d'un générateur seedé.
 - Aucune musique de fond ; effets sonores Epidemic Sound seulement, un par événement visuel.
+
+## Rushs Shade (sources réelles)
+
+Les rushs sont sur un partage public Shade (`https://app.shade.inc/publish/<share_id>/`). Deux outils :
+
+- `python3 -I clips/tools/shade_links.py <url du partage> [--filter "Rush 8" ...] [--all] [--out liens.md]` : liste les fichiers et imprime des liens de téléchargement **SOURCE** signés (valables 24 h), plus les commandes `curl -C -` pour les gros fichiers. Aucune clé n'est nécessaire, le partage est public.
+- `python3 -I clips/tools/shade_words.py <transcription Shade .json> <words.json> --media <url>` : convertit la transcription Shade (mots en ms, prises ratées incluses) au format `words.json` du pipeline. Elle sert à **localiser** les passages ; le minutage fin vient de la re-transcription Whisper de chaque mezzanine (`locate_segments.py --transcribe`).
+
+`locate_segments.py` accepte une URL signée comme `--src` (ffmpeg lit par requêtes de plage, rien n'est téléchargé en entier), `--fps 30` pour ramener un rush 60 fps à 30 fps, et `--takes` : quand un passage a été refait plusieurs fois, la prise retenue est celle dont le texte est le plus proche du champ `expected` du spec (égalité → la dernière prise).
+
+Rushs identifiés (transcriptions comparées) :
+
+| Vidéo YouTube | Rush Shade | Détails |
+|---|---|---|
+| Comment fonctionne VRAIMENT la manifestation (VD3J4KMotWM) | `2026-09-25 09-51-23.mp4` (asset `0e0d6a23-…`) | OBS, 1920×1080 60 fps HEVC, 48 min, 15,4 Go ; + `Screenrecorder-…` (tableau blanc) |
+| Manifestation Rapide : Possible en 24h ? (3ST8wdLa5pg) | `Rush 8.mp4` (asset `f30a0179-…`) | 1920×1080 60 fps HEVC, 53 min, 16,8 Go ; `Rush 8 cam2.mp4` = 2e angle 4K 30 fps |

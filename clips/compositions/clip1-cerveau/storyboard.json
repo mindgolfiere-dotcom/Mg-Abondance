@@ -1,14 +1,14 @@
 {
  "variant": "chalk",
  "cta": {
-  "at": "S6:Dans",
+  "at": "S6a:Dans",
   "keyword": "ABONDANCE",
   "auto": true,
   "line1": "Commente",
   "line2": "je t'envoie l'accès en DM",
   "extra": [
    {
-    "t": "S6:MG",
+    "t": "S6a:MG",
     "do": "text",
     "text": "MG Academy",
     "x": 540,
@@ -19,7 +19,7 @@
     "sfx": "stroke-short"
    },
    {
-    "t": "S6:gratuite",
+    "t": "S6b:gratuite",
     "do": "text",
     "text": "1re semaine gratuite",
     "x": 540,
@@ -31,7 +31,7 @@
     "sfx": "stroke-short"
    },
    {
-    "t": "S6:belle",
+    "t": "S6c:belle",
     "do": "prop",
     "name": "sparkle",
     "x": 880,
@@ -46,7 +46,7 @@
   {
    "id": "sc1",
    "in": "S1:@",
-   "out": "S2:@",
+   "out": "S2a:@",
    "exit": "erase",
    "actions": [
     {
@@ -180,12 +180,12 @@
   },
   {
    "id": "sc2a",
-   "in": "S2:@",
-   "out": "S2:contre",
+   "in": "S2a:@",
+   "out": "S2a:contre",
    "exit": "erase",
    "actions": [
     {
-     "t": "S2:souvenir",
+     "t": "S2a:souvenir",
      "do": "text",
      "text": "SOUVENIR",
      "x": 540,
@@ -196,7 +196,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:souvenir+0.6",
+     "t": "S2a:souvenir+0.6",
      "do": "path",
      "d": "M330 1128 Q540 1150 750 1126",
      "width": 4,
@@ -205,7 +205,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S2:mangé",
+     "t": "S2a:mangé",
      "do": "prop",
      "name": "calendar",
      "x": 290,
@@ -216,7 +216,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:septembre",
+     "t": "S2a:septembre",
      "do": "prop",
      "name": "plate",
      "x": 600,
@@ -226,7 +226,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:rien",
+     "t": "S2a:rien",
      "do": "stickman",
      "pose": "shrug",
      "x": 820,
@@ -236,7 +236,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:rien+0.3",
+     "t": "S2a:rien+0.3",
      "do": "text",
      "text": "?",
      "x": 820,
@@ -249,7 +249,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S2:émotion",
+     "t": "S2a:émotion",
      "do": "prop",
      "name": "heart",
      "id": "h1",
@@ -260,7 +260,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S2:particulière",
+     "t": "S2a:particulière",
      "do": "prop",
      "name": "cross",
      "x": 440,
@@ -273,12 +273,12 @@
   },
   {
    "id": "sc2b",
-   "in": "S2:contre",
+   "in": "S2a:contre",
    "out": "S3:@",
    "exit": "erase",
    "actions": [
     {
-     "t": "S2:reçu",
+     "t": "S2b:reçu",
      "do": "prop",
      "name": "phone",
      "id": "phone",
@@ -289,14 +289,14 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:téléphonique",
+     "t": "S2b:téléphonique",
      "do": "shake",
      "target": "phone",
      "px": 8,
      "sfx": "vibrate"
     },
     {
-     "t": "S2:bonne",
+     "t": "S2b:bonne",
      "do": "stickman",
      "pose": "cheer",
      "x": 520,
@@ -306,7 +306,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S2:bonne+0.2",
+     "t": "S2b:bonne+0.2",
      "do": "prop",
      "name": "burst",
      "x": 520,
@@ -315,7 +315,7 @@
      "pop": 0.25
     },
     {
-     "t": "S2:mauvaise",
+     "t": "S2b:mauvaise",
      "do": "stickman",
      "pose": "sad",
      "x": 800,
@@ -325,7 +325,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S2:rappellerais",
+     "t": "S2b:rappellerais",
      "do": "prop",
      "name": "calendar",
      "x": 220,
@@ -336,7 +336,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S2:rappellerais+0.3",
+     "t": "S2b:rappellerais+0.3",
      "do": "prop",
      "name": "check",
      "x": 290,
@@ -346,7 +346,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S2:Image",
+     "t": "S2b:Image",
      "do": "text",
      "text": "IMAGE",
      "x": 160,
@@ -356,7 +356,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S2:émotion#2",
+     "t": "S2b:émotion",
      "do": "text",
      "text": "+ ÉMOTION",
      "x": 390,
@@ -367,7 +367,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S2:égale",
+     "t": "S2b:égale",
      "do": "text",
      "text": "= SOUVENIR",
      "x": 540,
@@ -378,7 +378,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S2:souvenir#4+0.4",
+     "t": "S2b:souvenir+0.4",
      "do": "prop",
      "name": "sparkle",
      "x": 840,
@@ -474,7 +474,7 @@
   {
    "id": "sc4",
    "in": "S4:@",
-   "out": "S5:@",
+   "out": "S5a:@",
    "exit": "erase",
    "actions": [
     {
@@ -575,12 +575,12 @@
   },
   {
    "id": "sc5",
-   "in": "S5:@",
-   "out": "S6:@",
+   "in": "S5a:@",
+   "out": "S6a:@",
    "exit": "erase",
    "actions": [
     {
-     "t": "S5:@+0.2",
+     "t": "S5a:@+0.2",
      "do": "path",
      "id": "bridge",
      "d": "M150 1300 Q300 1220 420 1300 T690 1300 T930 1300",
@@ -590,7 +590,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S5:@+0.3",
+     "t": "S5a:@+0.3",
      "do": "prop",
      "name": "box",
      "id": "bA",
@@ -603,7 +603,7 @@
      "pop": 0.2
     },
     {
-     "t": "S5:B",
+     "t": "S5a:B",
      "do": "prop",
      "name": "box",
      "id": "bB",
@@ -617,7 +617,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S5:B+0.35",
+     "t": "S5a:B+0.35",
      "do": "prop",
      "name": "cross",
      "x": 310,
@@ -627,7 +627,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S5:passer#2",
+     "t": "S5a:passer#2",
      "do": "prop",
      "name": "box",
      "id": "bC",
@@ -640,7 +640,7 @@
      "pop": 0.2
     },
     {
-     "t": "S5:ni-0.3",
+     "t": "S5a:ni-0.3",
      "do": "prop",
      "name": "box",
      "id": "bD",
@@ -654,7 +654,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S5:ni",
+     "t": "S5a:ni",
      "do": "prop",
      "name": "cross",
      "x": 610,
@@ -664,7 +664,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S5:ni+0.3",
+     "t": "S5a:ni+0.3",
      "do": "prop",
      "name": "box",
      "id": "bE",
@@ -678,7 +678,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S5:ni+0.55",
+     "t": "S5a:ni+0.55",
      "do": "prop",
      "name": "cross",
      "x": 760,
@@ -688,7 +688,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S5:yeux",
+     "t": "S5b:yeux",
      "do": "prop",
      "name": "eye",
      "x": 540,
@@ -698,7 +698,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S5:opportunités",
+     "t": "S5b:opportunités",
      "do": "prop",
      "name": "arrow",
      "x": 180,
@@ -710,7 +710,7 @@
      "sfx": "whoosh"
     },
     {
-     "t": "S5:événements",
+     "t": "S5b:opportunités+0.4",
      "do": "prop",
      "name": "arrow",
      "x": 480,
@@ -722,7 +722,7 @@
      "sfx": "whoosh"
     },
     {
-     "t": "S5:automatiquement",
+     "t": "S5b:automatiquement",
      "do": "stickman",
      "pose": "stand",
      "x": 300,
@@ -732,7 +732,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S5:rien",
+     "t": "S5b:rien",
      "do": "text",
      "text": "rien à faire",
      "x": 560,
@@ -743,7 +743,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S5:rien+0.4",
+     "t": "S5b:rien+0.4",
      "do": "prop",
      "name": "zzz",
      "x": 400,

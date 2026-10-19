@@ -1,14 +1,14 @@
 {
  "variant": "paper",
  "cta": {
-  "at": "S7:Tout",
+  "at": "S7a:Tout",
   "keyword": "ABONDANCE",
   "auto": true,
   "line1": "Commente",
   "line2": "je t'envoie l'accès en DM",
   "extra": [
    {
-    "t": "S7:MG",
+    "t": "S7b:MG",
     "do": "text",
     "text": "MG Academy",
     "x": 540,
@@ -19,7 +19,7 @@
     "sfx": "stroke-short"
    },
    {
-    "t": "S7:gratuite",
+    "t": "S7d:gratuite",
     "do": "text",
     "text": "1re semaine gratuite",
     "x": 540,
@@ -31,7 +31,7 @@
     "sfx": "stroke-short"
    },
    {
-    "t": "S7:bullshit",
+    "t": "S7e:bullshit",
     "do": "text",
     "text": "0 bullshit",
     "x": 850,
@@ -517,7 +517,7 @@
   {
    "id": "sc5",
    "in": "S5:@",
-   "out": "S6:@",
+   "out": "S6a:@",
    "exit": "erase",
    "actions": [
     {
@@ -586,12 +586,12 @@
   },
   {
    "id": "sc6",
-   "in": "S6:@",
-   "out": "S7:@",
+   "in": "S6a:@",
+   "out": "S7a:@",
    "exit": "erase",
    "actions": [
     {
-     "t": "S6:15",
+     "t": "S6a:15",
      "do": "prop",
      "name": "clock",
      "x": 230,
@@ -601,7 +601,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S6:secondes",
+     "t": "S6a:secondes",
      "do": "text",
      "text": "15-20 s",
      "x": 230,
@@ -612,7 +612,7 @@
      "sfx": "stroke-short"
     },
     {
-     "t": "S6:intention",
+     "t": "S6a:intention",
      "do": "prop",
      "name": "bulb",
      "x": 230,
@@ -622,7 +622,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S6:seule",
+     "t": "S6b:seule",
      "do": "prop",
      "name": "bubble",
      "id": "qb",
@@ -634,7 +634,7 @@
      "sfx": "pop"
     },
     {
-     "t": "S6:question",
+     "t": "S6b:question",
      "do": "text",
      "text": "Qu'est-ce que je pourrais",
      "x": 640,
@@ -645,7 +645,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S6:remarquer",
+     "t": "S6c:remarquer",
      "do": "text",
      "text": "remarquer aujourd'hui ?",
      "x": 640,
@@ -657,7 +657,7 @@
      "sfx": "stroke"
     },
     {
-     "t": "S6:jours",
+     "t": "S6c:jours",
      "do": "prop",
      "name": "sparkle",
      "x": 840,
