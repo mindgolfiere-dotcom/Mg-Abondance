@@ -342,6 +342,27 @@
    "exit": "erase",
    "actions": [
     {
+     "t": "S2a:septembre#2",
+     "do": "prop",
+     "name": "calendar",
+     "x": 220,
+     "y": 1130,
+     "scale": 0.9,
+     "label": "20 sept. 2014",
+     "draw": 0.5,
+     "sfx": "stroke"
+    },
+    {
+     "t": "S2a:mangeant",
+     "do": "prop",
+     "name": "plate",
+     "x": 400,
+     "y": 1150,
+     "scale": 0.8,
+     "draw": 0.4,
+     "sfx": "stroke-short"
+    },
+    {
      "t": "S2b:reçu",
      "do": "prop",
      "name": "phone",

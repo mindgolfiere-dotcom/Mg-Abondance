@@ -22,7 +22,7 @@ Output cutlist.json: ordered sub-clips with source in/out (seconds and frames), 
 the kept words re-timed on the edited timeline (captions), segment boundaries, the list of
 trimmed pauses, and the expected frames at every cut (used by the post-render QC).
 """
-import json, os, subprocess, math, re, sys, unicodedata
+import json, os, re, subprocess, math, re, sys, unicodedata
 from fractions import Fraction
 from difflib import SequenceMatcher
 
@@ -107,9 +107,11 @@ def apply_fixes(words, fixes):
                     for j, k in enumerate(idx):
                         words[k]["w"] = parts[j]
                 else:
-                    words[idx[0]]["w"] = new
-                    for k in idx[1:]:
-                        words[k]["w"] = ""
+                    # different word count: spread the new words evenly over the matched time span
+                    t0, t1 = words[idx[0]]["s"], words[idx[-1]]["e"]
+                    step = (t1 - t0) / len(parts)
+                    repl = [{"w": pt, "s": round(t0 + j * step, 3), "e": round(t0 + (j + 1) * step, 3), "p": 1.0} for j, pt in enumerate(parts)]
+                    words[idx[0]:idx[-1] + 1] = repl
                 break
         else:
             print(f"  warning: fix not found: {old!r}")
@@ -129,6 +131,68 @@ def audio_envelope(path, hop=0.02):
     floor, loud = float(np.percentile(db, 15)), float(np.percentile(db, 90))
     thr = max(floor + 10.0, loud - 24.0)
     return db, hop, thr
+
+
+def integrated_loudness(path):
+    out = subprocess.run(["ffmpeg", "-v", "info", "-i", path, "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    tail = out[out.rfind("Summary:"):]
+    m = re.search(r"I:\s*(-?[0-9.]+) LUFS", tail)
+    return float(m.group(1)) if m else -23.0
+
+
+def silence_map(path, target_lufs=-16.0, qc_noise_db=-35.0, hop=0.005, margin_db=2.0):
+    """Where the speech track will read as silent to the post-render QC: per 5 ms frame, the peak amplitude in dBFS
+    is compared with the QC noise gate brought back to the mezzanine's own level (the face track is normalised to
+    target_lufs later). Returns (silent_bool_array, hop)."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "2", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    x = np.abs(np.frombuffer(raw, dtype=np.float32))      # interleaved L/R: the peak over both channels per frame
+    n = int(16000 * hop) * 2
+    nf = max(1, len(x) // n)
+    peak = x[:nf * n].reshape(nf, n).max(axis=1)
+    gain = target_lufs - integrated_loudness(path)
+    thr_db = qc_noise_db - gain + margin_db
+    silent = 20 * np.log10(peak + 1e-9) < thr_db
+    return silent, hop
+
+
+def split_on_silence(src_in, src_out, silent, hop, max_sil, keep, edge=0.03):
+    """Cut every silent stretch longer than max_sil inside [src_in, src_out] down to keep seconds.
+    Returns the list of kept (in, out) intervals, in order."""
+    i0, i1 = int(src_in / hop), int(src_out / hop)
+    if i1 <= i0 + 1 or i1 > len(silent):
+        return [(src_in, src_out)]
+    seg = silent[i0:i1]
+    stretches, j = [], 0
+    while j < len(seg):
+        if seg[j]:
+            k = j
+            while k < len(seg) and seg[k]:
+                k += 1
+            a, b = src_in + j * hop, src_in + k * hop
+            if b - a >= 0.02:
+                stretches.append((a, b))
+            j = k
+        else:
+            j += 1
+    out, cur_in = [], src_in
+    for a, b in stretches:
+        # a boundary pause is shared with the neighbouring sub-clip, so each side keeps half of `keep`,
+        # whatever the length of the silence touching the edge
+        if a <= src_in + 0.12:            # leading silence: keep only its tail
+            cur_in = max(cur_in, b - keep / 2)
+            continue
+        if b >= src_out - 0.15:           # trailing silence: keep only its head
+            src_out = min(src_out, a + keep / 2)
+            continue
+        if b - a <= max_sil:
+            continue
+        out.append((cur_in, a + keep / 2))
+        cur_in = b - keep / 2
+    if src_out - cur_in > 0.02:
+        out.append((cur_in, src_out))
+    return out or [(src_in, src_out)]
 
 
 def snap_to_speech(words, env, max_sil, bridge=0.08):
@@ -271,6 +335,12 @@ def main():
         runs.append(cur)
         seg_tl_in = tl
         seg_text = []
+        silent = None
+        if seg_file:
+            try:
+                silent, shop = silence_map(seg_file)
+            except Exception as e:  # noqa: BLE001
+                print(f"  warning: silence map skipped for {sid} ({e})")
         for ri, run in enumerate(runs):
             first_w, last_w = run[0][1], run[-1][1]
             src_in = first_w["s"] - (pad_in if ri == 0 else keep / 2)
@@ -281,20 +351,33 @@ def main():
                 src_in = max(src_in, words[gi0 - 1]["e"] + 0.01)
             if gi1 + 1 < len(words) and words[gi1 + 1]["s"] > last_w["e"]:
                 src_out = min(src_out, words[gi1 + 1]["s"] - 0.01)
-            fin, fout = frames(max(0.0, src_in), fps, "floor"), frames(src_out, fps, "ceil")
-            if fout <= fin:
-                fout = fin + 1
-            src_in, src_out = fin / fps, fout / fps
-            dur = src_out - src_in
-            clips.append({"i": len(clips), "seg": sid, "file": seg_file, "src_in": round(src_in, 4), "src_out": round(src_out, 4),
-                          "src_in_f": fin, "src_out_f": fout, "dur": round(dur, 4),
-                          "tl_in": round(tl, 4), "tl_out": round(tl + dur, 4),
-                          "text": " ".join(w["w"] for _, w in run)})
-            for _, w in run:
-                out_words.append({"w": w["w"], "s": round(w["s"] - src_in + tl, 3), "e": round(w["e"] - src_in + tl, 3),
-                                  "seg": sid, "src_s": w["s"]})
-                seg_text.append(w["w"])
-            tl += dur
+            src_in = max(0.0, src_in)
+            # the audio has the last word: every silent stretch > max_sil inside the run is shortened to keep
+            parts = split_on_silence(src_in, src_out, silent, shop, max_sil, keep) if silent is not None else [(src_in, src_out)]
+            for pi, (a_in, a_out) in enumerate(parts):
+                if pi > 0:
+                    trimmed.append({"seg": sid, "at_src": round(a_in, 3), "gap": round(a_in - parts[pi - 1][1] + keep, 3),
+                                    "kept": keep, "reason": "silence"})
+            run_words = list(run)
+            for pi, (a_in, a_out) in enumerate(parts):
+                fin, fout = frames(a_in, fps, "floor"), frames(a_out, fps, "ceil")
+                if fout <= fin:
+                    fout = fin + 1
+                a_in, a_out = fin / fps, fout / fps
+                dur = a_out - a_in
+                # words whose start falls in this part (the last part takes what is left)
+                mine = [rw for rw in run_words if rw[1]["s"] < a_out] if pi < len(parts) - 1 else run_words
+                run_words = [rw for rw in run_words if rw not in mine]
+                clips.append({"i": len(clips), "seg": sid, "file": seg_file, "src_in": round(a_in, 4), "src_out": round(a_out, 4),
+                              "src_in_f": fin, "src_out_f": fout, "dur": round(dur, 4),
+                              "tl_in": round(tl, 4), "tl_out": round(tl + dur, 4),
+                              "text": " ".join(w["w"] for _, w in mine)})
+                for _, w in mine:
+                    ws = max(a_in, min(w["s"], a_out)) - a_in + tl
+                    we = max(a_in, min(w["e"], a_out)) - a_in + tl
+                    out_words.append({"w": w["w"], "s": round(ws, 3), "e": round(max(we, ws + 0.05), 3), "seg": sid, "src_s": w["s"]})
+                    seg_text.append(w["w"])
+                tl += dur
         segments.append({"id": sid, "role": seg.get("role", ""), "tl_in": round(seg_tl_in, 3), "tl_out": round(tl, 3),
                          "text": " ".join(seg_text)})
 
@@ -307,8 +390,8 @@ def main():
            "pad_in": pad_in, "pad_out": pad_out}, "duration": round(total, 3), "clips": clips, "cuts": cuts,
            "words": out_words, "segments": segments, "trimmed_pauses": trimmed,
            "stats": {"n_clips": len(clips), "n_cuts": len(cuts), "n_words": len(out_words),
-                     "pauses_trimmed": sum(1 for t in trimmed if t["reason"] == "pause"),
-                     "seconds_removed_by_pauses": round(sum(t["gap"] - keep for t in trimmed if t["reason"] == "pause"), 2)}}
+                     "pauses_trimmed": sum(1 for t in trimmed if t["reason"] in ("pause", "silence")),
+                     "seconds_removed_by_pauses": round(sum(t["gap"] - keep for t in trimmed if t["reason"] in ("pause", "silence")), 2)}}
     json.dump(out, open(out_path, "w"), ensure_ascii=False, indent=1)
     print(f"timeline {total:.2f}s | {len(clips)} sub-clips | {len(cuts)} cuts | {out['stats']['pauses_trimmed']} pauses trimmed "
           f"({out['stats']['seconds_removed_by_pauses']}s removed) -> {out_path}")
