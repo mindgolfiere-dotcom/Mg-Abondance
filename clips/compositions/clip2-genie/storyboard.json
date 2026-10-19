@@ -42,7 +42,7 @@
     "sfx": "pop"
    },
    {
-    "t": "S7c:manifestation",
+    "t": "S7c:tous",
     "do": "image",
     "src": "vic_Helene_L.jpg",
     "x": 500,
@@ -235,7 +235,7 @@
   {
    "id": "sc2",
    "in": "S2:@",
-   "out": "S3:@",
+   "out": "S4:@",
    "exit": "erase",
    "actions": [
     {
@@ -325,74 +325,6 @@
    ]
   },
   {
-   "id": "sc3",
-   "in": "S3:@",
-   "out": "S4:@",
-   "exit": "erase",
-   "actions": [
-    {
-     "t": "S3:accélérateur",
-     "do": "prop",
-     "name": "box",
-     "x": 240,
-     "y": 1200,
-     "w": 170,
-     "h": 110,
-     "label": "4D",
-     "size": 50,
-     "draw": 0.5,
-     "sfx": "stroke"
-    },
-    {
-     "t": "S3:transformer",
-     "do": "prop",
-     "name": "arrow",
-     "x": 340,
-     "y": 1200,
-     "dx": 360,
-     "dy": 0,
-     "curve": 0,
-     "draw": 0.4,
-     "sfx": "whoosh"
-    },
-    {
-     "t": "S3:tridimensionnelle",
-     "do": "prop",
-     "name": "box",
-     "x": 800,
-     "y": 1200,
-     "w": 170,
-     "h": 110,
-     "label": "3D",
-     "size": 50,
-     "draw": 0.5,
-     "sfx": "stroke"
-    },
-    {
-     "t": "S3:attention",
-     "do": "prop",
-     "name": "eye",
-     "x": 540,
-     "y": 1380,
-     "scale": 1.5,
-     "pop": 0.35,
-     "sfx": "pop"
-    },
-    {
-     "t": "S3:attention+0.3",
-     "do": "text",
-     "text": "ATTENTION",
-     "x": 540,
-     "y": 1495,
-     "size": 50,
-     "anchor": "middle",
-     "weight": 700,
-     "cls": "accent",
-     "sfx": "stroke"
-    }
-   ]
-  },
-  {
    "id": "sc4a",
    "in": "S4:@",
    "out": "S4:chaque",
@@ -464,7 +396,7 @@
   {
    "id": "sc4b",
    "in": "S4:chaque",
-   "out": "S5:@",
+   "out": "S6a:@",
    "exit": "erase",
    "actions": [
     {
@@ -575,76 +507,6 @@
      "scale": 0.7,
      "draw": 0.2,
      "sfx": "stroke-short"
-    }
-   ]
-  },
-  {
-   "id": "sc5",
-   "in": "S5:@",
-   "out": "S6a:@",
-   "exit": "erase",
-   "actions": [
-    {
-     "t": "S5:version",
-     "do": "stickman",
-     "pose": "cheer",
-     "x": 300,
-     "y": 1470,
-     "scale": 1.15,
-     "draw": 0.5,
-     "sfx": "stroke"
-    },
-    {
-     "t": "S5:version+0.4",
-     "do": "stickman",
-     "pose": "sad",
-     "x": 780,
-     "y": 1470,
-     "scale": 1.15,
-     "draw": 0.5,
-     "sfx": "stroke"
-    },
-    {
-     "t": "S5:matérialisera",
-     "do": "text",
-     "text": "laquelle ?",
-     "x": 540,
-     "y": 1130,
-     "size": 48,
-     "anchor": "middle",
-     "sfx": "stroke-short"
-    },
-    {
-     "t": "S5:attention",
-     "do": "prop",
-     "name": "eye",
-     "x": 540,
-     "y": 1260,
-     "scale": 1.2,
-     "pop": 0.3,
-     "sfx": "pop"
-    },
-    {
-     "t": "S5:attention+0.3",
-     "do": "prop",
-     "name": "arrow",
-     "x": 470,
-     "y": 1300,
-     "dx": -110,
-     "dy": 70,
-     "curve": 20,
-     "draw": 0.3,
-     "sfx": "whoosh"
-    },
-    {
-     "t": "S5:attention+0.6",
-     "do": "prop",
-     "name": "sparkle",
-     "x": 300,
-     "y": 1230,
-     "scale": 1.1,
-     "pop": 0.25,
-     "sfx": "magic"
     }
    ]
   },

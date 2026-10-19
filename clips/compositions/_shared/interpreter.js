@@ -75,6 +75,10 @@ window.MGBuild = function build() {
       tl.to("#tear", { opacity: 0, duration: 0.3 }, c.at);
       tl.to("#captions", { y: c.capY, duration: 0.75, ease: "power3.inOut" }, c.at);
       tl.to("#grad-bottom", { opacity: 1, duration: 0.5 }, c.at);
+      if (c.faceOut && c.faceOut < PLAN.duration - 0.2) {
+        // the speech is over but the board holds: the small face fades instead of vanishing with its clip
+        tl.to(wrap, { opacity: 0, duration: 0.3, ease: "power2.in" }, c.faceOut - 0.3);
+      }
     }
 
     MG.captions(tl, PLAN.captions, "var(--cap-accent)");

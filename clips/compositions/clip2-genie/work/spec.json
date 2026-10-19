@@ -9,7 +9,7 @@
   {
    "id": "S1",
    "role": "hook",
-   "start": "fermer les yeux et visualiser très très fort",
+   "start": "fermer les yeux, visualiser très très fort",
    "end": "c'est dans Aladdin et c'est un Disney",
    "expected": "fermer les yeux et visualiser très très fort les ouvrir et voir ton truc se réaliser juste là devant toi, c'est juste pas possible. En fait si, ça existe, ça s'appelle le génie de la lampe, c'est dans Aladdin et c'est un Disney"
   },
@@ -20,15 +20,10 @@
    "end": "mais ça fonctionne",
    "expected": "Il est cependant possible d'accélérer le processus de manifestation pour ce qui devait prendre six mois prennent entre 24 heures et quelques semaines. Je sais, ce n'est pas une science exacte, mais ça fonctionne",
    "drops": [
-    "Je sais,"
+    "je sais pas,",
+    "Je sais,",
+    "d'accord?"
    ]
-  },
-  {
-   "id": "S3",
-   "role": "dev",
-   "start": "L'accélérateur énergétique qui va faire en sorte",
-   "end": "tridimensionnelle, c'est ton attention",
-   "expected": "L'accélérateur énergétique qui va faire en sorte de transformer ton désir 4D en une réalité tridimensionnelle, c'est ton attention"
   },
   {
    "id": "S4",
@@ -36,22 +31,21 @@
    "start": "si toi tu veux dix mille euros",
    "end": "C'est le fait de ne pas les avoir",
    "drops": [
-    "etc. et que durant ta pratique, chaque matin, donc t'es là sur ta ligne du temps,",
-    "Ah ben tiens, tu regardes",
-    "Tu regardes tes ventes et y'a toujours rien. Et puis là tu te demandes, pourquoi ça marche pas? En disant et en pensant tout ça,",
-    "par mois ou 10.000 euros tout court",
-    "désormais"
+    "etc. Et que durant ta pratique, chaque matin, donc tu es là sur ta ligne du temps,",
+    {
+     "phrase": "Ah bah tiens,",
+     "nth": 2
+    },
+    "Tu regardes tes ventes et il n'y a toujours rien. Puis là, tu te demandes pourquoi ça ne marche pas. En disant et en pensant tout ça,",
+    "désormais,",
+    "par mois ou 10 000 euros tout court"
    ],
-   "expected": "si toi tu veux dix mille euros et que pendant trois semaines tu pratiques visualisation, émotions, etc. et que durant ta pratique, chaque matin, donc t'es là sur ta ligne du temps, et chaque matin, tu te dis, ah ben tiens, y'a toujours rien. Ah ben tiens, tu regardes ton compte en banque et y'a toujours rien. Tu regardes tes ventes et y'a toujours rien. Et puis là tu te demandes, pourquoi ça marche pas? En disant et en pensant tout ça, l'énergie principale que tu communiques à ta quatrième dimension désormais n'est plus le fait d'avoir déjà tes 10.000 euros par mois ou 10.000 euros tout court. C'est le fait de ne pas les avoir"
-  },
-  {
-   "id": "S5",
-   "role": "dev",
-   "start": "Et la version entre les deux qui gagnera",
-   "end": "consacré le plus d'attention",
-   "expected": "Et la version entre les deux qui gagnera, qui se matérialisera dans la troisième dimension sera la version à laquelle tu auras consacré le plus d'attention",
-   "drops": [
-    "entre les deux"
+   "expected": "si toi tu veux dix mille euros et que pendant trois semaines tu pratiques visualisation, émotions, etc. et que durant ta pratique, chaque matin, donc t'es là sur ta ligne du temps, et chaque matin, tu te dis, ah ben tiens, y'a toujours rien. Ah ben tiens, tu regardes ton compte en banque et y'a toujours rien. Tu regardes tes ventes et y'a toujours rien. Et puis là tu te demandes, pourquoi ça marche pas? En disant et en pensant tout ça, l'énergie principale que tu communiques à ta quatrième dimension désormais n'est plus le fait d'avoir déjà tes 10.000 euros par mois ou 10.000 euros tout court. C'est le fait de ne pas les avoir",
+   "fixes": [
+    [
+     "ces 10 000 euros",
+     "tes 10 000 €"
+    ]
    ]
   },
   {
@@ -60,7 +54,7 @@
    "start": "tu vas prendre 15 à 20 secondes",
    "end": "Pour mettre une intention dans ta journée",
    "drops": [
-    "d'accord?"
+    "d'accord,"
    ],
    "expected": "tu vas prendre 15 à 20 secondes, pas plus, d'accord? Pour mettre une intention dans ta journée"
   },
@@ -104,7 +98,8 @@
    "start": "On a plus de 1500 élèves",
    "end": "il y a un truc qui se manifeste",
    "drops": [
-    "1500 membres"
+    "1500 membres",
+    "qui sont actuellement en pleine manifestation et"
    ],
    "expected": "On a plus de 1500 élèves, 1500 membres qui sont actuellement en pleine manifestation, et tous les jours il y a un truc qui se manifeste"
   },
@@ -113,7 +108,8 @@
    "role": "cta",
    "start": "Si tu veux nous rejoindre, la première semaine est gratuite",
    "end": "tu viens, tu regardes tout",
-   "expected": "Si tu veux nous rejoindre, la première semaine est gratuite. Tu payes rien, tu viens, tu regardes tout"
+   "expected": "Si tu veux nous rejoindre, la première semaine est gratuite. Tu payes rien, tu viens, tu regardes tout",
+   "drops": []
   },
   {
    "id": "S7e",
@@ -121,6 +117,25 @@
    "start": "Et je t'enseigne aucun bullshit",
    "end": "Et je t'enseigne aucun bullshit",
    "expected": "Et je t'enseigne aucun bullshit"
+  }
+ ],
+ "unused": [
+  {
+   "id": "S3",
+   "role": "dev",
+   "start": "L'accélérateur énergétique qui va faire en sorte",
+   "end": "tridimensionnelle, c'est ton attention",
+   "expected": "L'accélérateur énergétique qui va faire en sorte de transformer ton désir 4D en une réalité tridimensionnelle, c'est ton attention"
+  },
+  {
+   "id": "S5",
+   "role": "dev",
+   "start": "Et la version entre les deux qui gagnera",
+   "end": "consacré le plus d'attention",
+   "expected": "Et la version entre les deux qui gagnera, qui se matérialisera dans la troisième dimension sera la version à laquelle tu auras consacré le plus d'attention",
+   "drops": [
+    "entre les deux"
+   ]
   }
  ]
 }

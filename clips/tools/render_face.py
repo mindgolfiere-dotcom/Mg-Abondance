@@ -37,11 +37,14 @@ def detect_face_crop(src, info, cutlist, out_w, out_h, zoom, headroom, debug_png
     det = None
     if os.path.exists(MODEL):
         det = cv2.FaceDetectorYN_create(MODEL, "", (320, 320), 0.6, 0.3, 5000)
-    times = [c["src_in"] + 0.3 for c in cutlist["clips"][:12:2]] or [1.0]
+    # sample a few sub-clips, each from its own mezzanine file (times are relative to that file)
+    samples = [(c.get("file") or src, c["src_in"] + 0.3) for c in cutlist["clips"][:12:2]] or [(src, 1.0)]
     centers, heights, img = [], [], None
-    for t in times:
-        p = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", src, "-frames:v", "1", "-f", "image2pipe",
+    for f, t in samples:
+        p = subprocess.run(["ffmpeg", "-v", "error", "-ss", f"{t:.3f}", "-i", f, "-frames:v", "1", "-f", "image2pipe",
                             "-vcodec", "png", "-"], capture_output=True)
+        if not p.stdout:
+            continue
         img = cv2.imdecode(np.frombuffer(p.stdout, np.uint8), cv2.IMREAD_COLOR)
         if img is None or det is None:
             continue

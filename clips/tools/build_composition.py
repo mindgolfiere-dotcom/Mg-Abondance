@@ -127,6 +127,7 @@ def main():
     ap.add_argument("--sfx-dir", default=os.path.join(SHARED, "sfx"))
     ap.add_argument("--title", default="MG clip")
     ap.add_argument("--fps", type=int, default=None)
+    ap.add_argument("--tail", type=float, default=1.5, help="seconds of CTA board held after the last word (face fades out)")
     a = ap.parse_args()
 
     cl = json.load(open(a.cutlist))
@@ -143,7 +144,7 @@ def main():
         shutil.copy(os.path.join(SHARED, "fonts", f), os.path.join(assets, "fonts", f))
     shutil.copy(a.face, os.path.join(assets, "face.mp4"))
     face_dur = audio_duration(os.path.join(assets, "face.mp4"))
-    tail = float(sb.get("tail", 0.5))
+    tail = float(a.tail)
     total = round(face_dur + tail, 3)
 
     # scenes with resolved times
@@ -188,7 +189,14 @@ def main():
                 {"t": round(t0 + 4.3, 3), "do": "prop", "name": "sparkle", "x": 300, "y": 1120, "scale": 1.2, "pop": 0.25, "sfx": "magic"},
                 {"t": round(t0 + 4.45, 3), "do": "prop", "name": "sparkle", "x": 790, "y": 1110, "scale": 0.9, "pop": 0.25},
             ] + [dict(x, t=round(an.resolve(x["t"]), 3)) for x in c.get("extra", [])]}
+            if tail >= 0.8:   # the board holds after the last word: one last nudge on the keyword, never silent
+                auto["actions"] += [
+                    {"t": round(face_dur + 0.15, 3), "do": "punch", "target": "kw", "scale": 1.12},
+                    {"t": round(face_dur + 0.15, 3), "do": "prop", "name": "sparkle", "x": 360, "y": 1105, "scale": 1.0, "pop": 0.25, "sfx": "magic"},
+                    {"t": round(face_dur + 0.55, 3), "do": "prop", "name": "sparkle", "x": 760, "y": 1215, "scale": 0.8, "pop": 0.25, "sfx": "ding"},
+                ]
             scenes.append(auto)
+        cta["faceOut"] = round(face_dur, 3)
 
     # punch-ins at cuts (seeded pattern, never two in a row at the same scale)
     rnd = random.Random(42)

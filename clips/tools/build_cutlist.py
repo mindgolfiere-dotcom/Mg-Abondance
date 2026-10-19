@@ -22,7 +22,7 @@ Output cutlist.json: ordered sub-clips with source in/out (seconds and frames), 
 the kept words re-timed on the edited timeline (captions), segment boundaries, the list of
 trimmed pauses, and the expected frames at every cut (used by the post-render QC).
 """
-import json, math, re, sys, unicodedata
+import json, os, subprocess, math, re, sys, unicodedata
 from fractions import Fraction
 from difflib import SequenceMatcher
 
@@ -72,7 +72,109 @@ def frames(t, fps, mode):
 
 def load_words(path):
     W = json.load(open(path))
-    return [w for w in W["words"] if w["e"] >= w["s"] and (w["e"] - w["s"]) < 4.0]
+    words = [w for w in W["words"] if w["e"] >= w["s"] and (w["e"] - w["s"]) < 4.0]
+    # Whisper splits "crois-moi" into "crois" + "-moi": glue the dash fragments back onto the previous word
+    glued = []
+    for w in words:
+        if glued and w["w"].startswith("-") and len(w["w"]) > 1:
+            glued[-1]["w"] += w["w"]
+            glued[-1]["e"] = max(glued[-1]["e"], w["e"])
+        else:
+            glued.append(w)
+    words = glued
+    gpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "glossary.json")
+    if os.path.exists(gpath):
+        try:
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            from transcribe import apply_glossary
+            words = apply_glossary(words, json.load(open(gpath)))
+        except Exception as e:  # noqa: BLE001
+            print(f"warning: glossary not applied ({e})")
+    return words
+
+
+def apply_fixes(words, fixes):
+    """spec 'fixes': [["old phrase", "new phrase"], ...] applied to the segment words (first exact match,
+    accent/case-insensitive). Same token count -> word by word; otherwise the first word takes the whole new text."""
+    for old, new in fixes or []:
+        toks, owner = tokenize_words(words)
+        a = norm_tokens(old)
+        for i in range(len(toks) - len(a) + 1):
+            if toks[i:i + len(a)] == a:
+                idx = sorted({owner[k] for k in range(i, i + len(a))})
+                parts = new.split()
+                if len(parts) == len(idx):
+                    for j, k in enumerate(idx):
+                        words[k]["w"] = parts[j]
+                else:
+                    words[idx[0]]["w"] = new
+                    for k in idx[1:]:
+                        words[k]["w"] = ""
+                break
+        else:
+            print(f"  warning: fix not found: {old!r}")
+    return [w for w in words if w["w"] != ""]
+
+
+def audio_envelope(path, hop=0.02):
+    """20 ms RMS envelope (dBFS) of the file's audio, plus a speech threshold derived from its own levels."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+                         capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, dtype=np.float32)
+    n = int(16000 * hop)
+    nf = max(1, len(x) // n)
+    fr = x[:nf * n].reshape(nf, n)
+    db = 20 * np.log10(np.sqrt((fr ** 2).mean(axis=1)) + 1e-9)
+    floor, loud = float(np.percentile(db, 15)), float(np.percentile(db, 90))
+    thr = max(floor + 10.0, loud - 24.0)
+    return db, hop, thr
+
+
+def snap_to_speech(words, env, max_sil, bridge=0.08):
+    """Whisper sometimes leaves untranscribed speech (a stutter, a dropped 'par') inside what looks like a pause.
+    For every gap wider than max_sil, extend the neighbouring words over the voiced audio that touches them so a
+    cut never lands in the middle of speech. Returns the number of adjusted boundaries."""
+    import numpy as np
+    db, hop, thr = env
+    nb = int(round(bridge / hop))
+    adjusted = 0
+    def voiced(i):
+        return 0 <= i < len(db) and db[i] > thr
+    for a, b in zip(words, words[1:]):
+        if b["s"] - a["e"] <= max_sil:
+            continue
+        # trailing speech glued to the end of a
+        i = int(a["e"] / hop)
+        last_v, run = None, 0
+        j = i
+        while j < len(db) and (j * hop) < b["s"]:
+            if voiced(j):
+                last_v, run = j, 0
+            else:
+                run += 1
+                if run > nb:
+                    break
+            j += 1
+        new_e = a["e"] if last_v is None else max(a["e"], (last_v + 1) * hop)
+        # leading speech glued to the start of b
+        i = int(b["s"] / hop) - 1
+        first_v, run = None, 0
+        j = i
+        while j >= 0 and ((j + 1) * hop) > new_e:
+            if voiced(j):
+                first_v, run = j, 0
+            else:
+                run += 1
+                if run > nb:
+                    break
+            j -= 1
+        new_s = b["s"] if first_v is None else min(b["s"], first_v * hop)
+        if new_e > a["e"] + 0.03 or new_s < b["s"] - 0.03:
+            adjusted += 1
+            print(f"  speech in gap after {a['w']!r} ({a['e']:.2f}s): end -> {new_e:.2f}s | before {b['w']!r} ({b['s']:.2f}s): start -> {new_s:.2f}s")
+            a["e"], b["s"] = round(new_e, 3), round(new_s, 3)
+    return adjusted
 
 
 def main():
@@ -108,6 +210,12 @@ def main():
             sf = seg_files[sid]
             seg_file = sf["file"]
             words = load_words(sf["words"])
+            if seg.get("fixes"):
+                words = apply_fixes(words, seg["fixes"])
+            try:
+                snap_to_speech(words, audio_envelope(seg_file), max_sil)
+            except Exception as e:  # noqa: BLE001
+                print(f"  warning: speech snapping skipped for {sid} ({e})")
             toks, owner = tokenize_words(words)
             cursor_tok = 0
             if "src_in" in seg:   # explicit master times -> relative to the mezzanine
@@ -123,13 +231,25 @@ def main():
         seg_words = words[i0:i1 + 1]
         # drops: remove phrases inside the segment
         dropped = set()
-        for phrase in seg.get("drops", []):
+        for entry in seg.get("drops", []):
+            phrase, nth = (entry, 1) if isinstance(entry, str) else (entry["phrase"], int(entry.get("nth", 1)))
             st, so = tokenize_words(seg_words)
-            try:
-                d0, d1, r, _ = find_anchor(st, so, phrase, 0)
-            except SystemExit as e:
+            lo, found, seen = 0, None, 0
+            while True:
+                try:
+                    d0, d1, r, after = find_anchor(st, so, phrase, lo)
+                except SystemExit:
+                    break
+                if any(k not in dropped for k in range(d0, d1 + 1)):
+                    seen += 1
+                    if seen >= nth:
+                        found = (d0, d1, r)
+                        break
+                lo = after - len(norm_tokens(phrase)) + 1   # already dropped or not the wanted occurrence: look further
+            if not found:
                 print(f"  warning: drop not found in {sid}: {phrase!r}")
                 continue
+            d0, d1, r = found
             for k in range(d0, d1 + 1):
                 dropped.add(k)
             print(f"  drop {phrase!r} -> words {d0}-{d1} (match {r:.2f})")
@@ -155,6 +275,12 @@ def main():
             first_w, last_w = run[0][1], run[-1][1]
             src_in = first_w["s"] - (pad_in if ri == 0 else keep / 2)
             src_out = last_w["e"] + (pad_out if ri == len(runs) - 1 else keep / 2)
+            # never bleed into the neighbouring (dropped or out-of-segment) word
+            gi0, gi1 = i0 + run[0][0], i0 + run[-1][0]
+            if gi0 > 0 and words[gi0 - 1]["e"] < first_w["s"]:
+                src_in = max(src_in, words[gi0 - 1]["e"] + 0.01)
+            if gi1 + 1 < len(words) and words[gi1 + 1]["s"] > last_w["e"]:
+                src_out = min(src_out, words[gi1 + 1]["s"] - 0.01)
             fin, fout = frames(max(0.0, src_in), fps, "floor"), frames(src_out, fps, "ceil")
             if fout <= fin:
                 fout = fin + 1

@@ -1,0 +1,2659 @@
+{
+ "source_words": "clips/compositions/clip1-cerveau/work/seg/segments.json",
+ "fps": 30.0,
+ "rules": {
+  "max_silence": 0.25,
+  "keep_silence": 0.18,
+  "pad_in": 0.08,
+  "pad_out": 0.12
+ },
+ "duration": 87.033,
+ "clips": [
+  {
+   "i": 0,
+   "seg": "S1",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S1.mov",
+   "src_in": 1.4,
+   "src_out": 5.9667,
+   "src_in_f": 42,
+   "src_out_f": 179,
+   "dur": 4.5667,
+   "tl_in": 0.0,
+   "tl_out": 4.5667,
+   "text": "le subconscient est vraiment magique et j'adore ce mec, il est fabuleux,"
+  },
+  {
+   "i": 1,
+   "seg": "S1",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S1.mov",
+   "src_in": 15.0333,
+   "src_out": 16.6333,
+   "src_in_f": 451,
+   "src_out_f": 499,
+   "dur": 1.6,
+   "tl_in": 4.5667,
+   "tl_out": 6.1667,
+   "text": "il est un peu con quand même"
+  },
+  {
+   "i": 2,
+   "seg": "S1",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S1.mov",
+   "src_in": 18.3667,
+   "src_out": 23.2333,
+   "src_in_f": 551,
+   "src_out_f": 697,
+   "dur": 4.8667,
+   "tl_in": 6.1667,
+   "tl_out": 11.0333,
+   "text": "Il ne fera absolument pas la différence entre la scène que tu as imaginée et la réalité"
+  },
+  {
+   "i": 3,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 1.2333,
+   "src_out": 8.7333,
+   "src_in_f": 37,
+   "src_out_f": 262,
+   "dur": 7.5,
+   "tl_in": 11.0333,
+   "tl_out": 18.5333,
+   "text": "si je te demande de te souvenir de ce que tu as mangé le 20 septembre 2014,"
+  },
+  {
+   "i": 4,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 9.6,
+   "src_out": 10.8,
+   "src_in_f": 288,
+   "src_out_f": 324,
+   "dur": 1.2,
+   "tl_in": 18.5333,
+   "tl_out": 19.7333,
+   "text": "mais t'en sais rien,"
+  },
+  {
+   "i": 5,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 19.3,
+   "src_out": 24.5,
+   "src_in_f": 579,
+   "src_out_f": 735,
+   "dur": 5.2,
+   "tl_in": 19.7333,
+   "tl_out": 24.9333,
+   "text": "pourquoi tu ne te rappelles pas de ce souvenir? Parce qu'il ne te procurait pas une émotion particulière,"
+  },
+  {
+   "i": 6,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 28.7,
+   "src_out": 29.4667,
+   "src_in_f": 861,
+   "src_out_f": 884,
+   "dur": 0.7667,
+   "tl_in": 24.9333,
+   "tl_out": 25.7,
+   "text": "Par contre si ce même"
+  },
+  {
+   "i": 7,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 29.6,
+   "src_out": 32.6,
+   "src_in_f": 888,
+   "src_out_f": 978,
+   "dur": 3.0,
+   "tl_in": 25.7,
+   "tl_out": 28.7,
+   "text": "20 septembre 2014, en"
+  },
+  {
+   "i": 8,
+   "seg": "S2a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2a.mov",
+   "src_in": 33.1333,
+   "src_out": 34.1333,
+   "src_in_f": 994,
+   "src_out_f": 1024,
+   "dur": 1.0,
+   "tl_in": 28.7,
+   "tl_out": 29.7,
+   "text": "mangeant,"
+  },
+  {
+   "i": 9,
+   "seg": "S2b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2b.mov",
+   "src_in": 1.1667,
+   "src_out": 6.7333,
+   "src_in_f": 35,
+   "src_out_f": 202,
+   "dur": 5.5667,
+   "tl_in": 29.7,
+   "tl_out": 35.2667,
+   "text": "tu avais reçu un appel téléphonique qui t'annonçait une très très bonne nouvelle ou une très très mauvaise nouvelle,"
+  },
+  {
+   "i": 10,
+   "seg": "S2b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2b.mov",
+   "src_in": 7.0333,
+   "src_out": 9.7,
+   "src_in_f": 211,
+   "src_out_f": 291,
+   "dur": 2.6667,
+   "tl_in": 35.2667,
+   "tl_out": 37.9333,
+   "text": "crois-moi que tu te rappellerais de ce que tu mangeais ce jour-là."
+  },
+  {
+   "i": 11,
+   "seg": "S2b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S2b.mov",
+   "src_in": 16.2333,
+   "src_out": 19.8,
+   "src_in_f": 487,
+   "src_out_f": 594,
+   "dur": 3.5667,
+   "tl_in": 37.9333,
+   "tl_out": 41.5,
+   "text": "image plus émotion pour le cerveau égale souvenir."
+  },
+  {
+   "i": 12,
+   "seg": "S3",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S3.mov",
+   "src_in": 1.4,
+   "src_out": 5.1,
+   "src_in_f": 42,
+   "src_out_f": 153,
+   "dur": 3.7,
+   "tl_in": 41.5,
+   "tl_out": 45.2,
+   "text": "une visualisation sans émotion, c'est juste une imagination fantaisiste."
+  },
+  {
+   "i": 13,
+   "seg": "S3",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S3.mov",
+   "src_in": 5.6333,
+   "src_out": 6.9,
+   "src_in_f": 169,
+   "src_out_f": 207,
+   "dur": 1.2667,
+   "tl_in": 45.2,
+   "tl_out": 46.4667,
+   "text": "Mais quand tu mets de l'émotion,"
+  },
+  {
+   "i": 14,
+   "seg": "S3",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S3.mov",
+   "src_in": 6.9667,
+   "src_out": 8.0333,
+   "src_in_f": 209,
+   "src_out_f": 241,
+   "dur": 1.0667,
+   "tl_in": 46.4667,
+   "tl_out": 47.5333,
+   "text": "là, ça change tout."
+  },
+  {
+   "i": 15,
+   "seg": "S4",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S4.mov",
+   "src_in": 1.3667,
+   "src_out": 2.7,
+   "src_in_f": 41,
+   "src_out_f": 81,
+   "dur": 1.3333,
+   "tl_in": 47.5333,
+   "tl_out": 48.8667,
+   "text": "Lui, il va croire que"
+  },
+  {
+   "i": 16,
+   "seg": "S4",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S4.mov",
+   "src_in": 3.6,
+   "src_out": 5.8,
+   "src_in_f": 108,
+   "src_out_f": 174,
+   "dur": 2.2,
+   "tl_in": 48.8667,
+   "tl_out": 51.0667,
+   "text": "c'est déjà acquis, tu as déjà tes 10 000€ par mois."
+  },
+  {
+   "i": 17,
+   "seg": "S4",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S4.mov",
+   "src_in": 5.9333,
+   "src_out": 16.8,
+   "src_in_f": 178,
+   "src_out_f": 504,
+   "dur": 10.8667,
+   "tl_in": 51.0667,
+   "tl_out": 61.9333,
+   "text": "Et donc, il va faire un truc assez génial, il va réorganiser ta journée en fonction du résultat que tu as prétendument déjà obtenu."
+  },
+  {
+   "i": 18,
+   "seg": "S5a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5a.mov",
+   "src_in": 0.0,
+   "src_out": 0.7,
+   "src_in_f": 0,
+   "src_out_f": 21,
+   "dur": 0.7,
+   "tl_in": 61.9333,
+   "tl_out": 62.6333,
+   "text": "Il"
+  },
+  {
+   "i": 19,
+   "seg": "S5a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5a.mov",
+   "src_in": 1.3333,
+   "src_out": 3.7,
+   "src_in_f": 40,
+   "src_out_f": 111,
+   "dur": 2.3667,
+   "tl_in": 62.6333,
+   "tl_out": 65.0,
+   "text": "n'est pas nécessaire de passer par le B"
+  },
+  {
+   "i": 20,
+   "seg": "S5a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5a.mov",
+   "src_in": 5.7,
+   "src_out": 8.1,
+   "src_in_f": 171,
+   "src_out_f": 243,
+   "dur": 2.4,
+   "tl_in": 65.0,
+   "tl_out": 67.4,
+   "text": "Il n'est pas nécessaire de passer par le D ni par le E"
+  },
+  {
+   "i": 21,
+   "seg": "S5b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5b.mov",
+   "src_in": 1.4,
+   "src_out": 4.1333,
+   "src_in_f": 42,
+   "src_out_f": 124,
+   "dur": 2.7333,
+   "tl_in": 67.4,
+   "tl_out": 70.1333,
+   "text": "il va t'ouvrir les yeux sur les opportunités,"
+  },
+  {
+   "i": 22,
+   "seg": "S5b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5b.mov",
+   "src_in": 4.7667,
+   "src_out": 5.2333,
+   "src_in_f": 143,
+   "src_out_f": 157,
+   "dur": 0.4667,
+   "tl_in": 70.1333,
+   "tl_out": 70.6,
+   "text": "qui"
+  },
+  {
+   "i": 23,
+   "seg": "S5b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5b.mov",
+   "src_in": 5.5333,
+   "src_out": 10.2333,
+   "src_in_f": 166,
+   "src_out_f": 307,
+   "dur": 4.7,
+   "tl_in": 70.6,
+   "tl_out": 75.3,
+   "text": "vont dans le sens de« j'ai 10 000€ par mois». Et ça va se faire automatiquement."
+  },
+  {
+   "i": 24,
+   "seg": "S5b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S5b.mov",
+   "src_in": 10.6667,
+   "src_out": 12.3667,
+   "src_in_f": 320,
+   "src_out_f": 371,
+   "dur": 1.7,
+   "tl_in": 75.3,
+   "tl_out": 77.0,
+   "text": "T'auras rien à faire."
+  },
+  {
+   "i": 25,
+   "seg": "S6a",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S6a.mov",
+   "src_in": 1.4,
+   "src_out": 6.3667,
+   "src_in_f": 42,
+   "src_out_f": 191,
+   "dur": 4.9667,
+   "tl_in": 77.0,
+   "tl_out": 81.9667,
+   "text": "Dans la MG Academy, on ne fait que ça, t'as des manifestations tous les jours,"
+  },
+  {
+   "i": 26,
+   "seg": "S6b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S6b.mov",
+   "src_in": 0.0,
+   "src_out": 0.6667,
+   "src_in_f": 0,
+   "src_out_f": 20,
+   "dur": 0.6667,
+   "tl_in": 81.9667,
+   "tl_out": 82.6333,
+   "text": "Si"
+  },
+  {
+   "i": 27,
+   "seg": "S6b",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S6b.mov",
+   "src_in": 1.4,
+   "src_out": 3.9,
+   "src_in_f": 42,
+   "src_out_f": 117,
+   "dur": 2.5,
+   "tl_in": 82.6333,
+   "tl_out": 85.1333,
+   "text": "tu veux tester la première semaine est gratuite"
+  },
+  {
+   "i": 28,
+   "seg": "S6c",
+   "file": "clips/compositions/clip1-cerveau/work/seg/S6c.mov",
+   "src_in": 4.0,
+   "src_out": 5.9,
+   "src_in_f": 120,
+   "src_out_f": 177,
+   "dur": 1.9,
+   "tl_in": 85.1333,
+   "tl_out": 87.0333,
+   "text": "Elle est pas belle la vie quand même,"
+  }
+ ],
+ "cuts": [
+  {
+   "tl": 4.5667,
+   "tl_frame": 137,
+   "a_last_src_f": 178,
+   "b_first_src_f": 451,
+   "a_clip": 0,
+   "b_clip": 1
+  },
+  {
+   "tl": 6.1667,
+   "tl_frame": 185,
+   "a_last_src_f": 498,
+   "b_first_src_f": 551,
+   "a_clip": 1,
+   "b_clip": 2
+  },
+  {
+   "tl": 11.0333,
+   "tl_frame": 331,
+   "a_last_src_f": 696,
+   "b_first_src_f": 37,
+   "a_clip": 2,
+   "b_clip": 3
+  },
+  {
+   "tl": 18.5333,
+   "tl_frame": 556,
+   "a_last_src_f": 261,
+   "b_first_src_f": 288,
+   "a_clip": 3,
+   "b_clip": 4
+  },
+  {
+   "tl": 19.7333,
+   "tl_frame": 592,
+   "a_last_src_f": 323,
+   "b_first_src_f": 579,
+   "a_clip": 4,
+   "b_clip": 5
+  },
+  {
+   "tl": 24.9333,
+   "tl_frame": 748,
+   "a_last_src_f": 734,
+   "b_first_src_f": 861,
+   "a_clip": 5,
+   "b_clip": 6
+  },
+  {
+   "tl": 25.7,
+   "tl_frame": 771,
+   "a_last_src_f": 883,
+   "b_first_src_f": 888,
+   "a_clip": 6,
+   "b_clip": 7
+  },
+  {
+   "tl": 28.7,
+   "tl_frame": 861,
+   "a_last_src_f": 977,
+   "b_first_src_f": 994,
+   "a_clip": 7,
+   "b_clip": 8
+  },
+  {
+   "tl": 29.7,
+   "tl_frame": 891,
+   "a_last_src_f": 1023,
+   "b_first_src_f": 35,
+   "a_clip": 8,
+   "b_clip": 9
+  },
+  {
+   "tl": 35.2667,
+   "tl_frame": 1058,
+   "a_last_src_f": 201,
+   "b_first_src_f": 211,
+   "a_clip": 9,
+   "b_clip": 10
+  },
+  {
+   "tl": 37.9333,
+   "tl_frame": 1138,
+   "a_last_src_f": 290,
+   "b_first_src_f": 487,
+   "a_clip": 10,
+   "b_clip": 11
+  },
+  {
+   "tl": 41.5,
+   "tl_frame": 1245,
+   "a_last_src_f": 593,
+   "b_first_src_f": 42,
+   "a_clip": 11,
+   "b_clip": 12
+  },
+  {
+   "tl": 45.2,
+   "tl_frame": 1356,
+   "a_last_src_f": 152,
+   "b_first_src_f": 169,
+   "a_clip": 12,
+   "b_clip": 13
+  },
+  {
+   "tl": 46.4667,
+   "tl_frame": 1394,
+   "a_last_src_f": 206,
+   "b_first_src_f": 209,
+   "a_clip": 13,
+   "b_clip": 14
+  },
+  {
+   "tl": 47.5333,
+   "tl_frame": 1426,
+   "a_last_src_f": 240,
+   "b_first_src_f": 41,
+   "a_clip": 14,
+   "b_clip": 15
+  },
+  {
+   "tl": 48.8667,
+   "tl_frame": 1466,
+   "a_last_src_f": 80,
+   "b_first_src_f": 108,
+   "a_clip": 15,
+   "b_clip": 16
+  },
+  {
+   "tl": 51.0667,
+   "tl_frame": 1532,
+   "a_last_src_f": 173,
+   "b_first_src_f": 178,
+   "a_clip": 16,
+   "b_clip": 17
+  },
+  {
+   "tl": 61.9333,
+   "tl_frame": 1858,
+   "a_last_src_f": 503,
+   "b_first_src_f": 0,
+   "a_clip": 17,
+   "b_clip": 18
+  },
+  {
+   "tl": 62.6333,
+   "tl_frame": 1879,
+   "a_last_src_f": 20,
+   "b_first_src_f": 40,
+   "a_clip": 18,
+   "b_clip": 19
+  },
+  {
+   "tl": 65.0,
+   "tl_frame": 1950,
+   "a_last_src_f": 110,
+   "b_first_src_f": 171,
+   "a_clip": 19,
+   "b_clip": 20
+  },
+  {
+   "tl": 67.4,
+   "tl_frame": 2022,
+   "a_last_src_f": 242,
+   "b_first_src_f": 42,
+   "a_clip": 20,
+   "b_clip": 21
+  },
+  {
+   "tl": 70.1333,
+   "tl_frame": 2104,
+   "a_last_src_f": 123,
+   "b_first_src_f": 143,
+   "a_clip": 21,
+   "b_clip": 22
+  },
+  {
+   "tl": 70.6,
+   "tl_frame": 2118,
+   "a_last_src_f": 156,
+   "b_first_src_f": 166,
+   "a_clip": 22,
+   "b_clip": 23
+  },
+  {
+   "tl": 75.3,
+   "tl_frame": 2259,
+   "a_last_src_f": 306,
+   "b_first_src_f": 320,
+   "a_clip": 23,
+   "b_clip": 24
+  },
+  {
+   "tl": 77.0,
+   "tl_frame": 2310,
+   "a_last_src_f": 370,
+   "b_first_src_f": 42,
+   "a_clip": 24,
+   "b_clip": 25
+  },
+  {
+   "tl": 81.9667,
+   "tl_frame": 2459,
+   "a_last_src_f": 190,
+   "b_first_src_f": 0,
+   "a_clip": 25,
+   "b_clip": 26
+  },
+  {
+   "tl": 82.6333,
+   "tl_frame": 2479,
+   "a_last_src_f": 19,
+   "b_first_src_f": 42,
+   "a_clip": 26,
+   "b_clip": 27
+  },
+  {
+   "tl": 85.1333,
+   "tl_frame": 2554,
+   "a_last_src_f": 116,
+   "b_first_src_f": 120,
+   "a_clip": 27,
+   "b_clip": 28
+  }
+ ],
+ "words": [
+  {
+   "w": "le",
+   "s": 0.1,
+   "e": 0.24,
+   "seg": "S1",
+   "src_s": 1.5
+  },
+  {
+   "w": "subconscient",
+   "s": 0.24,
+   "e": 0.8,
+   "seg": "S1",
+   "src_s": 1.64
+  },
+  {
+   "w": "est",
+   "s": 0.8,
+   "e": 0.94,
+   "seg": "S1",
+   "src_s": 2.2
+  },
+  {
+   "w": "vraiment",
+   "s": 0.94,
+   "e": 1.22,
+   "seg": "S1",
+   "src_s": 2.34
+  },
+  {
+   "w": "magique",
+   "s": 1.22,
+   "e": 1.98,
+   "seg": "S1",
+   "src_s": 2.62
+  },
+  {
+   "w": "et",
+   "s": 1.98,
+   "e": 2.14,
+   "seg": "S1",
+   "src_s": 3.38
+  },
+  {
+   "w": "j'adore",
+   "s": 2.14,
+   "e": 3.06,
+   "seg": "S1",
+   "src_s": 3.54
+  },
+  {
+   "w": "ce",
+   "s": 3.06,
+   "e": 3.3,
+   "seg": "S1",
+   "src_s": 4.46
+  },
+  {
+   "w": "mec,",
+   "s": 3.3,
+   "e": 3.48,
+   "seg": "S1",
+   "src_s": 4.7
+  },
+  {
+   "w": "il",
+   "s": 3.68,
+   "e": 3.7,
+   "seg": "S1",
+   "src_s": 5.08
+  },
+  {
+   "w": "est",
+   "s": 3.7,
+   "e": 3.94,
+   "seg": "S1",
+   "src_s": 5.1
+  },
+  {
+   "w": "fabuleux,",
+   "s": 3.94,
+   "e": 4.46,
+   "seg": "S1",
+   "src_s": 5.34
+  },
+  {
+   "w": "il",
+   "s": 4.673,
+   "e": 4.953,
+   "seg": "S1",
+   "src_s": 15.14
+  },
+  {
+   "w": "est",
+   "s": 4.953,
+   "e": 5.053,
+   "seg": "S1",
+   "src_s": 15.42
+  },
+  {
+   "w": "un",
+   "s": 5.053,
+   "e": 5.173,
+   "seg": "S1",
+   "src_s": 15.52
+  },
+  {
+   "w": "peu",
+   "s": 5.173,
+   "e": 5.373,
+   "seg": "S1",
+   "src_s": 15.64
+  },
+  {
+   "w": "con",
+   "s": 5.373,
+   "e": 5.713,
+   "seg": "S1",
+   "src_s": 15.84
+  },
+  {
+   "w": "quand",
+   "s": 5.713,
+   "e": 5.913,
+   "seg": "S1",
+   "src_s": 16.18
+  },
+  {
+   "w": "même",
+   "s": 5.913,
+   "e": 6.073,
+   "seg": "S1",
+   "src_s": 16.38
+  },
+  {
+   "w": "Il",
+   "s": 6.26,
+   "e": 6.52,
+   "seg": "S1",
+   "src_s": 18.46
+  },
+  {
+   "w": "ne",
+   "s": 6.52,
+   "e": 6.62,
+   "seg": "S1",
+   "src_s": 18.72
+  },
+  {
+   "w": "fera",
+   "s": 6.62,
+   "e": 6.7,
+   "seg": "S1",
+   "src_s": 18.82
+  },
+  {
+   "w": "absolument",
+   "s": 6.7,
+   "e": 7.36,
+   "seg": "S1",
+   "src_s": 18.9
+  },
+  {
+   "w": "pas",
+   "s": 7.36,
+   "e": 7.6,
+   "seg": "S1",
+   "src_s": 19.56
+  },
+  {
+   "w": "la",
+   "s": 7.6,
+   "e": 7.74,
+   "seg": "S1",
+   "src_s": 19.8
+  },
+  {
+   "w": "différence",
+   "s": 7.74,
+   "e": 8.1,
+   "seg": "S1",
+   "src_s": 19.94
+  },
+  {
+   "w": "entre",
+   "s": 8.1,
+   "e": 8.4,
+   "seg": "S1",
+   "src_s": 20.3
+  },
+  {
+   "w": "la",
+   "s": 8.4,
+   "e": 8.62,
+   "seg": "S1",
+   "src_s": 20.6
+  },
+  {
+   "w": "scène",
+   "s": 8.62,
+   "e": 8.9,
+   "seg": "S1",
+   "src_s": 20.82
+  },
+  {
+   "w": "que",
+   "s": 8.9,
+   "e": 9.04,
+   "seg": "S1",
+   "src_s": 21.1
+  },
+  {
+   "w": "tu",
+   "s": 9.04,
+   "e": 9.16,
+   "seg": "S1",
+   "src_s": 21.24
+  },
+  {
+   "w": "as",
+   "s": 9.16,
+   "e": 9.26,
+   "seg": "S1",
+   "src_s": 21.36
+  },
+  {
+   "w": "imaginée",
+   "s": 9.26,
+   "e": 9.7,
+   "seg": "S1",
+   "src_s": 21.46
+  },
+  {
+   "w": "et",
+   "s": 9.7,
+   "e": 10.32,
+   "seg": "S1",
+   "src_s": 21.9
+  },
+  {
+   "w": "la",
+   "s": 10.32,
+   "e": 10.56,
+   "seg": "S1",
+   "src_s": 22.52
+  },
+  {
+   "w": "réalité",
+   "s": 10.56,
+   "e": 10.9,
+   "seg": "S1",
+   "src_s": 22.76
+  },
+  {
+   "w": "si",
+   "s": 11.13,
+   "e": 11.61,
+   "seg": "S2a",
+   "src_s": 1.33
+  },
+  {
+   "w": "je",
+   "s": 11.74,
+   "e": 11.98,
+   "seg": "S2a",
+   "src_s": 1.94
+  },
+  {
+   "w": "te",
+   "s": 11.98,
+   "e": 12.06,
+   "seg": "S2a",
+   "src_s": 2.18
+  },
+  {
+   "w": "demande",
+   "s": 12.06,
+   "e": 12.24,
+   "seg": "S2a",
+   "src_s": 2.26
+  },
+  {
+   "w": "de",
+   "s": 12.24,
+   "e": 12.36,
+   "seg": "S2a",
+   "src_s": 2.44
+  },
+  {
+   "w": "te",
+   "s": 12.36,
+   "e": 12.52,
+   "seg": "S2a",
+   "src_s": 2.56
+  },
+  {
+   "w": "souvenir",
+   "s": 12.52,
+   "e": 12.86,
+   "seg": "S2a",
+   "src_s": 2.72
+  },
+  {
+   "w": "de",
+   "s": 12.86,
+   "e": 13.08,
+   "seg": "S2a",
+   "src_s": 3.06
+  },
+  {
+   "w": "ce",
+   "s": 13.08,
+   "e": 13.16,
+   "seg": "S2a",
+   "src_s": 3.28
+  },
+  {
+   "w": "que",
+   "s": 13.16,
+   "e": 13.26,
+   "seg": "S2a",
+   "src_s": 3.36
+  },
+  {
+   "w": "tu",
+   "s": 13.26,
+   "e": 13.4,
+   "seg": "S2a",
+   "src_s": 3.46
+  },
+  {
+   "w": "as",
+   "s": 13.4,
+   "e": 13.52,
+   "seg": "S2a",
+   "src_s": 3.6
+  },
+  {
+   "w": "mangé",
+   "s": 13.52,
+   "e": 13.86,
+   "seg": "S2a",
+   "src_s": 3.72
+  },
+  {
+   "w": "le",
+   "s": 13.86,
+   "e": 14.62,
+   "seg": "S2a",
+   "src_s": 4.06
+  },
+  {
+   "w": "20",
+   "s": 14.62,
+   "e": 15.78,
+   "seg": "S2a",
+   "src_s": 4.82
+  },
+  {
+   "w": "septembre",
+   "s": 15.78,
+   "e": 16.84,
+   "seg": "S2a",
+   "src_s": 5.98
+  },
+  {
+   "w": "2014,",
+   "s": 17.0,
+   "e": 18.42,
+   "seg": "S2a",
+   "src_s": 7.2
+  },
+  {
+   "w": "mais",
+   "s": 18.653,
+   "e": 18.833,
+   "seg": "S2a",
+   "src_s": 9.72
+  },
+  {
+   "w": "t'en",
+   "s": 18.833,
+   "e": 19.053,
+   "seg": "S2a",
+   "src_s": 9.9
+  },
+  {
+   "w": "sais",
+   "s": 19.053,
+   "e": 19.233,
+   "seg": "S2a",
+   "src_s": 10.12
+  },
+  {
+   "w": "rien,",
+   "s": 19.233,
+   "e": 19.633,
+   "seg": "S2a",
+   "src_s": 10.3
+  },
+  {
+   "w": "pourquoi",
+   "s": 19.843,
+   "e": 20.243,
+   "seg": "S2a",
+   "src_s": 19.41
+  },
+  {
+   "w": "tu",
+   "s": 20.243,
+   "e": 20.423,
+   "seg": "S2a",
+   "src_s": 19.81
+  },
+  {
+   "w": "ne",
+   "s": 20.423,
+   "e": 20.503,
+   "seg": "S2a",
+   "src_s": 19.99
+  },
+  {
+   "w": "te",
+   "s": 20.503,
+   "e": 20.603,
+   "seg": "S2a",
+   "src_s": 20.07
+  },
+  {
+   "w": "rappelles",
+   "s": 20.603,
+   "e": 20.923,
+   "seg": "S2a",
+   "src_s": 20.17
+  },
+  {
+   "w": "pas",
+   "s": 20.923,
+   "e": 21.123,
+   "seg": "S2a",
+   "src_s": 20.49
+  },
+  {
+   "w": "de",
+   "s": 21.123,
+   "e": 21.343,
+   "seg": "S2a",
+   "src_s": 20.69
+  },
+  {
+   "w": "ce",
+   "s": 21.343,
+   "e": 21.443,
+   "seg": "S2a",
+   "src_s": 20.91
+  },
+  {
+   "w": "souvenir?",
+   "s": 21.443,
+   "e": 22.103,
+   "seg": "S2a",
+   "src_s": 21.01
+  },
+  {
+   "w": "Parce",
+   "s": 22.103,
+   "e": 22.443,
+   "seg": "S2a",
+   "src_s": 21.67
+  },
+  {
+   "w": "qu'il",
+   "s": 22.443,
+   "e": 22.563,
+   "seg": "S2a",
+   "src_s": 22.01
+  },
+  {
+   "w": "ne",
+   "s": 22.563,
+   "e": 22.663,
+   "seg": "S2a",
+   "src_s": 22.13
+  },
+  {
+   "w": "te",
+   "s": 22.663,
+   "e": 22.783,
+   "seg": "S2a",
+   "src_s": 22.23
+  },
+  {
+   "w": "procurait",
+   "s": 22.783,
+   "e": 23.223,
+   "seg": "S2a",
+   "src_s": 22.35
+  },
+  {
+   "w": "pas",
+   "s": 23.223,
+   "e": 23.383,
+   "seg": "S2a",
+   "src_s": 22.79
+  },
+  {
+   "w": "une",
+   "s": 23.383,
+   "e": 23.623,
+   "seg": "S2a",
+   "src_s": 22.95
+  },
+  {
+   "w": "émotion",
+   "s": 23.623,
+   "e": 24.023,
+   "seg": "S2a",
+   "src_s": 23.19
+  },
+  {
+   "w": "particulière,",
+   "s": 24.023,
+   "e": 24.823,
+   "seg": "S2a",
+   "src_s": 23.59
+  },
+  {
+   "w": "Par contre si ce même",
+   "s": 25.033,
+   "e": 25.593,
+   "seg": "S2a",
+   "src_s": 28.8
+  },
+  {
+   "w": "20",
+   "s": 25.82,
+   "e": 26.66,
+   "seg": "S2a",
+   "src_s": 29.72
+  },
+  {
+   "w": "septembre",
+   "s": 26.66,
+   "e": 27.14,
+   "seg": "S2a",
+   "src_s": 30.56
+  },
+  {
+   "w": "2014,",
+   "s": 27.14,
+   "e": 27.96,
+   "seg": "S2a",
+   "src_s": 31.04
+  },
+  {
+   "w": "en",
+   "s": 28.14,
+   "e": 28.6,
+   "seg": "S2a",
+   "src_s": 32.04
+  },
+  {
+   "w": "mangeant,",
+   "s": 28.807,
+   "e": 29.567,
+   "seg": "S2a",
+   "src_s": 33.24
+  },
+  {
+   "w": "tu",
+   "s": 29.793,
+   "e": 30.493,
+   "seg": "S2b",
+   "src_s": 1.26
+  },
+  {
+   "w": "avais",
+   "s": 30.493,
+   "e": 30.713,
+   "seg": "S2b",
+   "src_s": 1.96
+  },
+  {
+   "w": "reçu",
+   "s": 30.713,
+   "e": 30.973,
+   "seg": "S2b",
+   "src_s": 2.18
+  },
+  {
+   "w": "un",
+   "s": 30.973,
+   "e": 31.113,
+   "seg": "S2b",
+   "src_s": 2.44
+  },
+  {
+   "w": "appel",
+   "s": 31.113,
+   "e": 31.253,
+   "seg": "S2b",
+   "src_s": 2.58
+  },
+  {
+   "w": "téléphonique",
+   "s": 31.253,
+   "e": 31.793,
+   "seg": "S2b",
+   "src_s": 2.72
+  },
+  {
+   "w": "qui",
+   "s": 31.793,
+   "e": 31.913,
+   "seg": "S2b",
+   "src_s": 3.26
+  },
+  {
+   "w": "t'annonçait",
+   "s": 31.913,
+   "e": 32.313,
+   "seg": "S2b",
+   "src_s": 3.38
+  },
+  {
+   "w": "une",
+   "s": 32.313,
+   "e": 32.453,
+   "seg": "S2b",
+   "src_s": 3.78
+  },
+  {
+   "w": "très",
+   "s": 32.453,
+   "e": 32.733,
+   "seg": "S2b",
+   "src_s": 3.92
+  },
+  {
+   "w": "très",
+   "s": 32.733,
+   "e": 32.953,
+   "seg": "S2b",
+   "src_s": 4.2
+  },
+  {
+   "w": "bonne",
+   "s": 32.953,
+   "e": 33.193,
+   "seg": "S2b",
+   "src_s": 4.42
+  },
+  {
+   "w": "nouvelle",
+   "s": 33.193,
+   "e": 33.513,
+   "seg": "S2b",
+   "src_s": 4.66
+  },
+  {
+   "w": "ou",
+   "s": 33.513,
+   "e": 33.753,
+   "seg": "S2b",
+   "src_s": 4.98
+  },
+  {
+   "w": "une",
+   "s": 33.753,
+   "e": 33.913,
+   "seg": "S2b",
+   "src_s": 5.22
+  },
+  {
+   "w": "très",
+   "s": 33.913,
+   "e": 34.133,
+   "seg": "S2b",
+   "src_s": 5.38
+  },
+  {
+   "w": "très",
+   "s": 34.133,
+   "e": 34.333,
+   "seg": "S2b",
+   "src_s": 5.6
+  },
+  {
+   "w": "mauvaise",
+   "s": 34.333,
+   "e": 34.653,
+   "seg": "S2b",
+   "src_s": 5.8
+  },
+  {
+   "w": "nouvelle,",
+   "s": 34.653,
+   "e": 35.153,
+   "seg": "S2b",
+   "src_s": 6.12
+  },
+  {
+   "w": "crois-moi",
+   "s": 35.363,
+   "e": 35.663,
+   "seg": "S2b",
+   "src_s": 7.13
+  },
+  {
+   "w": "que",
+   "s": 35.663,
+   "e": 35.803,
+   "seg": "S2b",
+   "src_s": 7.43
+  },
+  {
+   "w": "tu",
+   "s": 35.803,
+   "e": 35.923,
+   "seg": "S2b",
+   "src_s": 7.57
+  },
+  {
+   "w": "te",
+   "s": 35.923,
+   "e": 36.083,
+   "seg": "S2b",
+   "src_s": 7.69
+  },
+  {
+   "w": "rappellerais",
+   "s": 36.083,
+   "e": 36.663,
+   "seg": "S2b",
+   "src_s": 7.85
+  },
+  {
+   "w": "de",
+   "s": 36.663,
+   "e": 36.783,
+   "seg": "S2b",
+   "src_s": 8.43
+  },
+  {
+   "w": "ce",
+   "s": 36.783,
+   "e": 36.863,
+   "seg": "S2b",
+   "src_s": 8.55
+  },
+  {
+   "w": "que",
+   "s": 36.863,
+   "e": 36.943,
+   "seg": "S2b",
+   "src_s": 8.63
+  },
+  {
+   "w": "tu",
+   "s": 36.943,
+   "e": 37.063,
+   "seg": "S2b",
+   "src_s": 8.71
+  },
+  {
+   "w": "mangeais",
+   "s": 37.063,
+   "e": 37.343,
+   "seg": "S2b",
+   "src_s": 8.83
+  },
+  {
+   "w": "ce",
+   "s": 37.343,
+   "e": 37.443,
+   "seg": "S2b",
+   "src_s": 9.11
+  },
+  {
+   "w": "jour-là.",
+   "s": 37.443,
+   "e": 37.813,
+   "seg": "S2b",
+   "src_s": 9.21
+  },
+  {
+   "w": "image",
+   "s": 38.04,
+   "e": 38.48,
+   "seg": "S2b",
+   "src_s": 16.34
+  },
+  {
+   "w": "plus",
+   "s": 38.48,
+   "e": 38.9,
+   "seg": "S2b",
+   "src_s": 16.78
+  },
+  {
+   "w": "émotion",
+   "s": 38.9,
+   "e": 39.48,
+   "seg": "S2b",
+   "src_s": 17.2
+  },
+  {
+   "w": "pour",
+   "s": 39.48,
+   "e": 39.98,
+   "seg": "S2b",
+   "src_s": 17.78
+  },
+  {
+   "w": "le",
+   "s": 39.98,
+   "e": 40.1,
+   "seg": "S2b",
+   "src_s": 18.28
+  },
+  {
+   "w": "cerveau",
+   "s": 40.1,
+   "e": 40.5,
+   "seg": "S2b",
+   "src_s": 18.4
+  },
+  {
+   "w": "égale",
+   "s": 40.5,
+   "e": 40.9,
+   "seg": "S2b",
+   "src_s": 18.8
+  },
+  {
+   "w": "souvenir.",
+   "s": 40.9,
+   "e": 41.36,
+   "seg": "S2b",
+   "src_s": 19.2
+  },
+  {
+   "w": "une",
+   "s": 41.59,
+   "e": 41.73,
+   "seg": "S3",
+   "src_s": 1.49
+  },
+  {
+   "w": "visualisation",
+   "s": 41.73,
+   "e": 42.33,
+   "seg": "S3",
+   "src_s": 1.63
+  },
+  {
+   "w": "sans",
+   "s": 42.33,
+   "e": 42.59,
+   "seg": "S3",
+   "src_s": 2.23
+  },
+  {
+   "w": "émotion,",
+   "s": 42.59,
+   "e": 43.03,
+   "seg": "S3",
+   "src_s": 2.49
+  },
+  {
+   "w": "c'est",
+   "s": 43.21,
+   "e": 43.33,
+   "seg": "S3",
+   "src_s": 3.11
+  },
+  {
+   "w": "juste",
+   "s": 43.33,
+   "e": 43.59,
+   "seg": "S3",
+   "src_s": 3.23
+  },
+  {
+   "w": "une",
+   "s": 43.59,
+   "e": 43.97,
+   "seg": "S3",
+   "src_s": 3.49
+  },
+  {
+   "w": "imagination",
+   "s": 43.97,
+   "e": 44.41,
+   "seg": "S3",
+   "src_s": 3.87
+  },
+  {
+   "w": "fantaisiste.",
+   "s": 44.41,
+   "e": 45.11,
+   "seg": "S3",
+   "src_s": 4.31
+  },
+  {
+   "w": "Mais",
+   "s": 45.317,
+   "e": 45.417,
+   "seg": "S3",
+   "src_s": 5.75
+  },
+  {
+   "w": "quand",
+   "s": 45.417,
+   "e": 45.597,
+   "seg": "S3",
+   "src_s": 5.85
+  },
+  {
+   "w": "tu",
+   "s": 45.597,
+   "e": 45.717,
+   "seg": "S3",
+   "src_s": 6.03
+  },
+  {
+   "w": "mets",
+   "s": 45.717,
+   "e": 45.837,
+   "seg": "S3",
+   "src_s": 6.15
+  },
+  {
+   "w": "de",
+   "s": 45.837,
+   "e": 45.897,
+   "seg": "S3",
+   "src_s": 6.27
+  },
+  {
+   "w": "l'émotion,",
+   "s": 45.897,
+   "e": 46.367,
+   "seg": "S3",
+   "src_s": 6.33
+  },
+  {
+   "w": "là,",
+   "s": 46.56,
+   "e": 46.81,
+   "seg": "S3",
+   "src_s": 7.06
+  },
+  {
+   "w": "ça",
+   "s": 46.97,
+   "e": 47.05,
+   "seg": "S3",
+   "src_s": 7.47
+  },
+  {
+   "w": "change",
+   "s": 47.05,
+   "e": 47.27,
+   "seg": "S3",
+   "src_s": 7.55
+  },
+  {
+   "w": "tout.",
+   "s": 47.27,
+   "e": 47.41,
+   "seg": "S3",
+   "src_s": 7.77
+  },
+  {
+   "w": "Lui,",
+   "s": 47.627,
+   "e": 47.947,
+   "seg": "S4",
+   "src_s": 1.46
+  },
+  {
+   "w": "il",
+   "s": 47.967,
+   "e": 48.087,
+   "seg": "S4",
+   "src_s": 1.8
+  },
+  {
+   "w": "va",
+   "s": 48.087,
+   "e": 48.187,
+   "seg": "S4",
+   "src_s": 1.92
+  },
+  {
+   "w": "croire",
+   "s": 48.187,
+   "e": 48.527,
+   "seg": "S4",
+   "src_s": 2.02
+  },
+  {
+   "w": "que",
+   "s": 48.527,
+   "e": 48.747,
+   "seg": "S4",
+   "src_s": 2.36
+  },
+  {
+   "w": "c'est",
+   "s": 48.987,
+   "e": 49.107,
+   "seg": "S4",
+   "src_s": 3.72
+  },
+  {
+   "w": "déjà",
+   "s": 49.107,
+   "e": 49.287,
+   "seg": "S4",
+   "src_s": 3.84
+  },
+  {
+   "w": "acquis,",
+   "s": 49.287,
+   "e": 49.527,
+   "seg": "S4",
+   "src_s": 4.02
+  },
+  {
+   "w": "tu",
+   "s": 49.667,
+   "e": 49.667,
+   "seg": "S4",
+   "src_s": 4.4
+  },
+  {
+   "w": "as",
+   "s": 49.667,
+   "e": 49.747,
+   "seg": "S4",
+   "src_s": 4.4
+  },
+  {
+   "w": "déjà",
+   "s": 49.747,
+   "e": 49.967,
+   "seg": "S4",
+   "src_s": 4.48
+  },
+  {
+   "w": "tes",
+   "s": 49.967,
+   "e": 50.127,
+   "seg": "S4",
+   "src_s": 4.7
+  },
+  {
+   "w": "10",
+   "s": 50.127,
+   "e": 50.287,
+   "seg": "S4",
+   "src_s": 4.86
+  },
+  {
+   "w": "000€",
+   "s": 50.287,
+   "e": 50.547,
+   "seg": "S4",
+   "src_s": 5.02
+  },
+  {
+   "w": "par",
+   "s": 50.547,
+   "e": 50.747,
+   "seg": "S4",
+   "src_s": 5.28
+  },
+  {
+   "w": "mois.",
+   "s": 50.747,
+   "e": 50.967,
+   "seg": "S4",
+   "src_s": 5.48
+  },
+  {
+   "w": "Et",
+   "s": 51.183,
+   "e": 51.503,
+   "seg": "S4",
+   "src_s": 6.05
+  },
+  {
+   "w": "donc,",
+   "s": 51.503,
+   "e": 51.703,
+   "seg": "S4",
+   "src_s": 6.37
+  },
+  {
+   "w": "il",
+   "s": 51.763,
+   "e": 51.923,
+   "seg": "S4",
+   "src_s": 6.63
+  },
+  {
+   "w": "va",
+   "s": 51.923,
+   "e": 52.043,
+   "seg": "S4",
+   "src_s": 6.79
+  },
+  {
+   "w": "faire",
+   "s": 52.043,
+   "e": 52.623,
+   "seg": "S4",
+   "src_s": 6.91
+  },
+  {
+   "w": "un",
+   "s": 52.623,
+   "e": 53.683,
+   "seg": "S4",
+   "src_s": 7.49
+  },
+  {
+   "w": "truc",
+   "s": 53.683,
+   "e": 53.863,
+   "seg": "S4",
+   "src_s": 8.55
+  },
+  {
+   "w": "assez",
+   "s": 53.863,
+   "e": 54.343,
+   "seg": "S4",
+   "src_s": 8.73
+  },
+  {
+   "w": "génial,",
+   "s": 54.343,
+   "e": 54.903,
+   "seg": "S4",
+   "src_s": 9.21
+  },
+  {
+   "w": "il",
+   "s": 55.123,
+   "e": 55.523,
+   "seg": "S4",
+   "src_s": 9.99
+  },
+  {
+   "w": "va",
+   "s": 55.523,
+   "e": 55.703,
+   "seg": "S4",
+   "src_s": 10.39
+  },
+  {
+   "w": "réorganiser",
+   "s": 55.703,
+   "e": 56.743,
+   "seg": "S4",
+   "src_s": 10.57
+  },
+  {
+   "w": "ta",
+   "s": 56.743,
+   "e": 57.003,
+   "seg": "S4",
+   "src_s": 11.61
+  },
+  {
+   "w": "journée",
+   "s": 57.003,
+   "e": 57.363,
+   "seg": "S4",
+   "src_s": 11.87
+  },
+  {
+   "w": "en",
+   "s": 57.363,
+   "e": 57.803,
+   "seg": "S4",
+   "src_s": 12.23
+  },
+  {
+   "w": "fonction",
+   "s": 58.053,
+   "e": 58.533,
+   "seg": "S4",
+   "src_s": 12.92
+  },
+  {
+   "w": "du",
+   "s": 58.533,
+   "e": 58.793,
+   "seg": "S4",
+   "src_s": 13.4
+  },
+  {
+   "w": "résultat",
+   "s": 58.793,
+   "e": 59.273,
+   "seg": "S4",
+   "src_s": 13.66
+  },
+  {
+   "w": "que",
+   "s": 59.273,
+   "e": 59.413,
+   "seg": "S4",
+   "src_s": 14.14
+  },
+  {
+   "w": "tu",
+   "s": 59.413,
+   "e": 59.593,
+   "seg": "S4",
+   "src_s": 14.28
+  },
+  {
+   "w": "as",
+   "s": 59.593,
+   "e": 59.853,
+   "seg": "S4",
+   "src_s": 14.46
+  },
+  {
+   "w": "prétendument",
+   "s": 59.853,
+   "e": 60.953,
+   "seg": "S4",
+   "src_s": 14.72
+  },
+  {
+   "w": "déjà",
+   "s": 60.953,
+   "e": 61.273,
+   "seg": "S4",
+   "src_s": 15.82
+  },
+  {
+   "w": "obtenu.",
+   "s": 61.273,
+   "e": 61.793,
+   "seg": "S4",
+   "src_s": 16.14
+  },
+  {
+   "w": "Il",
+   "s": 61.933,
+   "e": 62.533,
+   "seg": "S5a",
+   "src_s": 0.0
+  },
+  {
+   "w": "n'est",
+   "s": 62.74,
+   "e": 63.03,
+   "seg": "S5a",
+   "src_s": 1.44
+  },
+  {
+   "w": "pas",
+   "s": 63.03,
+   "e": 63.15,
+   "seg": "S5a",
+   "src_s": 1.73
+  },
+  {
+   "w": "nécessaire",
+   "s": 63.15,
+   "e": 63.53,
+   "seg": "S5a",
+   "src_s": 1.85
+  },
+  {
+   "w": "de",
+   "s": 63.53,
+   "e": 63.67,
+   "seg": "S5a",
+   "src_s": 2.23
+  },
+  {
+   "w": "passer",
+   "s": 63.67,
+   "e": 63.91,
+   "seg": "S5a",
+   "src_s": 2.37
+  },
+  {
+   "w": "par",
+   "s": 63.91,
+   "e": 64.23,
+   "seg": "S5a",
+   "src_s": 2.61
+  },
+  {
+   "w": "le",
+   "s": 64.43,
+   "e": 64.73,
+   "seg": "S5a",
+   "src_s": 3.13
+  },
+  {
+   "w": "B",
+   "s": 64.73,
+   "e": 64.91,
+   "seg": "S5a",
+   "src_s": 3.43
+  },
+  {
+   "w": "Il",
+   "s": 65.09,
+   "e": 65.33,
+   "seg": "S5a",
+   "src_s": 5.79
+  },
+  {
+   "w": "n'est",
+   "s": 65.33,
+   "e": 65.45,
+   "seg": "S5a",
+   "src_s": 6.03
+  },
+  {
+   "w": "pas",
+   "s": 65.45,
+   "e": 65.53,
+   "seg": "S5a",
+   "src_s": 6.15
+  },
+  {
+   "w": "nécessaire",
+   "s": 65.53,
+   "e": 65.83,
+   "seg": "S5a",
+   "src_s": 6.23
+  },
+  {
+   "w": "de",
+   "s": 65.83,
+   "e": 65.95,
+   "seg": "S5a",
+   "src_s": 6.53
+  },
+  {
+   "w": "passer",
+   "s": 65.95,
+   "e": 66.15,
+   "seg": "S5a",
+   "src_s": 6.65
+  },
+  {
+   "w": "par",
+   "s": 66.15,
+   "e": 66.35,
+   "seg": "S5a",
+   "src_s": 6.85
+  },
+  {
+   "w": "le",
+   "s": 66.35,
+   "e": 66.47,
+   "seg": "S5a",
+   "src_s": 7.05
+  },
+  {
+   "w": "D",
+   "s": 66.47,
+   "e": 66.63,
+   "seg": "S5a",
+   "src_s": 7.17
+  },
+  {
+   "w": "ni",
+   "s": 66.63,
+   "e": 66.77,
+   "seg": "S5a",
+   "src_s": 7.33
+  },
+  {
+   "w": "par",
+   "s": 66.77,
+   "e": 66.93,
+   "seg": "S5a",
+   "src_s": 7.47
+  },
+  {
+   "w": "le",
+   "s": 66.93,
+   "e": 67.07,
+   "seg": "S5a",
+   "src_s": 7.63
+  },
+  {
+   "w": "E",
+   "s": 67.07,
+   "e": 67.27,
+   "seg": "S5a",
+   "src_s": 7.77
+  },
+  {
+   "w": "il",
+   "s": 67.5,
+   "e": 67.58,
+   "seg": "S5b",
+   "src_s": 1.5
+  },
+  {
+   "w": "va",
+   "s": 67.58,
+   "e": 67.74,
+   "seg": "S5b",
+   "src_s": 1.58
+  },
+  {
+   "w": "t'ouvrir",
+   "s": 67.74,
+   "e": 68.22,
+   "seg": "S5b",
+   "src_s": 1.74
+  },
+  {
+   "w": "les",
+   "s": 68.22,
+   "e": 68.38,
+   "seg": "S5b",
+   "src_s": 2.22
+  },
+  {
+   "w": "yeux",
+   "s": 68.38,
+   "e": 68.64,
+   "seg": "S5b",
+   "src_s": 2.38
+  },
+  {
+   "w": "sur",
+   "s": 68.64,
+   "e": 69.22,
+   "seg": "S5b",
+   "src_s": 2.64
+  },
+  {
+   "w": "les",
+   "s": 69.22,
+   "e": 69.36,
+   "seg": "S5b",
+   "src_s": 3.22
+  },
+  {
+   "w": "opportunités,",
+   "s": 69.36,
+   "e": 70.02,
+   "seg": "S5b",
+   "src_s": 3.36
+  },
+  {
+   "w": "qui",
+   "s": 70.247,
+   "e": 70.487,
+   "seg": "S5b",
+   "src_s": 4.88
+  },
+  {
+   "w": "vont",
+   "s": 70.707,
+   "e": 70.947,
+   "seg": "S5b",
+   "src_s": 5.64
+  },
+  {
+   "w": "dans",
+   "s": 70.947,
+   "e": 71.087,
+   "seg": "S5b",
+   "src_s": 5.88
+  },
+  {
+   "w": "le",
+   "s": 71.087,
+   "e": 71.207,
+   "seg": "S5b",
+   "src_s": 6.02
+  },
+  {
+   "w": "sens",
+   "s": 71.207,
+   "e": 71.467,
+   "seg": "S5b",
+   "src_s": 6.14
+  },
+  {
+   "w": "de«",
+   "s": 71.467,
+   "e": 71.847,
+   "seg": "S5b",
+   "src_s": 6.4
+  },
+  {
+   "w": "j'ai",
+   "s": 71.847,
+   "e": 72.287,
+   "seg": "S5b",
+   "src_s": 6.78
+  },
+  {
+   "w": "10",
+   "s": 72.287,
+   "e": 72.367,
+   "seg": "S5b",
+   "src_s": 7.22
+  },
+  {
+   "w": "000€",
+   "s": 72.367,
+   "e": 72.647,
+   "seg": "S5b",
+   "src_s": 7.3
+  },
+  {
+   "w": "par",
+   "s": 72.647,
+   "e": 72.847,
+   "seg": "S5b",
+   "src_s": 7.58
+  },
+  {
+   "w": "mois».",
+   "s": 72.847,
+   "e": 73.167,
+   "seg": "S5b",
+   "src_s": 7.78
+  },
+  {
+   "w": "Et",
+   "s": 73.327,
+   "e": 73.637,
+   "seg": "S5b",
+   "src_s": 8.26
+  },
+  {
+   "w": "ça",
+   "s": 73.637,
+   "e": 73.757,
+   "seg": "S5b",
+   "src_s": 8.57
+  },
+  {
+   "w": "va",
+   "s": 73.757,
+   "e": 73.877,
+   "seg": "S5b",
+   "src_s": 8.69
+  },
+  {
+   "w": "se",
+   "s": 73.877,
+   "e": 74.017,
+   "seg": "S5b",
+   "src_s": 8.81
+  },
+  {
+   "w": "faire",
+   "s": 74.017,
+   "e": 74.277,
+   "seg": "S5b",
+   "src_s": 8.95
+  },
+  {
+   "w": "automatiquement.",
+   "s": 74.277,
+   "e": 75.207,
+   "seg": "S5b",
+   "src_s": 9.21
+  },
+  {
+   "w": "T'auras",
+   "s": 75.413,
+   "e": 75.853,
+   "seg": "S5b",
+   "src_s": 10.78
+  },
+  {
+   "w": "rien",
+   "s": 75.853,
+   "e": 76.373,
+   "seg": "S5b",
+   "src_s": 11.22
+  },
+  {
+   "w": "à",
+   "s": 76.373,
+   "e": 76.653,
+   "seg": "S5b",
+   "src_s": 11.74
+  },
+  {
+   "w": "faire.",
+   "s": 76.653,
+   "e": 76.873,
+   "seg": "S5b",
+   "src_s": 12.02
+  },
+  {
+   "w": "Dans",
+   "s": 77.08,
+   "e": 77.32,
+   "seg": "S6a",
+   "src_s": 1.48
+  },
+  {
+   "w": "la MG",
+   "s": 77.32,
+   "e": 77.68,
+   "seg": "S6a",
+   "src_s": 1.72
+  },
+  {
+   "w": "Academy,",
+   "s": 77.68,
+   "e": 78.38,
+   "seg": "S6a",
+   "src_s": 2.08
+  },
+  {
+   "w": "on",
+   "s": 78.38,
+   "e": 78.4,
+   "seg": "S6a",
+   "src_s": 2.78
+  },
+  {
+   "w": "ne",
+   "s": 78.4,
+   "e": 78.54,
+   "seg": "S6a",
+   "src_s": 2.8
+  },
+  {
+   "w": "fait",
+   "s": 78.54,
+   "e": 78.76,
+   "seg": "S6a",
+   "src_s": 2.94
+  },
+  {
+   "w": "que",
+   "s": 78.76,
+   "e": 79.1,
+   "seg": "S6a",
+   "src_s": 3.16
+  },
+  {
+   "w": "ça,",
+   "s": 79.33,
+   "e": 79.66,
+   "seg": "S6a",
+   "src_s": 3.73
+  },
+  {
+   "w": "t'as",
+   "s": 79.81,
+   "e": 79.99,
+   "seg": "S6a",
+   "src_s": 4.21
+  },
+  {
+   "w": "des",
+   "s": 79.99,
+   "e": 80.21,
+   "seg": "S6a",
+   "src_s": 4.39
+  },
+  {
+   "w": "manifestations",
+   "s": 80.21,
+   "e": 80.99,
+   "seg": "S6a",
+   "src_s": 4.61
+  },
+  {
+   "w": "tous",
+   "s": 80.99,
+   "e": 81.47,
+   "seg": "S6a",
+   "src_s": 5.39
+  },
+  {
+   "w": "les",
+   "s": 81.47,
+   "e": 81.61,
+   "seg": "S6a",
+   "src_s": 5.87
+  },
+  {
+   "w": "jours,",
+   "s": 81.61,
+   "e": 81.83,
+   "seg": "S6a",
+   "src_s": 6.01
+  },
+  {
+   "w": "Si",
+   "s": 81.967,
+   "e": 82.527,
+   "seg": "S6b",
+   "src_s": 0.0
+  },
+  {
+   "w": "tu",
+   "s": 82.753,
+   "e": 82.923,
+   "seg": "S6b",
+   "src_s": 1.52
+  },
+  {
+   "w": "veux",
+   "s": 82.923,
+   "e": 83.023,
+   "seg": "S6b",
+   "src_s": 1.69
+  },
+  {
+   "w": "tester",
+   "s": 83.023,
+   "e": 83.263,
+   "seg": "S6b",
+   "src_s": 1.79
+  },
+  {
+   "w": "la",
+   "s": 83.263,
+   "e": 83.403,
+   "seg": "S6b",
+   "src_s": 2.03
+  },
+  {
+   "w": "première",
+   "s": 83.403,
+   "e": 83.663,
+   "seg": "S6b",
+   "src_s": 2.17
+  },
+  {
+   "w": "semaine",
+   "s": 83.663,
+   "e": 84.043,
+   "seg": "S6b",
+   "src_s": 2.43
+  },
+  {
+   "w": "est",
+   "s": 84.043,
+   "e": 84.263,
+   "seg": "S6b",
+   "src_s": 2.81
+  },
+  {
+   "w": "gratuite",
+   "s": 84.263,
+   "e": 84.993,
+   "seg": "S6b",
+   "src_s": 3.03
+  },
+  {
+   "w": "Elle",
+   "s": 85.233,
+   "e": 85.433,
+   "seg": "S6c",
+   "src_s": 4.1
+  },
+  {
+   "w": "est",
+   "s": 85.433,
+   "e": 85.513,
+   "seg": "S6c",
+   "src_s": 4.3
+  },
+  {
+   "w": "pas",
+   "s": 85.513,
+   "e": 85.773,
+   "seg": "S6c",
+   "src_s": 4.38
+  },
+  {
+   "w": "belle",
+   "s": 85.773,
+   "e": 86.033,
+   "seg": "S6c",
+   "src_s": 4.64
+  },
+  {
+   "w": "la",
+   "s": 86.033,
+   "e": 86.133,
+   "seg": "S6c",
+   "src_s": 4.9
+  },
+  {
+   "w": "vie",
+   "s": 86.133,
+   "e": 86.333,
+   "seg": "S6c",
+   "src_s": 5.0
+  },
+  {
+   "w": "quand",
+   "s": 86.333,
+   "e": 86.533,
+   "seg": "S6c",
+   "src_s": 5.2
+  },
+  {
+   "w": "même,",
+   "s": 86.533,
+   "e": 86.913,
+   "seg": "S6c",
+   "src_s": 5.4
+  }
+ ],
+ "segments": [
+  {
+   "id": "S1",
+   "role": "hook",
+   "tl_in": 0.0,
+   "tl_out": 11.033,
+   "text": "le subconscient est vraiment magique et j'adore ce mec, il est fabuleux, il est un peu con quand même Il ne fera absolument pas la différence entre la scène que tu as imaginée et la réalité"
+  },
+  {
+   "id": "S2a",
+   "role": "dev",
+   "tl_in": 11.033,
+   "tl_out": 29.7,
+   "text": "si je te demande de te souvenir de ce que tu as mangé le 20 septembre 2014, mais t'en sais rien, pourquoi tu ne te rappelles pas de ce souvenir? Parce qu'il ne te procurait pas une émotion particulière, Par contre si ce même 20 septembre 2014, en mangeant,"
+  },
+  {
+   "id": "S2b",
+   "role": "dev",
+   "tl_in": 29.7,
+   "tl_out": 41.5,
+   "text": "tu avais reçu un appel téléphonique qui t'annonçait une très très bonne nouvelle ou une très très mauvaise nouvelle, crois-moi que tu te rappellerais de ce que tu mangeais ce jour-là. image plus émotion pour le cerveau égale souvenir."
+  },
+  {
+   "id": "S3",
+   "role": "dev",
+   "tl_in": 41.5,
+   "tl_out": 47.533,
+   "text": "une visualisation sans émotion, c'est juste une imagination fantaisiste. Mais quand tu mets de l'émotion, là, ça change tout."
+  },
+  {
+   "id": "S4",
+   "role": "dev",
+   "tl_in": 47.533,
+   "tl_out": 61.933,
+   "text": "Lui, il va croire que c'est déjà acquis, tu as déjà tes 10 000€ par mois. Et donc, il va faire un truc assez génial, il va réorganiser ta journée en fonction du résultat que tu as prétendument déjà obtenu."
+  },
+  {
+   "id": "S5a",
+   "role": "dev",
+   "tl_in": 61.933,
+   "tl_out": 67.4,
+   "text": "Il n'est pas nécessaire de passer par le B Il n'est pas nécessaire de passer par le D ni par le E"
+  },
+  {
+   "id": "S5b",
+   "role": "dev",
+   "tl_in": 67.4,
+   "tl_out": 77.0,
+   "text": "il va t'ouvrir les yeux sur les opportunités, qui vont dans le sens de« j'ai 10 000€ par mois». Et ça va se faire automatiquement. T'auras rien à faire."
+  },
+  {
+   "id": "S6a",
+   "role": "cta",
+   "tl_in": 77.0,
+   "tl_out": 81.967,
+   "text": "Dans la MG Academy, on ne fait que ça, t'as des manifestations tous les jours,"
+  },
+  {
+   "id": "S6b",
+   "role": "cta",
+   "tl_in": 81.967,
+   "tl_out": 85.133,
+   "text": "Si tu veux tester la première semaine est gratuite"
+  },
+  {
+   "id": "S6c",
+   "role": "cta",
+   "tl_in": 85.133,
+   "tl_out": 87.033,
+   "text": "Elle est pas belle la vie quand même,"
+  }
+ ],
+ "trimmed_pauses": [
+  {
+   "seg": "S1",
+   "at_src": 5.86,
+   "gap": 9.28,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S1",
+   "at_src": 16.54,
+   "gap": 1.92,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S2a",
+   "at_src": 8.62,
+   "gap": 1.1,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S2a",
+   "at_src": 10.7,
+   "gap": 8.71,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S2a",
+   "at_src": 24.39,
+   "gap": 4.41,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S2a",
+   "at_src": 29.36,
+   "gap": 0.36,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S2a",
+   "at_src": 32.5,
+   "gap": 0.74,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S2b",
+   "at_src": 6.62,
+   "gap": 0.51,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S2b",
+   "at_src": 9.58,
+   "gap": 6.76,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S3",
+   "at_src": 5.01,
+   "gap": 0.74,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S3",
+   "at_src": 6.8,
+   "gap": 0.26,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S4",
+   "at_src": 2.58,
+   "gap": 1.14,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S4",
+   "at_src": 5.7,
+   "gap": 0.35,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S5a",
+   "at_src": 0.6,
+   "gap": 0.84,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S5a",
+   "at_src": 3.61,
+   "gap": 2.18,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S5b",
+   "at_src": 4.02,
+   "gap": 0.86,
+   "kept": 0.18,
+   "reason": "drop"
+  },
+  {
+   "seg": "S5b",
+   "at_src": 5.12,
+   "gap": 0.52,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S5b",
+   "at_src": 10.14,
+   "gap": 0.64,
+   "kept": 0.18,
+   "reason": "pause"
+  },
+  {
+   "seg": "S6b",
+   "at_src": 0.56,
+   "gap": 0.96,
+   "kept": 0.18,
+   "reason": "pause"
+  }
+ ],
+ "stats": {
+  "n_clips": 29,
+  "n_cuts": 28,
+  "n_words": 261,
+  "pauses_trimmed": 11,
+  "seconds_removed_by_pauses": 5.04
+ }
+}
