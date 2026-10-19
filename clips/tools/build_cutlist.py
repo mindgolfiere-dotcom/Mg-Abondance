@@ -140,7 +140,7 @@ def integrated_loudness(path):
     return float(m.group(1)) if m else -23.0
 
 
-def silence_map(path, target_lufs=-16.0, qc_noise_db=-35.0, hop=0.005, margin_db=2.0):
+def silence_map(path, target_lufs=-16.0, qc_noise_db=-35.0, hop=0.005, margin_db=4.0):
     """Where the speech track will read as silent to the post-render QC: per 5 ms frame, the peak amplitude in dBFS
     is compared with the QC noise gate brought back to the mezzanine's own level (the face track is normalised to
     target_lufs later). Returns (silent_bool_array, hop)."""
@@ -186,7 +186,7 @@ def split_on_silence(src_in, src_out, silent, hop, max_sil, keep, edge=0.03):
         if b >= src_out - 0.15:           # trailing silence: keep only its head
             src_out = min(src_out, a + keep / 2)
             continue
-        if b - a <= max_sil:
+        if b - a <= max_sil - 0.03:       # 30 ms of headroom under the rule: the final mix is gated a little differently
             continue
         out.append((cur_in, a + keep / 2))
         cur_in = b - keep / 2
